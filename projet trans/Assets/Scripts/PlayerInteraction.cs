@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public float camMinX;
+    public float camMaxX;
+    public float camMinY;
+    public float camMaxY;
+
+    public float zoomOutMin = 1;
+    public float zoomOutMax = 8;
+
+    public float force;
+
+    private bool activeTouch = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,26 +31,41 @@ public class PlayerInteraction : MonoBehaviour
             var tempPosition = Input.touches[0].position;
 
             var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
-            if (Physics.Raycast(tempRay, out var other))
+            if (Physics.Raycast(tempRay, out var other) && activeTouch == false)
             {
                 var sceneNext = other.collider.GetComponent<SwitchScene>().maScene;
 
                 SceneManager.LoadScene(sceneNext);
             }
-            if (Input.touchCount>1)
-            {
-                var tempMoveTouchA = Input.touches[0];
-                var tempMoveTouchB = Input.touches[1];
 
-                Vector2 touchAPrev = tempMoveTouchA.position - tempMoveTouchA.deltaPosition;
-                Vector2 touchBPrev = tempMoveTouchB.position - tempMoveTouchB.deltaPosition;
+            if (SceneManager.GetActiveScene().name == "SceneTest")
+            {
+                Vector2 deplacementVector = Input.touches[0].deltaPosition;
+
+                Camera.main.transform.position += new Vector3(-deplacementVector.x * force * (Camera.main.orthographicSize / 8), -deplacementVector.y * force * (Camera.main.orthographicSize / 8), 0);
+                Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, camMinX, camMaxX), Mathf.Clamp(Camera.main.transform.position.y, camMinY, camMaxY), -10);
+            }
+
+            if ((Input.touchCount > 1) && (SceneManager.GetActiveScene().name == "SceneTest"))
+            {
+                var tempTouchA = Input.touches[0];
+                var tempTouchB = Input.touches[1];
+
+                Vector2 touchAPrev = tempTouchA.position - tempTouchA.deltaPosition;
+                Vector2 touchBPrev = tempTouchB.position - tempTouchB.deltaPosition;
 
                 float prevMagnitude = (touchAPrev - touchBPrev).magnitude;
+                float currentMagnitude = (tempTouchA.position - tempTouchB.position).magnitude;
 
-                if ()
-                {
-                    Debug.Log("ça zooooooom");
-                }
+                float difference = currentMagnitude - prevMagnitude;
+
+                zoom(difference * 0.005f);
+            }
+            activeTouch = true;
+
+        } else 
+        { 
+            activeTouch = false;
         }
 
 
@@ -55,5 +82,10 @@ public class PlayerInteraction : MonoBehaviour
                 SceneManager.LoadScene("SceneTest");
             }
         }*/
+    }
+
+    void zoom(float increment)
+    {
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, zoomOutMin, zoomOutMax);
     }
 }
