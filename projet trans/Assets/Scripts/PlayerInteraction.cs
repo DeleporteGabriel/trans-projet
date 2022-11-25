@@ -38,15 +38,17 @@ public class PlayerInteraction : MonoBehaviour
                 SceneManager.LoadScene(sceneNext);
             }
 
-            if (SceneManager.GetActiveScene().name == "SceneTest")
+            if (SceneManager.GetActiveScene().name == "SceneMap")
             {
                 Vector2 deplacementVector = Input.touches[0].deltaPosition;
+
+                Debug.Log("bonjour bg");
 
                 Camera.main.transform.position += new Vector3(-deplacementVector.x * force * (Camera.main.orthographicSize / 8), -deplacementVector.y * force * (Camera.main.orthographicSize / 8), 0);
                 Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, camMinX, camMaxX), Mathf.Clamp(Camera.main.transform.position.y, camMinY, camMaxY), -10);
             }
 
-            if ((Input.touchCount > 1) && (SceneManager.GetActiveScene().name == "SceneTest"))
+            if ((Input.touchCount > 1) && (SceneManager.GetActiveScene().name == "SceneMap"))
             {
                 var tempTouchA = Input.touches[0];
                 var tempTouchB = Input.touches[1];

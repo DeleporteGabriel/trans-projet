@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class texteDialogue : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class texteDialogue : MonoBehaviour
 
     private int lettreAffiche = 0;
     private string textAffiche;
+
+    public string nextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,10 @@ public class texteDialogue : MonoBehaviour
 
         if ((Input.touchCount > 0) && (stayTouch == false) && (textAffiche == mesDialogues[numeroDialogue]))
         {
+            if (numeroDialogue == mesDialogues.Count - 1)
+            {
+                SceneManager.LoadScene(nextScene);
+            }
             numeroDialogue = Mathf.Clamp(numeroDialogue + 1, 0, mesDialogues.Count - 1);
 
             stayTouch = true;

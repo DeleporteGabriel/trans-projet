@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scene/SceneTest.unity
+    path: Assets/Scene/SceneMap.unity
     guid: ead8adac0b2fe344b9905c9aef783058
   - enabled: 1
     path: Assets/Scene/SceneTest2.unity
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/SceneTest5.unity
     guid: 570c3fc44cb0cf6498b76104f2e76f52
+  - enabled: 1
+    path: Assets/Scene/SceneTestMinijeu.unity
+    guid: 991e615a02ea1164d92b58287fcaab24
   m_configObjects: {}
