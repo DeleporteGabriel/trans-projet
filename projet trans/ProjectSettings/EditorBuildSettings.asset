@@ -9,24 +9,27 @@ EditorBuildSettings:
     path: Assets/Scene/SceneMap.unity
     guid: ead8adac0b2fe344b9905c9aef783058
   - enabled: 1
-    path: Assets/Scene/SceneTest2.unity
+    path: Assets/Scene/VisualNovel/SceneTest2.unity
     guid: 2bacbac744810404f91e8f7e6386e7ea
   - enabled: 1
-    path: Assets/Scene/SceneTest3.unity
+    path: Assets/Scene/VisualNovel/SceneTest3.unity
     guid: ce11d9892ac46d74db170302fd0b8baa
   - enabled: 1
-    path: Assets/Scene/SceneTest4.unity
+    path: Assets/Scene/VisualNovel/SceneTest4.unity
     guid: fc0423b482d0263499f4df738d7f7899
   - enabled: 1
-    path: Assets/Scene/SceneTest7.unity
+    path: Assets/Scene/VisualNovel/SceneTest7.unity
     guid: 375b1e31279e8164c92de684249bfbad
   - enabled: 1
-    path: Assets/Scene/SceneTest6.unity
+    path: Assets/Scene/VisualNovel/SceneTest6.unity
     guid: 3c61354e9b0d3604dbdc31593377bc9c
   - enabled: 1
-    path: Assets/Scene/SceneTest5.unity
+    path: Assets/Scene/VisualNovel/SceneTest5.unity
     guid: 570c3fc44cb0cf6498b76104f2e76f52
   - enabled: 1
-    path: Assets/Scene/SceneTestMinijeu.unity
+    path: Assets/Scene/MiniJeu/SceneTestMinijeu.unity
     guid: 991e615a02ea1164d92b58287fcaab24
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneDrag&Drop.unity
+    guid: 1f2d6b2d23ff7ba49af1584e3afa137b
   m_configObjects: {}

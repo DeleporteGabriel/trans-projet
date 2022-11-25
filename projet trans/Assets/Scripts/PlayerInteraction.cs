@@ -15,8 +15,6 @@ public class PlayerInteraction : MonoBehaviour
 
     public float force;
 
-    private bool activeTouch = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,21 +26,9 @@ public class PlayerInteraction : MonoBehaviour
     {
         if(Input.touchCount>0)
         {
-            var tempPosition = Input.touches[0].position;
-
-            var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
-            if (Physics.Raycast(tempRay, out var other) && activeTouch == false)
-            {
-                var sceneNext = other.collider.GetComponent<SwitchScene>().maScene;
-
-                SceneManager.LoadScene(sceneNext);
-            }
-
             if (SceneManager.GetActiveScene().name == "SceneMap")
             {
                 Vector2 deplacementVector = Input.touches[0].deltaPosition;
-
-                Debug.Log("bonjour bg");
 
                 Camera.main.transform.position += new Vector3(-deplacementVector.x * force * (Camera.main.orthographicSize / 8), -deplacementVector.y * force * (Camera.main.orthographicSize / 8), 0);
                 Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, camMinX, camMaxX), Mathf.Clamp(Camera.main.transform.position.y, camMinY, camMaxY), -10);
@@ -63,27 +49,7 @@ public class PlayerInteraction : MonoBehaviour
 
                 zoom(difference * 0.005f);
             }
-            activeTouch = true;
-
-        } else 
-        { 
-            activeTouch = false;
         }
-
-
-        /*
-         * 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (SceneManager.GetActiveScene().name == "SceneTest")
-            {
-                SceneManager.LoadScene("SceneTest2");
-            }
-            else
-            {
-                SceneManager.LoadScene("SceneTest");
-            }
-        }*/
     }
 
     void zoom(float increment)
