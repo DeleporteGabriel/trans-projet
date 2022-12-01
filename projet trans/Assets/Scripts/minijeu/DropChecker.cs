@@ -23,6 +23,7 @@ public class DropChecker : MonoBehaviour
         {
             maJaugeValue.jaugeHype += 70;
             maJaugeValue.DragDrop = 1;
+            maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneMap");
         }
     }

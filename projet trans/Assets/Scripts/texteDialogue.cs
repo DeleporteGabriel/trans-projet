@@ -29,6 +29,7 @@ public class texteDialogue : MonoBehaviour
     {
         monMiniJeuChecker = FindObjectOfType<IndestructibleObject>();
 
+        #region Light Girl
         if (SceneManager.GetActiveScene().name == "SceneLightGirl")
         {
             if (monMiniJeuChecker.DragDrop == 0)
@@ -42,6 +43,8 @@ public class texteDialogue : MonoBehaviour
                 nextScene = nextSceneB;
             }
         }
+        #endregion
+        #region Benevol
         else if (SceneManager.GetActiveScene().name == "SceneBenevol")
         {
             if (monMiniJeuChecker.Cibles == 0)
@@ -55,6 +58,22 @@ public class texteDialogue : MonoBehaviour
                 nextScene = nextSceneB;
             }
         }
+        #endregion
+        #region Goth
+        else if (SceneManager.GetActiveScene().name == "SceneGoth")
+        {
+            if (monMiniJeuChecker.DragPlace == 0)
+            {
+                mesDialogues = mesDialoguesA;
+                nextScene = nextSceneA;
+            }
+            else if (monMiniJeuChecker.DragPlace == 1)
+            {
+                mesDialogues = mesDialoguesB;
+                nextScene = nextSceneB;
+            }
+        }
+        #endregion
         else
         {
             mesDialogues = mesDialoguesA;

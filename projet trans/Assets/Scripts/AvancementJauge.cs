@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class CibleCount : MonoBehaviour
+public class AvancementJauge : MonoBehaviour
 {
     private IndestructibleObject maJaugeValue;
 
-    public int totalCible;
-    public int cibleTrouver;
-
+    public CanvasRenderer cr;
+    public Texture imageA;
+    public Texture imageB;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +18,13 @@ public class CibleCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (totalCible == cibleTrouver)
+        if (maJaugeValue.minijeuTermines == 0)
         {
-            maJaugeValue.jaugeHype += 70;
-            maJaugeValue.Cibles = 1;
-            maJaugeValue.minijeuTermines++;
-            SceneManager.LoadScene("SceneMap");
+            cr.SetTexture(imageA);
+        }
+        else
+        {
+            cr.SetTexture(imageB);
         }
     }
 }

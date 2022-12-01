@@ -9,6 +9,9 @@ public class IndestructibleObject : MonoBehaviour
 
     public int DragDrop;
     public int Cibles;
+    public int DragPlace;
+
+    public int minijeuTermines;
 
     // Start is called before the first frame update
     void Start()

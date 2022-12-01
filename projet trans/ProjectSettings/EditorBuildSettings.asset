@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/MiniJeu/SceneShaker.unity
     guid: 66598e128ec0b9840bda984248f908aa
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/ScenePlaceAuBonEndroit.unity
+    guid: 1f39dea542039bf4084a4538be501f3a
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneBalaie.unity
+    guid: daca569fca005d74b8f49422f62d22ff
   m_configObjects: {}
