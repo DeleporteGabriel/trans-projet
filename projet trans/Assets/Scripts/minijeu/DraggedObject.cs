@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DraggedObject : MonoBehaviour
 {
-
+    private IndestructibleObject maJaugeValue;
     public bool isDragged = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        maJaugeValue = FindObjectOfType<IndestructibleObject>();
     }
 
     // Update is called once per frame
@@ -40,9 +41,10 @@ public class DraggedObject : MonoBehaviour
 
         if (Physics.Raycast(transform.position, new Vector3 (0, 0, 1), out var otherB))
         {
-            if (otherB.collider.GetComponent<ZoneDetect>() != null)
+            if (otherB.collider.GetComponent<ZoneDetect>() != null && isDragged == false)
             {
-                Debug.Log("bravo t'as gagné");
+                maJaugeValue.jaugeHype += 70;
+                SceneManager.LoadScene("SceneMap");
             }
         }
     }

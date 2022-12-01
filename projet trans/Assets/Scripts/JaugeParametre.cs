@@ -1,15 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class CibleCount : MonoBehaviour
+public class JaugeParametre : MonoBehaviour
 {
     private IndestructibleObject maJaugeValue;
-
-    public int totalCible;
-    public int cibleTrouver;
-
+    public RectTransform monTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +15,6 @@ public class CibleCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (totalCible == cibleTrouver)
-        {
-            maJaugeValue.jaugeHype += 70;
-            SceneManager.LoadScene("SceneMap");
-        }
+        monTransform.sizeDelta = new Vector2 (maJaugeValue.jaugeHype, 80);
     }
 }

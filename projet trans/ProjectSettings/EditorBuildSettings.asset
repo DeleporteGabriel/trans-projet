@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/MiniJeu/SceneSlide.unity
     guid: 5a1e2a0253031d443b6e0807fbb90228
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneDessin.unity
+    guid: fd2ff0800fe041c4aa42ecc0e4ae6e24
+  - enabled: 1
+    path: Assets/Scene/FirstScene.unity
+    guid: cfc663019451b9f4fb9617a2c04ef85e
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneShaker.unity
+    guid: 66598e128ec0b9840bda984248f908aa
   m_configObjects: {}

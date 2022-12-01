@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShakingObject : MonoBehaviour
 {
+    private IndestructibleObject maJaugeValue;
+
     public Rigidbody rgbd;
     public float force;
     // Start is called before the first frame update
     void Start()
     {
-        
+        maJaugeValue = FindObjectOfType<IndestructibleObject>();
     }
 
     // Update is called once per frame
@@ -25,7 +28,8 @@ public class ShakingObject : MonoBehaviour
         {
             if (otherB.collider.GetComponent<ZoneDetect>() != null)
             {
-                Debug.Log("bravo t'as gagné");
+                maJaugeValue.jaugeHype += 70;
+                SceneManager.LoadScene("SceneMap");
             }
         }
     }
