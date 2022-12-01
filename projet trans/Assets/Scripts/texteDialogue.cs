@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class texteDialogue : MonoBehaviour
 {
-    public List<string> mesDialogues;
+    private IndestructibleObject monMiniJeuChecker;
+
+    public List<string> mesDialoguesA;
+    public List<string> mesDialoguesB;
+
+    private List<string> mesDialogues;
+
     public TextMeshProUGUI monTexte;
     public int numeroDialogue = 0;
     private bool stayTouch = true;
@@ -14,10 +20,46 @@ public class texteDialogue : MonoBehaviour
     private int lettreAffiche = 0;
     private string textAffiche;
 
-    public string nextScene;
+    public string nextSceneA;
+    public string nextSceneB;
+
+    private string nextScene;
     // Start is called before the first frame update
     void Start()
     {
+        monMiniJeuChecker = FindObjectOfType<IndestructibleObject>();
+
+        if (SceneManager.GetActiveScene().name == "SceneLightGirl")
+        {
+            if (monMiniJeuChecker.DragDrop == 0)
+            {
+                mesDialogues = mesDialoguesA;
+                nextScene = nextSceneA;
+            }
+            else if (monMiniJeuChecker.DragDrop == 1)
+            {
+                mesDialogues = mesDialoguesB;
+                nextScene = nextSceneB;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "SceneBenevol")
+        {
+            if (monMiniJeuChecker.Cibles == 0)
+            {
+                mesDialogues = mesDialoguesA;
+                nextScene = nextSceneA;
+            }
+            else if (monMiniJeuChecker.Cibles == 1)
+            {
+                mesDialogues = mesDialoguesB;
+                nextScene = nextSceneB;
+            }
+        }
+        else
+        {
+            mesDialogues = mesDialoguesA;
+            nextScene = nextSceneA;
+        }
     }
 
     // Update is called once per frame

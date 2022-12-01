@@ -7,16 +7,21 @@ public class IndestructibleObject : MonoBehaviour
 {
     public float jaugeHype;
 
+    public int DragDrop;
+    public int Cibles;
+
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        SceneManager.LoadScene("SceneMap");
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (SceneManager.GetActiveScene().name == "FirstScene" && (Input.touchCount > 0))
+        {
+            SceneManager.LoadScene("SceneMap");
+        }
     }
 }
