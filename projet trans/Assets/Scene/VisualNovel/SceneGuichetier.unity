@@ -398,7 +398,7 @@ MonoBehaviour:
   - bravo.
   monTexte: {fileID: 506038657}
   numeroDialogue: 0
-  nextScene: SceneTestMinijeu
+  nextScene: SceneSlider
 --- !u!1 &536586798
 GameObject:
   m_ObjectHideFlags: 0

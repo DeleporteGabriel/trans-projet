@@ -17,8 +17,16 @@ public class ShakingObject : MonoBehaviour
     {
         Input.gyro.enabled = true; //Active le gyro
 
-        rgbd.AddForce(Input.gyro.userAcceleration * force);
+        rgbd.velocity = new Vector3( Input.gyro.rotationRate.y, Input.gyro.rotationRate.x,0) * force;
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.80f, 1.80f ), Mathf.Clamp(transform.position.y, -3.52f, 5.50f), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.80f, 1.80f ), Mathf.Clamp(transform.position.y, -3.52f, 5.50f), 0);
+
+        if (Physics.Raycast(transform.position, new Vector3(0, 0, 1), out var otherB))
+        {
+            if (otherB.collider.GetComponent<ZoneDetect>() != null)
+            {
+                Debug.Log("bravo t'as gagné");
+            }
+        }
     }
 }

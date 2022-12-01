@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ff1f644ba0bc4da23714d88248bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maScene: SceneTest4
+  maScene: SceneDA
 --- !u!212 &378466697
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ff1f644ba0bc4da23714d88248bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maScene: SceneTest7
+  maScene: SceneBarman
 --- !u!212 &452130128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ff1f644ba0bc4da23714d88248bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maScene: SceneTest6
+  maScene: SceneBenevol
 --- !u!212 &833132680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ff1f644ba0bc4da23714d88248bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maScene: SceneTest2
+  maScene: SceneGuichetier
 --- !u!54 &1282731301
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ff1f644ba0bc4da23714d88248bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maScene: SceneTest5
+  maScene: SceneLightGirl
 --- !u!212 &1535658486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ff1f644ba0bc4da23714d88248bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maScene: SceneTest3
+  maScene: SceneGoth
 --- !u!1 &2062771319
 GameObject:
   m_ObjectHideFlags: 0
