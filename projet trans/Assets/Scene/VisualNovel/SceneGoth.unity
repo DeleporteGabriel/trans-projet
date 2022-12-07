@@ -175,12 +175,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - je suis a la sono
-  - '*start beatboxing*'
-  - aide moi steupler
+  - HEY !
+  - '[Mon dieu, pourquoi elle hurle ?]'
+  - SUPER MANAGER, BESOIN D'AIDE !
+  - '[Retire ton casque...]'
   mesDialoguesB:
-  - "le son est r\xE9gl\xE9"
-  - nickel dude
+  - "Ho d\xE9sol\xE9 pour le casque, je l'oublie \xE0 chaque fois. Merci d'avoir
+    branch\xE9 mon matos d'ailleurs !"
   monTexte: {fileID: 147216189}
   numeroDialogue: 0
   nextSceneA: ScenePlaceAuBonEndroit
@@ -1029,7 +1030,7 @@ Camera:
   m_GameObject: {fileID: 2049894394}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

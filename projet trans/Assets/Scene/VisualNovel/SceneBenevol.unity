@@ -175,10 +175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Bonjour j'ai besoin d'aide stp
-  - Tu veux m'aider stp?????????
+  - Hey ! Hum, excuse moi... Ho pardon, je veux dire excusez moi Super Manager !
+  - "Je dois transporter des badges aux entr\xE9es mais je ne sais pas o\xF9 allez.
+    Vous pouvez m'aidez ?"
   mesDialoguesB:
-  - Merci bg
+  - "Ho c'\xE9tait si simple. Merci beaucoup mon pote... Heu Super Manager je veux
+    dire !"
   monTexte: {fileID: 78906113}
   numeroDialogue: 0
   nextSceneA: SceneCibles
@@ -842,7 +844,7 @@ Camera:
   m_GameObject: {fileID: 2049894394}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

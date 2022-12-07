@@ -371,11 +371,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Ralala ces jeunes
-  - Ils nous volent notre travail
-  - en attendant, mon ptit, tu veux bien faire mon travail ?
+  - Hey l'ami, une boisson ?
+  - "Bha non d\xE9sol\xE9, j'ai pas vraiment le temps..."
+  - "Je suis d\xE9bord\xE9 avec l'inventaire. Tu peux t'occuper du shaker s'il te
+    pla\xEEt ?"
   mesDialoguesB:
-  - "les jeunes ces f\xE9n\xE9ants"
+  - "T'es super mon gars. J'ai fini avec l'arri\xE8re boutique, tu peux y aller,
+    encore merci."
   monTexte: {fileID: 632859582}
   numeroDialogue: 0
   nextSceneA: SceneShaker
@@ -843,7 +845,7 @@ Camera:
   m_GameObject: {fileID: 2049894394}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

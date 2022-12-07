@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CurseurChange : MonoBehaviour
 {
+    private IndestructibleObject maJaugeValue;
+
     public float placementSlider;
 
     private Transform selectSlider = null;
@@ -13,14 +15,27 @@ public class CurseurChange : MonoBehaviour
     public float sliderMax;
 
     public SpriteRenderer sr;
+    public SpriteRenderer srModel;
 
     private float sliderA;
     private float sliderB;
     private float sliderC;
+
+    private float modelA;
+    private float modelB;
+    private float modelC;
+
+    public float margeSlide;
     // Start is called before the first frame update
     void Start()
     {
-        
+        maJaugeValue = FindObjectOfType<IndestructibleObject>();
+
+        modelA = Random.Range(0f, 100f)/100f;
+        modelB = Random.Range(0f, 100f)/100f;
+        modelC = Random.Range(0f, 100f)/100f;
+
+        srModel.color = new Vector4(modelA, modelB, modelC, 255);
     }
 
     // Update is called once per frame
@@ -73,5 +88,17 @@ public class CurseurChange : MonoBehaviour
         }
 
         sr.color = new Vector4(sliderA, sliderB, sliderC, 255);
+
+
+
+        //VICTORY
+        if ((sliderA > (modelA-margeSlide) && sliderA < (modelA + margeSlide)) && (sliderB > (modelB - margeSlide) && sliderB < (modelB + margeSlide)) && (sliderC > (modelC - margeSlide) && sliderC < (modelC + margeSlide)))
+        {
+            maJaugeValue.AugmenteJaugeValue(0.15f);
+            maJaugeValue.ColorsTest = 1;
+            maJaugeValue.minijeuTermines++;
+            SceneManager.LoadScene("SceneMap");
+        }
+
     }
 }

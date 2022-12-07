@@ -701,15 +701,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - "Qui s\xE8me le vent r\xE9colte la temp\xE8te"
-  - "Tant va la cruche qu'\xE0 la fin elle se casse"
-  - "Un grand pouvoir implique de grande responsabilit\xE9"
-  - Pierre qui roule n'amasse pas mousse
-  - "Qui dort d\xEEne"
-  - j'ai besoin d'aide, sinon
+  - Bonjour... Super... Manager...
+  - "Je... crois... que... j'ai... m\xEAl\xE9e... mes... affaires..."
+  - "Mais... il... reste... tellement... \xE0...faire..."
   mesDialoguesB:
-  - Un chasseur sachant chasser sans son chien est un bon chasseur
-  - "Maintenant va, tu m'as d\xE9j\xE0 aid\xE9"
+  - ' Merci !'
+  - Beaucoup !
+  - Super !
+  - ' Manager !'
   monTexte: {fileID: 1848320805}
   numeroDialogue: 0
   nextSceneA: SceneDrag&Drop
@@ -847,7 +846,7 @@ Camera:
   m_GameObject: {fileID: 2049894394}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

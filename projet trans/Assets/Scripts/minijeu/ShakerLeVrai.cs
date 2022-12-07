@@ -13,6 +13,8 @@ public class ShakerLeVrai : MonoBehaviour
     public Transform up, down;
     private float t;
 
+    private bool pointAdd = true;
+
     public float shakeNumber;
     public float shakeVictoire;
     // Start is called before the first frame update
@@ -30,9 +32,16 @@ public class ShakerLeVrai : MonoBehaviour
         t += Input.gyro.userAcceleration.magnitude*force;
         transform.position = Vector3.Lerp(down.position, up.position, (Mathf.Sin(t)+1)/2);
 
-        if (((Mathf.Sin(t)+1)/2) == 0 || ((Mathf.Sin(t) + 1) / 2) == 1)
+        if (((Mathf.Sin(t)+1)/2) <= 0.05 || ((Mathf.Sin(t) + 1) / 2) >= 0.95)
         {
-            shakeNumber++;
+            if (pointAdd == true) {
+                pointAdd = false;
+                shakeNumber++;
+            }
+        }
+        else
+        {
+            pointAdd = true;
         }
 
         if (shakeNumber == shakeVictoire)

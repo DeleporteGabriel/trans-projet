@@ -384,11 +384,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Je suis le guichetier
-  - "mes tickets sont d\xE9licieux"
-  - j'ai besoin d'aide pour les tickets
+  - Ho bonjour Super Manager, quel plaisir de vous voir. Vous arrivez au bon moment.
+  - Pour les tampons j'ai besoin d'encre. Mais je n'ai plus la couleur, aidez moi
+    je vous prie !
   mesDialoguesB:
-  - "c'\xE9tait une r\xE9f\xE9rence mais merci"
+  - 'Ho vous me sauvez la vie, merci. '
   monTexte: {fileID: 506038657}
   numeroDialogue: 0
   nextSceneA: SceneSlider
@@ -944,7 +944,7 @@ Camera:
   m_GameObject: {fileID: 2049894394}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

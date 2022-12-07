@@ -870,7 +870,7 @@ Camera:
   m_GameObject: {fileID: 2049894394}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -990,10 +990,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Je suis un artiste
-  - "mais aide moi quand m\xEAme"
+  - Tais-toi !
+  - Je suis un artiste.
+  - Je sens l'inspiration venir... Oui... Je le vois ! Tends moi la peinture gamin
+    tu veux ?
   mesDialoguesB:
-  - "bravo \xE0 moi"
+  - "Mmh, c'est pas encore \xE7a. Merci gamin et repasse me voir plus tard j'aurai
+    s\xFBrement besoin d'aide."
   monTexte: {fileID: 2129918777}
   numeroDialogue: 0
   nextSceneA: SceneSlide
