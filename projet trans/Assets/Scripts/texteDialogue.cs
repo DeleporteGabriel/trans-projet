@@ -74,6 +74,51 @@ public class texteDialogue : MonoBehaviour
             }
         }
         #endregion
+        #region BobRoss
+        else if (SceneManager.GetActiveScene().name == "SceneDA")
+        {
+            if (monMiniJeuChecker.GyroSpace == 0)
+            {
+                mesDialogues = mesDialoguesA;
+                nextScene = nextSceneA;
+            }
+            else if (monMiniJeuChecker.GyroSpace == 1)
+            {
+                mesDialogues = mesDialoguesB;
+                nextScene = nextSceneB;
+            }
+        }
+        #endregion
+        #region Guichetier
+        else if (SceneManager.GetActiveScene().name == "SceneGuichetier")
+        {
+            if (monMiniJeuChecker.ColorsTest == 0)
+            {
+                mesDialogues = mesDialoguesA;
+                nextScene = nextSceneA;
+            }
+            else if (monMiniJeuChecker.ColorsTest == 1)
+            {
+                mesDialogues = mesDialoguesB;
+                nextScene = nextSceneB;
+            }
+        }
+        #endregion
+        #region Guichetier
+        else if (SceneManager.GetActiveScene().name == "SceneBarman")
+        {
+            if (monMiniJeuChecker.ShakeBranlette == 0)
+            {
+                mesDialogues = mesDialoguesA;
+                nextScene = nextSceneA;
+            }
+            else if (monMiniJeuChecker.ShakeBranlette == 1)
+            {
+                mesDialogues = mesDialoguesB;
+                nextScene = nextSceneB;
+            }
+        }
+        #endregion
         else
         {
             mesDialogues = mesDialoguesA;

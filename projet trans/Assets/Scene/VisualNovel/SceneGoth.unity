@@ -175,15 +175,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Feur
-  - Stiti
-  - Bril
-  - Taire
-  - Deux
-  - "Ans d'\xE9tudes \xE0 Montpellier"
+  - je suis a la sono
+  - '*start beatboxing*'
+  - aide moi steupler
   mesDialoguesB:
-  - "Des \xE9tudes de quoi?"
-  - Feur
+  - "le son est r\xE9gl\xE9"
+  - nickel dude
   monTexte: {fileID: 147216189}
   numeroDialogue: 0
   nextSceneA: ScenePlaceAuBonEndroit

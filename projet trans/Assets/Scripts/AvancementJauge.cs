@@ -13,6 +13,7 @@ public class AvancementJauge : MonoBehaviour
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        maJaugeValue.ChangeJaugeHype();
     }
 
     // Update is called once per frame

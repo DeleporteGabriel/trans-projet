@@ -990,12 +990,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - MC Kraken drops in the ring
-  - In the ocean they call me the king
-  - You're nobody, blank viking
-  - I'm gonna eat you, thanksgiving
+  - Je suis un artiste
+  - "mais aide moi quand m\xEAme"
   mesDialoguesB:
-  - oh non tu m'as battu en rap battle eurg
+  - "bravo \xE0 moi"
   monTexte: {fileID: 2129918777}
   numeroDialogue: 0
   nextSceneA: SceneSlide

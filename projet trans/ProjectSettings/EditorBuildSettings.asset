@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scene/FirstScene.unity
+    guid: cfc663019451b9f4fb9617a2c04ef85e
+  - enabled: 1
     path: Assets/Scene/SceneMap.unity
     guid: ead8adac0b2fe344b9905c9aef783058
   - enabled: 1
@@ -41,9 +44,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/MiniJeu/SceneDessin.unity
     guid: fd2ff0800fe041c4aa42ecc0e4ae6e24
-  - enabled: 1
-    path: Assets/Scene/FirstScene.unity
-    guid: cfc663019451b9f4fb9617a2c04ef85e
   - enabled: 1
     path: Assets/Scene/MiniJeu/SceneShaker.unity
     guid: 66598e128ec0b9840bda984248f908aa

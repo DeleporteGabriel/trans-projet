@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShakerLeVrai : MonoBehaviour
 {
+    private IndestructibleObject maJaugeValue;
+
     public float force;
     public Rigidbody rgbd;
     public float shakingMax;
@@ -15,7 +18,7 @@ public class ShakerLeVrai : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        maJaugeValue = FindObjectOfType<IndestructibleObject>();
     }
 
     // Update is called once per frame
@@ -27,14 +30,18 @@ public class ShakerLeVrai : MonoBehaviour
         t += Input.gyro.userAcceleration.magnitude*force;
         transform.position = Vector3.Lerp(down.position, up.position, (Mathf.Sin(t)+1)/2);
 
-        if (Mathf.Sin(t) == 0 || Mathf.Sin(t) == 1)
+        if (((Mathf.Sin(t)+1)/2) == 0 || ((Mathf.Sin(t) + 1) / 2) == 1)
         {
             shakeNumber++;
         }
 
         if (shakeNumber == shakeVictoire)
         {
-            Debug.Log("ON A GAGNÉ");
+            //maJaugeValue.jaugeHype += 70;
+            maJaugeValue.AugmenteJaugeValue(0.15f);
+            maJaugeValue.ShakeBranlette = 1;
+            maJaugeValue.minijeuTermines++;
+            SceneManager.LoadScene("SceneMap");
         }
 
         //rgbd.velocity = new Vector3 (0, (Input.gyro.rotationRate.z + compensation) * force, 0);

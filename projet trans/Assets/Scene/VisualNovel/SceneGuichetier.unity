@@ -384,11 +384,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - je suis WAAAAAAAARIO
-  - tu peux m'aider ? WAAAAAAAAAH
-  - "viens l\xE0 WAAAAAAH"
+  - Je suis le guichetier
+  - "mes tickets sont d\xE9licieux"
+  - j'ai besoin d'aide pour les tickets
   mesDialoguesB:
-  - wah.
+  - "c'\xE9tait une r\xE9f\xE9rence mais merci"
   monTexte: {fileID: 506038657}
   numeroDialogue: 0
   nextSceneA: SceneSlider

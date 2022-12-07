@@ -175,10 +175,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - "Bonjour je suis l'\xE9cureuil"
-  - SQUIRK
+  - Bonjour j'ai besoin d'aide stp
+  - Tu veux m'aider stp?????????
   mesDialoguesB:
-  - "J'ai menti je ne suis pas un \xE9cureuil"
+  - Merci bg
   monTexte: {fileID: 78906113}
   numeroDialogue: 0
   nextSceneA: SceneCibles

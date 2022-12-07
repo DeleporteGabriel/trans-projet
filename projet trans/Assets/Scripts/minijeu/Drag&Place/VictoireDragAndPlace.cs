@@ -20,7 +20,8 @@ public class VictoireDragAndPlace : MonoBehaviour
     {
         if (totalDrop == currentDrop)
         {
-            maJaugeValue.jaugeHype += 70;
+            //maJaugeValue.jaugeHype += 70;
+            maJaugeValue.AugmenteJaugeValue(0.15f);
             maJaugeValue.DragPlace = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneMap");

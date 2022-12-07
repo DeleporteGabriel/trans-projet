@@ -371,12 +371,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Ralala ces arabes
+  - Ralala ces jeunes
   - Ils nous volent notre travail
-  - Ils sont partout
-  - C'est le grand remplacement
+  - en attendant, mon ptit, tu veux bien faire mon travail ?
   mesDialoguesB:
-  - "j'ai chang\xE9 d'avis je ne suis plus raciste"
+  - "les jeunes ces f\xE9n\xE9ants"
   monTexte: {fileID: 632859582}
   numeroDialogue: 0
   nextSceneA: SceneShaker

@@ -28,7 +28,9 @@ public class ShakingObject : MonoBehaviour
         {
             if (otherB.collider.GetComponent<ZoneDetect>() != null)
             {
-                maJaugeValue.jaugeHype += 70;
+                //maJaugeValue.jaugeHype += 70;
+                maJaugeValue.AugmenteJaugeValue(0.15f);
+                maJaugeValue.GyroSpace = 1;
                 maJaugeValue.minijeuTermines++;
                 SceneManager.LoadScene("SceneMap");
             }

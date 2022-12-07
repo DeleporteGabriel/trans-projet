@@ -21,7 +21,8 @@ public class CibleCount : MonoBehaviour
     {
         if (totalCible == cibleTrouver)
         {
-            maJaugeValue.jaugeHype += 70;
+            //maJaugeValue.jaugeHype += 70;
+            maJaugeValue.AugmenteJaugeValue(0.15f);
             maJaugeValue.Cibles = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneMap");

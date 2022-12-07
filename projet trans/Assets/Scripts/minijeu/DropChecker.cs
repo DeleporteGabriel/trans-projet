@@ -21,7 +21,8 @@ public class DropChecker : MonoBehaviour
     {
         if (totalDrop == currentDrop && isCorrect == 0)
         {
-            maJaugeValue.jaugeHype += 70;
+            //maJaugeValue.jaugeHype += 70;
+            maJaugeValue.AugmenteJaugeValue(0.15f);
             maJaugeValue.DragDrop = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneMap");
