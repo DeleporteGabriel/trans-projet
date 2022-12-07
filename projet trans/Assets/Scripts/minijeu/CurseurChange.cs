@@ -94,10 +94,10 @@ public class CurseurChange : MonoBehaviour
         //VICTORY
         if ((sliderA > (modelA-margeSlide) && sliderA < (modelA + margeSlide)) && (sliderB > (modelB - margeSlide) && sliderB < (modelB + margeSlide)) && (sliderC > (modelC - margeSlide) && sliderC < (modelC + margeSlide)))
         {
-            maJaugeValue.AugmenteJaugeValue(0.15f);
+            maJaugeValue.AugmenteJaugeValue(1f/6f);
             maJaugeValue.ColorsTest = 1;
             maJaugeValue.minijeuTermines++;
-            SceneManager.LoadScene("SceneMap");
+            SceneManager.LoadScene("SceneGuichetier");
         }
 
     }

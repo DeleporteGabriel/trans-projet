@@ -47,10 +47,10 @@ public class ShakerLeVrai : MonoBehaviour
         if (shakeNumber == shakeVictoire)
         {
             //maJaugeValue.jaugeHype += 70;
-            maJaugeValue.AugmenteJaugeValue(0.15f);
+            maJaugeValue.AugmenteJaugeValue(1f/6f);
             maJaugeValue.ShakeBranlette = 1;
             maJaugeValue.minijeuTermines++;
-            SceneManager.LoadScene("SceneMap");
+            SceneManager.LoadScene("SceneBarman");
         }
 
         //rgbd.velocity = new Vector3 (0, (Input.gyro.rotationRate.z + compensation) * force, 0);

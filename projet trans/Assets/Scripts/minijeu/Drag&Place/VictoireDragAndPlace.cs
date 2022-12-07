@@ -21,10 +21,10 @@ public class VictoireDragAndPlace : MonoBehaviour
         if (totalDrop == currentDrop)
         {
             //maJaugeValue.jaugeHype += 70;
-            maJaugeValue.AugmenteJaugeValue(0.15f);
+            maJaugeValue.AugmenteJaugeValue(1f / 6f);
             maJaugeValue.DragPlace = 1;
             maJaugeValue.minijeuTermines++;
-            SceneManager.LoadScene("SceneMap");
+            SceneManager.LoadScene("SceneGoth");
         }
     }
 }

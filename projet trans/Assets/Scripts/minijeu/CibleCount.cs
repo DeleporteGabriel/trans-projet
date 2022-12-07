@@ -22,10 +22,10 @@ public class CibleCount : MonoBehaviour
         if (totalCible == cibleTrouver)
         {
             //maJaugeValue.jaugeHype += 70;
-            maJaugeValue.AugmenteJaugeValue(0.15f);
+            maJaugeValue.AugmenteJaugeValue(1f / 6f);
             maJaugeValue.Cibles = 1;
             maJaugeValue.minijeuTermines++;
-            SceneManager.LoadScene("SceneMap");
+            SceneManager.LoadScene("SceneBenevol");
         }
     }
 }
