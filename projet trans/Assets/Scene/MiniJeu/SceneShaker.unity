@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd70817cb08b5c4bb1636a4f773c948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0.02
+  force: 0.09
   rgbd: {fileID: 139824827}
   shakingMax: 5
   up: {fileID: 1240916028}
