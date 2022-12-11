@@ -7,35 +7,45 @@ public class SwitchScene : MonoBehaviour
 {
     public string maScene;
     private bool activeTouch = false;
+
+    public SpriteRenderer sr;
+
+    public float timer;
+    public float timerMax;
     // Start is called before the first frame update
     void Start()
     {
-        
+        timerMax = 1;
+        if (Input.touchCount > 0) { activeTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        timer += Time.deltaTime;
+        if (timer > timerMax)
         {
-            var tempPosition = Input.touches[0].position;
-
-            var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
-            if (Physics.Raycast(tempRay, out var other) && activeTouch == false)
+            if (Input.touchCount > 0)
             {
-                if (other.collider.GetComponent<SwitchScene>() != null)
+                var tempPosition = Input.touches[0].position;
+
+                var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
+                if (Physics.Raycast(tempRay, out var other) && activeTouch == false)
                 {
-                    var sceneNext = other.collider.GetComponent<SwitchScene>().maScene;
+                    if (other.collider.GetComponent<SwitchScene>() != null)
+                    {
+                        var sceneNext = other.collider.GetComponent<SwitchScene>().maScene;
 
-                    SceneManager.LoadScene(sceneNext);
+                        SceneManager.LoadScene(sceneNext);
+                    }
                 }
-            }
 
-            activeTouch = true;
-        }
-        else
-        {
-            activeTouch = false;
+                activeTouch = true;
+            }
+            else
+            {
+                activeTouch = false;
+            }
         }
 
     }

@@ -23,7 +23,9 @@ public class texteDialogue : MonoBehaviour
     public string nextSceneA;
     public string nextSceneB;
 
-    private string nextScene;
+    public GameObject mesOptions;
+
+    private bool stopDialogue = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +37,10 @@ public class texteDialogue : MonoBehaviour
             if (monMiniJeuChecker.DragDrop == 0)
             {
                 mesDialogues = mesDialoguesA;
-                nextScene = nextSceneA;
             }
             else if (monMiniJeuChecker.DragDrop == 1)
             {
                 mesDialogues = mesDialoguesB;
-                nextScene = nextSceneB;
             }
         }
         #endregion
@@ -50,12 +50,10 @@ public class texteDialogue : MonoBehaviour
             if (monMiniJeuChecker.Cibles == 0)
             {
                 mesDialogues = mesDialoguesA;
-                nextScene = nextSceneA;
             }
             else if (monMiniJeuChecker.Cibles == 1)
             {
                 mesDialogues = mesDialoguesB;
-                nextScene = nextSceneB;
             }
         }
         #endregion
@@ -65,12 +63,10 @@ public class texteDialogue : MonoBehaviour
             if (monMiniJeuChecker.DragPlace == 0)
             {
                 mesDialogues = mesDialoguesA;
-                nextScene = nextSceneA;
             }
             else if (monMiniJeuChecker.DragPlace == 1)
             {
                 mesDialogues = mesDialoguesB;
-                nextScene = nextSceneB;
             }
         }
         #endregion
@@ -80,12 +76,10 @@ public class texteDialogue : MonoBehaviour
             if (monMiniJeuChecker.GyroSpace == 0)
             {
                 mesDialogues = mesDialoguesA;
-                nextScene = nextSceneA;
             }
             else if (monMiniJeuChecker.GyroSpace == 1)
             {
                 mesDialogues = mesDialoguesB;
-                nextScene = nextSceneB;
             }
         }
         #endregion
@@ -95,34 +89,29 @@ public class texteDialogue : MonoBehaviour
             if (monMiniJeuChecker.ColorsTest == 0)
             {
                 mesDialogues = mesDialoguesA;
-                nextScene = nextSceneA;
             }
             else if (monMiniJeuChecker.ColorsTest == 1)
             {
                 mesDialogues = mesDialoguesB;
-                nextScene = nextSceneB;
             }
         }
         #endregion
-        #region Guichetier
+        #region Barman
         else if (SceneManager.GetActiveScene().name == "SceneBarman")
         {
             if (monMiniJeuChecker.ShakeBranlette == 0)
             {
                 mesDialogues = mesDialoguesA;
-                nextScene = nextSceneA;
             }
             else if (monMiniJeuChecker.ShakeBranlette == 1)
             {
                 mesDialogues = mesDialoguesB;
-                nextScene = nextSceneB;
             }
         }
         #endregion
         else
         {
             mesDialogues = mesDialoguesA;
-            nextScene = nextSceneA;
         }
     }
 
@@ -135,14 +124,23 @@ public class texteDialogue : MonoBehaviour
             textAffiche += mesDialogues[numeroDialogue][lettreAffiche];
         }
         lettreAffiche++;
-
-        monTexte.text = textAffiche;
-
         if ((Input.touchCount > 0) && (stayTouch == false) && (textAffiche == mesDialogues[numeroDialogue]))
         {
             if (numeroDialogue == mesDialogues.Count - 1)
             {
-                SceneManager.LoadScene(nextScene);
+                stopDialogue = true;
+                if (mesDialogues == mesDialoguesA)
+                {
+                    Instantiate(mesOptions, new Vector3(-1f, -0.6f, -1), Quaternion.identity);
+                    var nextMJ = Instantiate(mesOptions, new Vector3(1, -0.6f, -1), Quaternion.identity);
+                    nextMJ.GetComponent<SwitchScene>().sr.color = Color.green;
+                    nextMJ.GetComponent<SwitchScene>().maScene = nextSceneA;
+                }
+                else
+                {
+                    SceneManager.LoadScene(nextSceneB);
+                }
+
             }
             numeroDialogue = Mathf.Clamp(numeroDialogue + 1, 0, mesDialogues.Count - 1);
 
@@ -151,9 +149,9 @@ public class texteDialogue : MonoBehaviour
             textAffiche = "";
             lettreAffiche = 0;
         }
-        if (Input.touchCount == 0)
-        {
-            stayTouch = false;
-        }
+        if (stopDialogue == true) { textAffiche = ""; }
+        monTexte.text = textAffiche;
+
+        if (Input.touchCount == 0) { stayTouch = false; }
     }
 }

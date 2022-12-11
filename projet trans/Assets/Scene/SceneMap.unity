@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maScene: SceneDA
+  sr: {fileID: 378466697}
 --- !u!212 &378466697
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -296,6 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maScene: SceneBarman
+  sr: {fileID: 452130128}
 --- !u!212 &452130128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -675,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maScene: SceneBenevol
+  sr: {fileID: 833132680}
 --- !u!212 &833132680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -998,6 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maScene: SceneGuichetier
+  sr: {fileID: 1938903800}
 --- !u!135 &1282731302
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1163,6 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maScene: SceneLightGirl
+  sr: {fileID: 1535658486}
 --- !u!212 &1535658486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1357,6 +1362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maScene: SceneGoth
+  sr: {fileID: 1938903800}
 --- !u!114 &1938903804
 MonoBehaviour:
   m_ObjectHideFlags: 0
