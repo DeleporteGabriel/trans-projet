@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BadgeEnvoi : MonoBehaviour
 {
-    public List<Color> typeBadgeColor;
+    public List<Sprite> typeBadgeColor;
     public List<int> listBonBadge;
     public int badgeAvancement;
 
@@ -22,7 +22,7 @@ public class BadgeEnvoi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        srModele.color = typeBadgeColor[listBonBadge[badgeAvancement]];
+        srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class BadgeEnvoi : MonoBehaviour
                     if (other.collider.GetComponent<BadgeSelect>() != null && isTouch == false)
                     {
                         typeBadgeNumber = other.collider.GetComponent<BadgeSelect>().badgeNumber;
-                        sr.color = typeBadgeColor[typeBadgeNumber];
+                        sr.sprite = typeBadgeColor[typeBadgeNumber];
                     }
                 }
 
@@ -70,8 +70,8 @@ public class BadgeEnvoi : MonoBehaviour
             {
                 caDegage = false;
                 transform.position = new Vector3(0, 1.5f, 0);
-                sr.color = typeBadgeColor[0];
-                srModele.color = typeBadgeColor[listBonBadge[badgeAvancement]];
+                sr.sprite = typeBadgeColor[0];
+                srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
             }
         }
     }
