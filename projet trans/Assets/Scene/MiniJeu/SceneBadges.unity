@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeBadgeColor:
-  - {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0.4867382, g: 0, b: 1, a: 1}
   - {r: 0, g: 0.904428, b: 1, a: 1}
