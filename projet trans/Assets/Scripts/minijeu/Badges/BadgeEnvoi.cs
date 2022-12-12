@@ -65,11 +65,13 @@ public class BadgeEnvoi : MonoBehaviour
         }
         else
         {
-            transform.position += new Vector3(0, 0.09f, 0);
+            transform.position += new Vector3(0, 0.12f, 0);
+            transform.Rotate(0, 0, 5f);
             if (transform.position.y > 15f)
             {
                 caDegage = false;
                 transform.position = new Vector3(0, 1.5f, 0);
+                transform.rotation = Quaternion.identity;
                 sr.sprite = typeBadgeColor[0];
                 srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
             }
