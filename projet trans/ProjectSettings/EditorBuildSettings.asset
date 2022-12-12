@@ -56,4 +56,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/MiniJeu/SceneCombine.unity
     guid: a14c1a50e3e4b6f47a8f7ea44ba4da3a
+  - enabled: 1
+    path: Assets/Scene/VisualNovel/SceneLightGirl.unity
+    guid: ac3a37fc28ea0b84abaf81ec6b1ab35d
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneBadges.unity
+    guid: 93643aad3942e3845a6a68e7c93031d5
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneFraude.unity
+    guid: 060bb73df921f8b499c9f34c263f4ca8
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneOrdonnee.unity
+    guid: adede8afe01c09643949add7a7a7ae3b
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/SceneRythm.unity
+    guid: bff3e5eba2cad9542b8129905a6858ff
   m_configObjects: {}

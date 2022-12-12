@@ -10,9 +10,13 @@ public class PannelPart : MonoBehaviour
     public int rightPannel;
 
     public SpriteRenderer sr;
+
+    private Animator animObject;
     // Start is called before the first frame update
     void Start()
     {
+        animObject = GetComponent<Animator>();
+
         currentGraphics = Random.Range(0, 6);
         while (currentGraphics == rightPannel)
         {
@@ -24,5 +28,10 @@ public class PannelPart : MonoBehaviour
     void Update()
     {
         sr.color = graphics[currentGraphics];
+    }
+
+    public void onTapTrigger()
+    {
+        animObject.SetTrigger("onTap");
     }
 }

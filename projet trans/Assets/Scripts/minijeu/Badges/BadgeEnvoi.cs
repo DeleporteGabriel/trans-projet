@@ -23,6 +23,7 @@ public class BadgeEnvoi : MonoBehaviour
     void Start()
     {
         srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
+        sr.sprite = typeBadgeColor[0];
     }
 
     // Update is called once per frame

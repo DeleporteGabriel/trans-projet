@@ -28,6 +28,7 @@ public class Combine : MonoBehaviour
                 {
                     var targetObject = other.collider.GetComponent<PannelPart>();
                     targetObject.currentGraphics++;
+                    targetObject.onTapTrigger();
 
                     if (targetObject.currentGraphics >= targetObject.graphics.Count)
                     {

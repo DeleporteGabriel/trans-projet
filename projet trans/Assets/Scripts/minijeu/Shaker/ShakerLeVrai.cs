@@ -23,6 +23,7 @@ public class ShakerLeVrai : MonoBehaviour
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        mousse.sprite = mousseEtape[0];
     }
 
     // Update is called once per frame
@@ -49,14 +50,14 @@ public class ShakerLeVrai : MonoBehaviour
         if (shakeNumber == shakeVictoire/4)
         {
 
-            mousse.sprite = mousseEtape[0];
+            mousse.sprite = mousseEtape[1];
 
         }
 
         if (shakeNumber == shakeVictoire / 2)
         {
 
-            mousse.sprite = mousseEtape[1];
+            mousse.sprite = mousseEtape[2];
 
         }
 
