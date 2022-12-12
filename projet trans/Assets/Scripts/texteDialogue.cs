@@ -111,19 +111,21 @@ public class texteDialogue : MonoBehaviour
         #endregion
         else
         {
-            mesDialogues = mesDialoguesA;
+            mesDialogues = mesDialoguesB;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (textAffiche != mesDialogues[numeroDialogue])
+        if (stopDialogue == false)
         {
-            textAffiche += mesDialogues[numeroDialogue][lettreAffiche];
+            if (textAffiche != mesDialogues[numeroDialogue])
+            {
+                textAffiche += mesDialogues[numeroDialogue][lettreAffiche];
+            }
+            lettreAffiche++;
         }
-        lettreAffiche++;
         if ((Input.touchCount > 0) && (stayTouch == false) && (textAffiche == mesDialogues[numeroDialogue]))
         {
             if (numeroDialogue == mesDialogues.Count - 1)

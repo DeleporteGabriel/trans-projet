@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFraudeur: 0
-  vitesse: 0.01
+  vitesse: 0.005
   sr: {fileID: 1772625175561174286}
   timerMax: 2
   timer: 0

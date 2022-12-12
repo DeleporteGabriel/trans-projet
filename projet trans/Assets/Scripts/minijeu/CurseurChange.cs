@@ -31,9 +31,9 @@ public class CurseurChange : MonoBehaviour
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
-        modelA = Random.Range(0f, 100f)/100f;
-        modelB = Random.Range(0f, 100f)/100f;
-        modelC = Random.Range(0f, 100f)/100f;
+        modelA = Random.Range(25f, 100f)/100f;
+        modelB = Random.Range(25f, 100f)/100f;
+        modelC = Random.Range(25f, 100f)/100f;
 
         srModel.color = new Vector4(modelA, modelB, modelC, 255);
     }

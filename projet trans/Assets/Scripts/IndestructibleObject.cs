@@ -31,7 +31,7 @@ public class IndestructibleObject : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "FirstScene" && (Input.touchCount > 0))
         {
-            SceneManager.LoadScene("SceneMap");
+            SceneManager.LoadScene("SceneIntro");
         }
     }
 

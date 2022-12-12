@@ -19,7 +19,7 @@ public class Fraudeur : MonoBehaviour
             isFraudeur = true;
         }
 
-        vitesse = Random.Range(0.01f, 0.015f);
+        vitesse = Random.Range(0.0005f, 0.002f);
         timerMax = Random.Range(1.7f, 2.2f);
     }
 
