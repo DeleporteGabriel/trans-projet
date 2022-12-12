@@ -11,6 +11,8 @@ public class ShakerLeVrai : MonoBehaviour
     public Rigidbody rgbd;
     public float shakingMax;
     public Transform up, down;
+    public SpriteRenderer mousse;
+    public List<Sprite> mousseEtape;
     private float t;
 
     private bool pointAdd = true;
@@ -44,6 +46,20 @@ public class ShakerLeVrai : MonoBehaviour
             pointAdd = true;
         }
 
+        if (shakeNumber == shakeVictoire/4)
+        {
+
+            mousse.sprite = mousseEtape[0];
+
+        }
+
+        if (shakeNumber == shakeVictoire / 2)
+        {
+
+            mousse.sprite = mousseEtape[1];
+
+        }
+
         if (shakeNumber == shakeVictoire)
         {
             //maJaugeValue.jaugeHype += 70;
@@ -51,6 +67,7 @@ public class ShakerLeVrai : MonoBehaviour
             maJaugeValue.ShakeBranlette = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneBarman");
+            mousse.sprite = mousseEtape[2];
         }
 
         //rgbd.velocity = new Vector3 (0, (Input.gyro.rotationRate.z + compensation) * force, 0);
