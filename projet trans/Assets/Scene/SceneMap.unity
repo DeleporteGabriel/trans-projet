@@ -252,8 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e9a68eceeaad54784feb56a407ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monPerso: 2
   sr: {fileID: 378466697}
-  correspondanceMJ: 5
 --- !u!95 &378466700
 Animator:
   serializedVersion: 4
@@ -403,8 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e9a68eceeaad54784feb56a407ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monPerso: 3
   sr: {fileID: 452130128}
-  correspondanceMJ: 6
 --- !u!95 &452130131
 Animator:
   serializedVersion: 4
@@ -806,8 +806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e9a68eceeaad54784feb56a407ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monPerso: 1
   sr: {fileID: 833132680}
-  correspondanceMJ: 4
 --- !u!95 &833132683
 Animator:
   serializedVersion: 4
@@ -1099,8 +1099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e9a68eceeaad54784feb56a407ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monPerso: 0
   sr: {fileID: 1282731298}
-  correspondanceMJ: 3
 --- !u!95 &1282731304
 Animator:
   serializedVersion: 4
@@ -1323,7 +1323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535658483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.196, y: 0.375, z: 0}
+  m_LocalPosition: {x: 0.149, y: 0.291, z: 0}
   m_LocalScale: {x: 0.13246708, y: 0.13246708, z: 0.13246708}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1342,8 +1342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e9a68eceeaad54784feb56a407ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monPerso: 5
   sr: {fileID: 1535658486}
-  correspondanceMJ: 1
 --- !u!95 &1535658489
 Animator:
   serializedVersion: 4
@@ -1493,8 +1493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e9a68eceeaad54784feb56a407ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monPerso: 4
   sr: {fileID: 1938903800}
-  correspondanceMJ: 2
 --- !u!95 &1938903805
 Animator:
   serializedVersion: 4

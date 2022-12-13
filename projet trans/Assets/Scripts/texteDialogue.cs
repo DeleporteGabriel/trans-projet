@@ -26,90 +26,32 @@ public class texteDialogue : MonoBehaviour
     public GameObject mesOptions;
 
     private bool stopDialogue = false;
+
+    public int monPerso;
+    private int monMiniJeu;
     // Start is called before the first frame update
     void Start()
     {
         monMiniJeuChecker = FindObjectOfType<IndestructibleObject>();
 
-        #region Light Girl
-        if (SceneManager.GetActiveScene().name == "SceneLightGirl")
+        if (monPerso != -1)
         {
-            if (monMiniJeuChecker.DragDrop == 0)
+            for (int i = 0; i <= monMiniJeuChecker.currentMJ.Count - 1; i++)
             {
-                mesDialogues = mesDialoguesA;
-            }
-            else if (monMiniJeuChecker.DragDrop == 1)
-            {
-                mesDialogues = mesDialoguesB;
+                for (int j = 0; j < 3; j++)
+                {
+                    if (monMiniJeuChecker.currentMJ[i] == monMiniJeuChecker.mesPersos[monPerso][j])
+                    {
+                        //récupère la valeur du mj
+                        monMiniJeu = monMiniJeuChecker.currentMJ[i] - 1;
+                        nextSceneA = monMiniJeuChecker.mesMinijeux[monMiniJeu];
+                        mesDialogues = mesDialoguesA;
+                    }
+                }
             }
         }
-        #endregion
-        #region Benevol
-        else if (SceneManager.GetActiveScene().name == "SceneBenevol")
-        {
-            if (monMiniJeuChecker.Cibles == 0)
-            {
-                mesDialogues = mesDialoguesA;
-            }
-            else if (monMiniJeuChecker.Cibles == 1)
-            {
-                mesDialogues = mesDialoguesB;
-            }
-        }
-        #endregion
-        #region Goth
-        else if (SceneManager.GetActiveScene().name == "SceneGoth")
-        {
-            if (monMiniJeuChecker.DragPlace == 0)
-            {
-                mesDialogues = mesDialoguesA;
-            }
-            else if (monMiniJeuChecker.DragPlace == 1)
-            {
-                mesDialogues = mesDialoguesB;
-            }
-        }
-        #endregion
-        #region BobRoss
-        else if (SceneManager.GetActiveScene().name == "SceneDA")
-        {
-            if (monMiniJeuChecker.GyroSpace == 0)
-            {
-                mesDialogues = mesDialoguesA;
-            }
-            else if (monMiniJeuChecker.GyroSpace == 1)
-            {
-                mesDialogues = mesDialoguesB;
-            }
-        }
-        #endregion
-        #region Guichetier
-        else if (SceneManager.GetActiveScene().name == "SceneGuichetier")
-        {
-            if (monMiniJeuChecker.ColorsTest == 0)
-            {
-                mesDialogues = mesDialoguesA;
-            }
-            else if (monMiniJeuChecker.ColorsTest == 1)
-            {
-                mesDialogues = mesDialoguesB;
-            }
-        }
-        #endregion
-        #region Barman
-        else if (SceneManager.GetActiveScene().name == "SceneBarman")
-        {
-            if (monMiniJeuChecker.ShakeBranlette == 0)
-            {
-                mesDialogues = mesDialoguesA;
-            }
-            else if (monMiniJeuChecker.ShakeBranlette == 1)
-            {
-                mesDialogues = mesDialoguesB;
-            }
-        }
-        #endregion
-        else
+
+        if (mesDialogues == null)
         {
             mesDialogues = mesDialoguesB;
         }

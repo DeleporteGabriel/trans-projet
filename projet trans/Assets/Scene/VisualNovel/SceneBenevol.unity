@@ -186,6 +186,7 @@ MonoBehaviour:
   nextSceneA: SceneCibles
   nextSceneB: SceneMap
   mesOptions: {fileID: 6126608344249178347, guid: 0982af7dacee71c45b8558ffb8d47411, type: 3}
+  monPerso: 1
 --- !u!114 &78906113
 MonoBehaviour:
   m_ObjectHideFlags: 0

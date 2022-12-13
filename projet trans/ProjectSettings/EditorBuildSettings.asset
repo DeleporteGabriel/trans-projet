@@ -30,45 +30,63 @@ EditorBuildSettings:
     path: Assets/Scene/VisualNovel/SceneGuichetier.unity
     guid: 570c3fc44cb0cf6498b76104f2e76f52
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneSlider.unity
+    path: Assets/Scene/MiniJeu/LightGirl/SceneSlider.unity
     guid: 991e615a02ea1164d92b58287fcaab24
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneDrag&Drop.unity
+    path: Assets/Scene/MiniJeu/Barman/SceneDrag&Drop.unity
     guid: 1f2d6b2d23ff7ba49af1584e3afa137b
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneCibles.unity
+    path: Assets/Scene/MiniJeu/Goth/SceneCibles.unity
     guid: d31ff6e71d8a743478f759929f526448
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneSlide.unity
+    path: Assets/Scene/MiniJeu/Benevol/ScenePoubelle.unity
     guid: 5a1e2a0253031d443b6e0807fbb90228
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneDessin.unity
-    guid: fd2ff0800fe041c4aa42ecc0e4ae6e24
-  - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneShaker.unity
+    path: Assets/Scene/MiniJeu/Barman/SceneShaker.unity
     guid: 66598e128ec0b9840bda984248f908aa
   - enabled: 1
-    path: Assets/Scene/MiniJeu/ScenePlaceAuBonEndroit.unity
+    path: Assets/Scene/MiniJeu/DA/ScenePlaceAuBonEndroit.unity
     guid: 1f39dea542039bf4084a4538be501f3a
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneBalaie.unity
+    path: Assets/Scene/MiniJeu/Benevol/SceneBalaie.unity
     guid: daca569fca005d74b8f49422f62d22ff
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneCombine.unity
+    path: Assets/Scene/MiniJeu/DA/SceneCombine.unity
     guid: a14c1a50e3e4b6f47a8f7ea44ba4da3a
   - enabled: 1
     path: Assets/Scene/VisualNovel/SceneLightGirl.unity
     guid: ac3a37fc28ea0b84abaf81ec6b1ab35d
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneBadges.unity
+    path: Assets/Scene/MiniJeu/Guichetier/SceneBadges.unity
     guid: 93643aad3942e3845a6a68e7c93031d5
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneFraude.unity
+    path: Assets/Scene/MiniJeu/Guichetier/SceneFraude.unity
     guid: 060bb73df921f8b499c9f34c263f4ca8
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneOrdonnee.unity
+    path: Assets/Scene/MiniJeu/Benevol/SceneOrdonnee.unity
     guid: adede8afe01c09643949add7a7a7ae3b
   - enabled: 1
-    path: Assets/Scene/MiniJeu/SceneRythm.unity
+    path: Assets/Scene/MiniJeu/Goth/SceneRythm.unity
     guid: bff3e5eba2cad9542b8129905a6858ff
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/Barman/SceneBierre.unity
+    guid: c87743554406c8740bac353b500b2012
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/Goth/SceneCourbes.unity
+    guid: 5444e8bce686e7d42ba6f7a5111f3686
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/Guichetier/SceneMonnaie.unity
+    guid: 05b708187f96ab54ca9d9a5e5672133d
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/LightGirl/SceneChiant.unity
+    guid: de2fe7f4ed130d5419f555edeeff43ca
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/LightGirl/SceneSimon.unity
+    guid: 6069774a4aef17e439fb10b44f07d43f
+  - enabled: 1
+    path: Assets/Scene/MiniJeu/DA/SceneDessin.unity
+    guid: bb39cc7771193024eae48fad6c92a092
   m_configObjects: {}
