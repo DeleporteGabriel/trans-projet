@@ -14,6 +14,8 @@ public class DropChecker : MonoBehaviour
     private bool fini = false;
 
     public GameObject victor;
+
+    private bool isTouch = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,19 @@ public class DropChecker : MonoBehaviour
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
                 fini = true;
             }
+
+            if (Input.touchCount > 0)
+            {
+                if (isTouch == false)
+                {
+                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.DragDrop = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneLightGirl");
+                }
+                isTouch = true;
+            }
+            else { isTouch = false; }
         }
     }
 }

@@ -688,6 +688,7 @@ MonoBehaviour:
   totalDrop: 6
   currentDrop: 0
   isCorrect: 0
+  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
 --- !u!1 &660467414
 GameObject:
   m_ObjectHideFlags: 0
