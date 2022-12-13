@@ -14,6 +14,7 @@ public class CreateTempo : MonoBehaviour
     private int noteNumber = 1;
     public CreateTempo self;
 
+
     public int rythmNumber = 0;
 
     public int variableTimer;

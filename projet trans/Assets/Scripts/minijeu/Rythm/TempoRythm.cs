@@ -12,10 +12,12 @@ public class TempoRythm : MonoBehaviour
     public int noteID;
 
     public CreateTempo IDchecker;
+    public List<Sprite> noteSkin;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        sr.sprite = noteSkin[Random.Range(0, 2)];
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class TempoRythm : MonoBehaviour
 
         if (tempoState == 2)
         {
-            sr.color = Color.red;
+            sr.sprite = noteSkin[3];
             IDchecker.rythmNumber++;
             IDchecker.errorCheck++;
             tempoState++;
@@ -47,14 +49,14 @@ public class TempoRythm : MonoBehaviour
                 {
                     if (IDchecker.rythmNumber == noteID)
                     {
-                        sr.color = Color.red;
+                        sr.sprite = noteSkin[3];
                         IDchecker.errorCheck++;
                         tempoState = 3;
                     }
                 }
                 else if (tempoState == 1)
                 {
-                    if ((sr.color != Color.red) && (IDchecker.rythmNumber == noteID))
+                    if ((sr.sprite = noteSkin[3]) && (IDchecker.rythmNumber == noteID))
                     {
                         sr.enabled = false;
                         tempoState = 3;
