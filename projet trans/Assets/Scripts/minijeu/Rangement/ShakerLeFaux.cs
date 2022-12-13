@@ -15,6 +15,18 @@ public class ShakerLeFaux : MonoBehaviour
     public float shakeVictoire;
 
     public int positionLigne;
+
+    public bool isTouch = false;
+
+    public GameObject monPrefab;
+    public List<int> quantiteColonne;
+
+    public int colonneProche;
+    public List<GameObject> mesColonnes;
+
+    public float tempProche;
+
+    public GameObject ocmoi;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,27 +52,53 @@ public class ShakerLeFaux : MonoBehaviour
             Debug.Log("ON A GAGNÉ");
         }*/
 
+        if (Input.touchCount > 0)
+        {
+            if (isTouch == false)
+            {
+                var tempPosition = Input.touches[0].position;
+
+                var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
+                if (Physics.Raycast(tempRay, out var other))
+                {
+                    if (other.collider.GetComponent<ZoneDetect>() != null)
+                    {
+                        
+                        var monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+
+                        tempProche = 99999;
+                        for (int i = 0; i <= mesColonnes.Count - 1; i++)
+                        {
+                            if (Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x) < tempProche)
+                            {
+                                colonneProche = i;
+                                tempProche = Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x);
+                            }
+                        }
+
+                        quantiteColonne[colonneProche] += 1;
+                        monObjet.GetComponent<CaisseRanger>().positionColonne = quantiteColonne[colonneProche];
+                    }
+                }
+            }
+
+            isTouch = true;
+        }
+        else
+        {
+            isTouch = false;
+        }
+
         rgbd.velocity = new Vector3 ((Input.gyro.rotationRate.z) * -force, 0, 0);
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.60f), 0, 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.60f), -1.5f, 0);
 
-        if (transform.position.x > 1.4f && positionLigne != 2) 
-        {
-            positionLigne = 2;
-            shakeNumber++;
-        }
-        else if (transform.position.x <= -1.3f && positionLigne != 1)
-        {
-            positionLigne = 1;
-            shakeNumber++;
-        }
-
-        if (shakeNumber == shakeVictoire)
+        /*if (shakeNumber == shakeVictoire)
         {
             maJaugeValue.AugmenteJaugeValue(1f / 6f);
             maJaugeValue.ShakeBranlette = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneMap");
-        }
+        }*/
     }
 }
