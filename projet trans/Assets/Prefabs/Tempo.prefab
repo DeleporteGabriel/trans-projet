@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.037960052, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0e068405ba846574da1363f3514e8aeb, type: 3}
+  m_Color: {r: 0.96779263, g: 0.96724814, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,6 +103,11 @@ MonoBehaviour:
   sr: {fileID: 2668002192976549061}
   noteID: 0
   IDchecker: {fileID: 2537413829510621287, guid: 1830d5641cc721d47be456bb589abe54, type: 3}
+  noteSkin:
+  - {fileID: 21300000, guid: d9e6cd4da0679324cba8a883a023eab6, type: 3}
+  - {fileID: 21300000, guid: 0e068405ba846574da1363f3514e8aeb, type: 3}
+  - {fileID: 21300000, guid: 2d9ce4f779e14bf4a98b97ead4bc896c, type: 3}
+  - {fileID: 21300000, guid: 5c38042a570f3794e87deefdba3b861d, type: 3}
 --- !u!135 &1425238154162309931
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -114,5 +119,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.2190229
+  m_Center: {x: -0.40551233, y: 0, z: 0}
