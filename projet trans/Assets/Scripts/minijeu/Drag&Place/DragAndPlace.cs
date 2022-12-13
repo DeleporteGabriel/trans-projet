@@ -56,6 +56,7 @@ public class DragAndPlace: MonoBehaviour
                 {
                     isPut = true;
                     uniteCentrale.currentDrop += 1;
+                    transform.position = new Vector3(otherB.collider.GetComponent<Transform>().position.x, otherB.collider.GetComponent<Transform>().position.y, 0);
                 }
             }
             else
