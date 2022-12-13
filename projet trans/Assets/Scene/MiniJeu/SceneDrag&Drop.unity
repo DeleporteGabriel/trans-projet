@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 1
   isPut: 0
@@ -282,6 +285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 0
   isPut: 0
@@ -481,6 +487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 1
   isPut: 0
@@ -676,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ddaee2f54e038409ce11221a16a196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalDrop: 3
+  totalDrop: 6
   currentDrop: 0
   isCorrect: 0
 --- !u!1 &660467414
@@ -723,6 +732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 1
   isPut: 0
@@ -825,6 +837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 1
   isPut: 0
@@ -953,6 +968,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 0
   isPut: 0
@@ -1068,6 +1086,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 1
   isPut: 0
@@ -1183,6 +1204,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 1
   isPut: 0
@@ -1298,6 +1322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3952033f33eb96e4ba5ff9dc822ad0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listeIngredients: []
+  bonIngredient: []
+  mauvaisIngredient: []
   isDragged: 0
   isGood: 0
   isPut: 0
