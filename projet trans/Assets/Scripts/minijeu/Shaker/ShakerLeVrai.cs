@@ -33,7 +33,7 @@ public class ShakerLeVrai : MonoBehaviour
     void Update()
     {
 
-        Vector3 randomSpawnPosition = new Vector3(Random.Range(-10, 11), 5, Random.Range(-10, 11));
+        Vector3 randomSpawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(-4f, 3f), -5);
 
         Instantiate(bulle, randomSpawnPosition, Quaternion.identity);
 
