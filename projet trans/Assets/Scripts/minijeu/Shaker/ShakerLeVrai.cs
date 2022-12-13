@@ -13,6 +13,9 @@ public class ShakerLeVrai : MonoBehaviour
     public Transform up, down;
     public SpriteRenderer mousse;
     public List<Sprite> mousseEtape;
+
+    public GameObject bulle;
+    
     private float t;
 
     private bool pointAdd = true;
@@ -29,6 +32,11 @@ public class ShakerLeVrai : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Vector3 randomSpawnPosition = new Vector3(Random.Range(-10, 11), 5, Random.Range(-10, 11));
+
+        Instantiate(bulle, randomSpawnPosition, Quaternion.identity);
+
         Input.gyro.enabled = true;
 
        // rgbd.velocity = Vector3.up * Input.gyro.userAcceleration.magnitude*Mathf.Sign(Input.gyro.userAcceleration.z);
@@ -47,17 +55,18 @@ public class ShakerLeVrai : MonoBehaviour
             pointAdd = true;
         }
 
+
         if (shakeNumber == shakeVictoire/4)
         {
 
-            mousse.sprite = mousseEtape[1];
+            mousse.sprite = mousseEtape[0];
 
         }
 
         if (shakeNumber == shakeVictoire / 2)
         {
 
-            mousse.sprite = mousseEtape[2];
+            mousse.sprite = mousseEtape[1];
 
         }
 
