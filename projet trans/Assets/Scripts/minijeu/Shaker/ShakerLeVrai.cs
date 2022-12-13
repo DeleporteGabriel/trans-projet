@@ -15,7 +15,7 @@ public class ShakerLeVrai : MonoBehaviour
     public List<Sprite> mousseEtape;
 
     public GameObject bulle;
-    
+    public Transform parent;
     private float t;
 
     private bool pointAdd = true;
@@ -33,10 +33,6 @@ public class ShakerLeVrai : MonoBehaviour
     void Update()
     {
 
-        Vector3 randomSpawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(-4f, 3f), -5);
-
-        Instantiate(bulle, randomSpawnPosition, Quaternion.identity);
-
         Input.gyro.enabled = true;
 
        // rgbd.velocity = Vector3.up * Input.gyro.userAcceleration.magnitude*Mathf.Sign(Input.gyro.userAcceleration.z);
@@ -48,6 +44,10 @@ public class ShakerLeVrai : MonoBehaviour
             if (pointAdd == true) {
                 pointAdd = false;
                 shakeNumber++;
+
+                Vector3 randomSpawnPosition = new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(-4f, 3f), -5);
+
+                Instantiate(bulle, randomSpawnPosition, Quaternion.identity, parent);
             }
         }
         else
@@ -69,6 +69,12 @@ public class ShakerLeVrai : MonoBehaviour
             mousse.sprite = mousseEtape[1];
 
         }
+        if (shakeNumber == shakeVictoire-4)
+        {
+
+            mousse.sprite = mousseEtape[2];
+
+        }
 
         if (shakeNumber == shakeVictoire)
         {
@@ -77,7 +83,6 @@ public class ShakerLeVrai : MonoBehaviour
             maJaugeValue.ShakeBranlette = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneBarman");
-            mousse.sprite = mousseEtape[2];
         }
 
         //rgbd.velocity = new Vector3 (0, (Input.gyro.rotationRate.z + compensation) * force, 0);
