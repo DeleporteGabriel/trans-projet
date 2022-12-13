@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DraggedObject : MonoBehaviour
 {
+    public List<Sprite> listeIngredients;
+    public List<Sprite> bonIngredient;
+    public List<Sprite> mauvaisIngredient;
+
     public bool isDragged = false;
     public bool isGood = false;
     public bool isPut = false;
@@ -16,6 +20,17 @@ public class DraggedObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for (var i = 0; i < listeIngredients.Count; i++)
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                bonIngredient.Add(listeIngredients[i]);
+            }
+            else
+            {
+                mauvaisIngredient.Add(listeIngredients[i]);
+            }
+        }
     }
 
     // Update is called once per frame
