@@ -42,6 +42,7 @@ public class TapFraude : MonoBehaviour
                     if (targetObject.isFraudeur == true)
                     {
                         targetObject.sr.enabled = false;
+                        targetObject.refBulle.GetComponent<SpriteRenderer>().enabled =false ;
                     }
                 }
             }

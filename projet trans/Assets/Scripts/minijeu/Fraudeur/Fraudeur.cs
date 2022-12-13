@@ -5,9 +5,17 @@ using UnityEngine;
 public class Fraudeur : MonoBehaviour
 {
     public bool isFraudeur = false;
+    public GameObject refBulle;
     public float vitesse;
 
     public SpriteRenderer sr;
+
+    public List<Sprite> listBadge;
+
+    public GameObject bulleBadge;
+    public SpriteRenderer srBulleBadge;
+
+    public Transform parent;
 
     public float timerMax;
     public float timer;
@@ -31,12 +39,15 @@ public class Fraudeur : MonoBehaviour
         {
             if (isFraudeur)
             {
-                sr.color = Color.red;
+                srBulleBadge.sprite = listBadge[0];
+                refBulle = Instantiate(bulleBadge, new Vector3(parent.position.x + 0.25f, parent.position.y + 0.5f, parent.position.z), Quaternion.identity, parent);
             }
             else
             {
-                sr.color = Color.green;
+                srBulleBadge.sprite = listBadge[Random.Range(1, 4)];
+                refBulle = Instantiate(bulleBadge, new Vector3(parent.position.x + 0.25f, parent.position.y + 0.5f, parent.position.z), Quaternion.identity, parent);
             }
+            timerMax = 99999999999999999999f;
         }
         transform.position += Vector3.down * vitesse;
 
@@ -51,6 +62,7 @@ public class Fraudeur : MonoBehaviour
                         otherB.collider.GetComponent<TapFraude>().fraudeCount++;
                     }
                     sr.enabled = false;
+                    refBulle.GetComponent<SpriteRenderer>().enabled = false;
                 }
             }
         }

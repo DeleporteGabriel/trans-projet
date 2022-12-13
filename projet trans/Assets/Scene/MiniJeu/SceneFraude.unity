@@ -343,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeTouch: 0
   fraudeCount: 0
-  timerMax: 0.5
+  timerMax: 1
   mesFraudeurs: {fileID: 2986804858714494926, guid: b94a95b5797f65c4c9becb4da87856a9, type: 3}
 --- !u!1 &1644314068
 GameObject:

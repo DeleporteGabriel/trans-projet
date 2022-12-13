@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2986804858714494926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.649143, y: 1.1348473, z: 9.535952}
-  m_LocalScale: {x: 0.647, y: 0.647, z: 0.647}
+  m_LocalScale: {x: 0.323, y: 0.323, z: 0.647}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 405ccdc18f7403e4597f3ad683843066, type: 3}
   m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFraudeur: 0
-  vitesse: 0.005
+  refBulle: {fileID: 0}
+  vitesse: 0.05
   sr: {fileID: 1772625175561174286}
+  listBadge:
+  - {fileID: 21300000, guid: 761310d13a7373c498dbe9e8a3286032, type: 3}
+  - {fileID: 21300000, guid: 0397c82006a8ea74eaf5a0e13c422478, type: 3}
+  - {fileID: 21300000, guid: f257ff42e2734864d8672e6a043e69a9, type: 3}
+  - {fileID: 21300000, guid: a7297bac8750c3248804fd094d7cbc27, type: 3}
+  - {fileID: 21300000, guid: 0aba8cfb160641a4789aa48599dab43e, type: 3}
+  bulleBadge: {fileID: 5527147638509395992, guid: c700fc801e1d59d4caa7dae48d9649a9, type: 3}
+  srBulleBadge: {fileID: 3003843098112660332, guid: c700fc801e1d59d4caa7dae48d9649a9, type: 3}
+  parent: {fileID: 6180160998515672486}
   timerMax: 2
   timer: 0
 --- !u!135 &2067563342932164594
@@ -114,5 +124,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.87408674
+  m_Center: {x: 0.3132071, y: -0.042714383, z: 0.00000036849858}
