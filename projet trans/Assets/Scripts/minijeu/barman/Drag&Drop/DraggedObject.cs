@@ -21,7 +21,7 @@ public class DraggedObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        uniteCentrale = FindObjectOfType<DropChecker>();
     }
 
     // Update is called once per frame
