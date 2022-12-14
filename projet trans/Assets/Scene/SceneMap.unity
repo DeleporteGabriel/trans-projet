@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -173,6 +173,7 @@ MonoBehaviour:
   sr: {fileID: 378466697}
   timer: 0
   timerMax: 0
+  spriteValide: {fileID: 0}
 --- !u!212 &378466697
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378466694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.946, y: 0.673, z: 0}
+  m_LocalPosition: {x: 1.22, y: 1.057, z: 0}
   m_LocalScale: {x: 0.13246708, y: 0.13246708, z: 0.13246708}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -324,6 +325,7 @@ MonoBehaviour:
   sr: {fileID: 452130128}
   timer: 0
   timerMax: 0
+  spriteValide: {fileID: 0}
 --- !u!212 &452130128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -384,7 +386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452130125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.267, y: -0.653, z: 0}
+  m_LocalPosition: {x: -1.022, y: -0.288, z: 0}
   m_LocalScale: {x: 0.13246708, y: 0.13246708, z: 0.13246708}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -727,6 +729,7 @@ MonoBehaviour:
   sr: {fileID: 833132680}
   timer: 0
   timerMax: 0
+  spriteValide: {fileID: 0}
 --- !u!212 &833132680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -787,7 +790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833132677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.138, y: -0.956, z: 0}
+  m_LocalPosition: {x: 1.46, y: -0.591, z: 0}
   m_LocalScale: {x: 0.13246708, y: 0.13246708, z: 0.13246708}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1051,7 +1054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282731297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.573, y: 0.477, z: 0}
+  m_LocalPosition: {x: -0.295, y: 0.823, z: 0}
   m_LocalScale: {x: 0.1192386, y: 0.1192386, z: 0.1192386}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1074,6 +1077,7 @@ MonoBehaviour:
   sr: {fileID: 1938903800}
   timer: 0
   timerMax: 0
+  spriteValide: {fileID: 0}
 --- !u!135 &1282731302
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1263,6 +1267,7 @@ MonoBehaviour:
   sr: {fileID: 1535658486}
   timer: 0
   timerMax: 0
+  spriteValide: {fileID: 0}
 --- !u!212 &1535658486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1445,7 +1450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938903799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.035, y: 1.985, z: 0}
+  m_LocalPosition: {x: 0.285, y: 2.35, z: 0}
   m_LocalScale: {x: 0.13246708, y: 0.13246708, z: 0.13246708}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1481,6 +1486,7 @@ MonoBehaviour:
   sr: {fileID: 1938903800}
   timer: 0
   timerMax: 0
+  spriteValide: {fileID: 0}
 --- !u!114 &1938903804
 MonoBehaviour:
   m_ObjectHideFlags: 0

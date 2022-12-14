@@ -83,7 +83,7 @@ public class DropChecker : MonoBehaviour
             }
             else
             {
-                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(-1 + 0.5f * i, 4, 0), Quaternion.identity);
+                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(-1 + 0.5f * (i - totalDrop), 4, 0), Quaternion.identity);
                 tempIngredient.GetComponent<DraggedObject>().isGood = false;
             }
         }

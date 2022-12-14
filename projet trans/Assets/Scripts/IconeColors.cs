@@ -32,5 +32,10 @@ public class IconeColors : MonoBehaviour
                 sr.enabled = true;
             }
         }
+
+        if (sr.enabled == false)
+        {
+            Destroy(gameObject);
+        }
     }
 }

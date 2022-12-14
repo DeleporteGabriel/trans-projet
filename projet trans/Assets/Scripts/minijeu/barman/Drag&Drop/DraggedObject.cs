@@ -66,6 +66,7 @@ public class DraggedObject : MonoBehaviour
                     {
                         uniteCentrale.isCorrect += 1;
                     }
+                    sr.enabled = false;
                 }
             }
             else
@@ -78,6 +79,7 @@ public class DraggedObject : MonoBehaviour
                     {
                         uniteCentrale.isCorrect -= 1;
                     }
+                    sr.enabled = true;
                 }
             }
         }

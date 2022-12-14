@@ -65,7 +65,7 @@ public class TriOrdre : MonoBehaviour
             {
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
                 fini = true;
-                maJaugeValue.removeMJ(4, 2);
+                maJaugeValue.removeMJ(4, 1);
             }
 
             if (Input.touchCount > 0)
