@@ -19,6 +19,8 @@ public class Fraudeur : MonoBehaviour
 
     public float timerMax;
     public float timer;
+
+    public float tempVitesse;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +29,8 @@ public class Fraudeur : MonoBehaviour
             isFraudeur = true;
         }
 
-        vitesse = Random.Range(0.0005f, 0.002f);
-        timerMax = Random.Range(1.7f, 2.2f);
+        vitesse = Random.Range(0.0005f*tempVitesse, 0.002f*tempVitesse);
+        timerMax = Random.Range(2f, 2.3f);
     }
 
     // Update is called once per frame

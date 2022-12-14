@@ -113,6 +113,7 @@ MonoBehaviour:
   parent: {fileID: 6180160998515672486}
   timerMax: 2
   timer: 0
+  tempVitesse: 2
 --- !u!135 &2067563342932164594
 SphereCollider:
   m_ObjectHideFlags: 0
