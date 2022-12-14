@@ -9,6 +9,8 @@ public class DraggedObject : MonoBehaviour
     public List<Sprite> bonIngredient;
     public List<Sprite> mauvaisIngredient;
 
+    public SpriteRenderer sr;
+
     public bool isDragged = false;
     public bool isGood = false;
     public bool isPut = false;
@@ -31,6 +33,18 @@ public class DraggedObject : MonoBehaviour
                 mauvaisIngredient.Add(listeIngredients[i]);
             }
         }
+        if(isGood == false)
+        {
+            sr.sprite = mauvaisIngredient[Random.Range(0,mauvaisIngredient.Count)];
+        }
+        else
+        {
+            sr.sprite = bonIngredient[Random.Range(0, bonIngredient.Count)];
+        }
+
+
+
+
     }
 
     // Update is called once per frame
