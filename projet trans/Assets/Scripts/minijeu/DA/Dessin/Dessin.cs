@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Dessin : FramedUpdateMonoBehaviour
 {
+    private bool isTouch = false;
+    private bool debut = true;
+    public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
 
     public LineRenderer linePrefab;  //Entrer le prefab qui contient le LR
 
@@ -18,6 +24,9 @@ public class Dessin : FramedUpdateMonoBehaviour
     void Start()
     {
         allLineRenderer = new List<LineRenderer>(); //On initialise la liste car sinon ça ne marche pas
+
+        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { isTouch = true; }
     }
 
     public override void OnEveryXFrameUpdate()
@@ -34,6 +43,17 @@ public class Dessin : FramedUpdateMonoBehaviour
     }
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0 && isTouch == false)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+
+            if (Input.touchCount == 0) { isTouch = false; }
+            return;
+        }
 
         if (Input.touchCount>0)
         {

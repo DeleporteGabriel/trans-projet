@@ -5,6 +5,14 @@ using UnityEngine;
 public class TapFraude : MonoBehaviour
 {
     public bool activeTouch = false;
+    private bool fini = false;
+    private bool debut = true;
+    public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
+
+    private IndestructibleObject maJaugeValue;
 
     public int fraudeCount;
 
@@ -15,12 +23,27 @@ public class TapFraude : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        maJaugeValue = FindObjectOfType<IndestructibleObject>();
+
+        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { activeTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0 && activeTouch == false)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+
+            if (Input.touchCount == 0) { activeTouch = false; }
+            return;
+        }
+
         timer += Time.deltaTime;
         if (timer >= timerMax)
         {

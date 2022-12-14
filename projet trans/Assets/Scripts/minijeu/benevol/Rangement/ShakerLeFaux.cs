@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ShakerLeFaux : MonoBehaviour
 {
+    private bool debut = true;
+    public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
+
     private IndestructibleObject maJaugeValue;
 
     public float force;
@@ -31,11 +37,24 @@ public class ShakerLeFaux : MonoBehaviour
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+
+        monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { isTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+            return;
+        }
+
         Input.gyro.enabled = true;
 
         // rgbd.velocity = Vector3.up * Input.gyro.userAcceleration.magnitude*Mathf.Sign(Input.gyro.userAcceleration.z);

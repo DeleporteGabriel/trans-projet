@@ -36,7 +36,8 @@ public class ShakerLeVrai : MonoBehaviour
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
         mousse.sprite = mousseEtape[0];
 
-        monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { isTouch = true; }
     }
 
     // Update is called once per frame
@@ -44,11 +45,13 @@ public class ShakerLeVrai : MonoBehaviour
     {
         if (debut == true)
         {
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 && isTouch == false)
             {
                 debut = false;
                 Destroy(monIntro);
             }
+
+            if (Input.touchCount == 0) { isTouch = false; }
             return;
         }
 

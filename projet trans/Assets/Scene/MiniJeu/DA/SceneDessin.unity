@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07491d23ceedd1e43a96bdc596c3903a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
+  intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
   linePrefab: {fileID: 2669024155167464400, guid: 0783bae9e4dbf214481d117a84fbb51a, type: 3}
 --- !u!135 &1328846385
 SphereCollider:

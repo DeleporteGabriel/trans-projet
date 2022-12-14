@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class Combine : MonoBehaviour
 {
     private bool fini = false;
+    private bool debut = true;
     public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
 
     private IndestructibleObject maJaugeValue;
 
@@ -18,11 +22,26 @@ public class Combine : MonoBehaviour
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+
+        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { activeTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0 && activeTouch == false)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+
+            if (Input.touchCount == 0) { activeTouch = false; }
+            return;
+        }
+
         if (Input.touchCount > 0)
         {
             if (fini == false)

@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ShakingObject : MonoBehaviour
 {
+    //private bool fini = false;
+    private bool debut = true;
+    public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
+
     private IndestructibleObject maJaugeValue;
 
     public Rigidbody rgbd;
@@ -13,11 +20,23 @@ public class ShakingObject : MonoBehaviour
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+
+        monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+            return;
+        }
+
         Input.gyro.enabled = true; //Active le gyro
 
         rgbd.velocity = new Vector3( Input.gyro.rotationRate.y, Input.gyro.rotationRate.x,0) * force;

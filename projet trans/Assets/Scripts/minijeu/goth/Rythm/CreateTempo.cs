@@ -42,7 +42,8 @@ public class CreateTempo : MonoBehaviour
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
         variableTimer = Random.Range(1, 3);
-        monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { isTouch = true; }
     }
 
     // Update is called once per frame
@@ -50,11 +51,13 @@ public class CreateTempo : MonoBehaviour
     {
         if (debut == true)
         {
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 && isTouch == false)
             {
                 debut = false;
                 Destroy(monIntro);
             }
+
+            if (Input.touchCount == 0) { isTouch = false; }
             return;
         }
 

@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class SimonManager : MonoBehaviour
 {
     private bool fini = false;
+    private bool debut = true;
     public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
 
     private IndestructibleObject maJaugeValue;
 
@@ -34,11 +38,27 @@ public class SimonManager : MonoBehaviour
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
         simonIsPlaying = true;
+
+        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { isTouch = true; }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0 && isTouch == false)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+
+            if (Input.touchCount == 0) { isTouch = false; }
+            return;
+        }
+
         timer += Time.deltaTime;
         if (timer >= timerMax / 2 && iModele != 0)
         {
