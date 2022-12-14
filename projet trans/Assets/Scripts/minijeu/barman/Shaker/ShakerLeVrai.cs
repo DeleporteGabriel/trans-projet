@@ -7,7 +7,11 @@ public class ShakerLeVrai : MonoBehaviour
 {
     private bool isTouch = false;
     private bool fini = false;
+    private bool debut = true;
     public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
 
     private IndestructibleObject maJaugeValue;
 
@@ -31,11 +35,22 @@ public class ShakerLeVrai : MonoBehaviour
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
         mousse.sprite = mousseEtape[0];
+
+        monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+            return;
+        }
 
         Input.gyro.enabled = true;
 

@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class CreateTempo : MonoBehaviour
 {
     private bool fini = false;
+    private bool debut = true;
     public GameObject victor;
+    public GameObject intro;
+
+    private GameObject monIntro;
 
     private IndestructibleObject maJaugeValue;
 
@@ -38,11 +42,22 @@ public class CreateTempo : MonoBehaviour
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
         variableTimer = Random.Range(1, 3);
+        monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+            return;
+        }
+
         timerTempo++;
 
         if ((timerTempo > variableTimer * delaisTempo) && (tempoTotal != noteNumber - 1))
