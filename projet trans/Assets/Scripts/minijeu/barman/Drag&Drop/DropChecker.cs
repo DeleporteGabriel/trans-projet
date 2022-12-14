@@ -34,30 +34,32 @@ public class DropChecker : MonoBehaviour
 
         if (diffucltLevel==1)
         {
-            numberGood = 3;
-            totalNumber = 6;
+            numberGood = 2;
+            totalDrop = numberGood;
+            totalNumber = 4;
             errortCount = 3;
         }
         if (diffucltLevel == 2)
         {
             numberGood = 4;
-            totalNumber = 8;
-            errortCount = 2;
+            totalDrop = numberGood;
+            totalNumber = 6;
+            errortCount = 1;
         }
         if (diffucltLevel == 3)
         {
             numberGood = 6;
-            totalNumber = 12;
-            errortCount = 1;
+            totalDrop = numberGood;
+            totalNumber = 8;
+            errortCount = 0;
         }
 
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
-        for (var i = 0; i < totalNumber; i++)
+        for (var i = 0; i < listeIngredients.Count; i++)
         {
             if (Random.Range(0, 2) == 0 && numberGood >= 0)
             {
                 bonIngredient.Add(listeIngredients[i]) ;
-                numberGood-- ;
             }
             else
             {
@@ -65,20 +67,19 @@ public class DropChecker : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < totalNumber; i++)
         {
-            var tempRand = Random.Range(0, 2);
 
-            if (tempRand == 0)
+            if (numberGood > 0)
             {
-                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(-1 + 0.5f*i, 4, 0), Quaternion.identity);
-                tempIngredient.GetComponent<DraggedObject>().isGood = false;
+                var tempIngredient = Instantiate(bonIngredient[Random.Range(1, bonIngredient.Count)], new Vector3(-1 + 0.5f * i, 2, 0), Quaternion.identity);
+                tempIngredient.GetComponent<DraggedObject>().isGood = true;
+                numberGood--;
             }
             else
             {
-                var tempIngredient = Instantiate(bonIngredient[Random.Range(1, bonIngredient.Count)], new Vector3(-1 + 0.5f * i, 2 , 0), Quaternion.identity);
-                tempIngredient.GetComponent<DraggedObject>().isGood = true;
-                totalDrop++;
+                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(-1 + 0.5f * i, 4, 0), Quaternion.identity);
+                tempIngredient.GetComponent<DraggedObject>().isGood = false;
             }
         }
 

@@ -330,6 +330,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: diffucltLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: bonIngredient.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -423,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6855544746697830777, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 6855544746697830777, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: m_LocalPosition.y
