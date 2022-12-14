@@ -41,13 +41,13 @@ public class Fraudeur : MonoBehaviour
         {
             if (isFraudeur)
             {
-                srBulleBadge.sprite = listBadge[0];
                 refBulle = Instantiate(bulleBadge, new Vector3(parent.position.x + 0.25f, parent.position.y + 0.5f, parent.position.z), Quaternion.identity, parent);
+                refBulle.GetComponent<SpriteRenderer>().sprite = listBadge[0];
             }
             else
             {
-                srBulleBadge.sprite = listBadge[Random.Range(1, 5)];
                 refBulle = Instantiate(bulleBadge, new Vector3(parent.position.x + 0.25f, parent.position.y + 0.5f, parent.position.z), Quaternion.identity, parent);
+                refBulle.GetComponent<SpriteRenderer>().sprite = listBadge[Random.Range(1, 5)];
             }
             timerMax = 99999999999999999999f;
         }
@@ -63,6 +63,7 @@ public class Fraudeur : MonoBehaviour
                     {
                         otherB.collider.GetComponent<TapFraude>().fraudeCount++;
                     }
+                    otherB.collider.GetComponent<TapFraude>().pnjPass++;
                     sr.enabled = false;
                     refBulle.GetComponent<SpriteRenderer>().enabled = false;
                 }
