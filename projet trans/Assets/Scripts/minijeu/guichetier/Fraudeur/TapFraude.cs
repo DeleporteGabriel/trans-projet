@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TapFraude : MonoBehaviour
 {
@@ -15,9 +16,14 @@ public class TapFraude : MonoBehaviour
     private IndestructibleObject maJaugeValue;
 
     public int fraudeCount;
+    public int margeFraude;
 
     public float timerMax;
     private float timer;
+
+    public int pnjCount;
+    public int pnjMax;
+    public int pnjPass;
 
     public GameObject mesFraudeurs;
     // Start is called before the first frame update
@@ -45,9 +51,10 @@ public class TapFraude : MonoBehaviour
         }
 
         timer += Time.deltaTime;
-        if (timer >= timerMax)
+        if (timer >= timerMax && pnjCount <= pnjMax)
         {
             Instantiate(mesFraudeurs, new Vector3(Random.Range(-1.5f, 1.7f), 7, 0), Quaternion.identity);
+            pnjCount++;
             timer = 0;
         }
 
@@ -66,6 +73,11 @@ public class TapFraude : MonoBehaviour
                     {
                         targetObject.sr.enabled = false;
                         targetObject.refBulle.GetComponent<SpriteRenderer>().enabled =false ;
+                        pnjPass++;
+                    }
+                    else
+                    {
+                        fraudeCount++;
                     }
                 }
             }
@@ -80,6 +92,28 @@ public class TapFraude : MonoBehaviour
         if (fraudeCount >= 3)
         {
             Debug.Log("t'as perdu");
+        }
+        if (pnjCount >= pnjMax && pnjCount == pnjPass && fraudeCount <= margeFraude)
+        {
+            if (fini == false)
+            {
+                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+                fini = true;
+                maJaugeValue.removeMJ(3, 0);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                if (activeTouch == false)
+                {
+                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.faitOuPasFait[1] = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneGuichetier");
+                }
+                activeTouch = true;
+            }
+            else { activeTouch = false; }
         }
     }
 }

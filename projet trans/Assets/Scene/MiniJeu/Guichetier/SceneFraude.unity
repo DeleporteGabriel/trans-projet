@@ -429,7 +429,11 @@ MonoBehaviour:
   victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
   intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
   fraudeCount: 0
+  margeFraude: 2
   timerMax: 1.5
+  pnjCount: 0
+  pnjMax: 15
+  pnjPass: 0
   mesFraudeurs: {fileID: 2986804858714494926, guid: b94a95b5797f65c4c9becb4da87856a9, type: 3}
 --- !u!1 &1644314068
 GameObject:
