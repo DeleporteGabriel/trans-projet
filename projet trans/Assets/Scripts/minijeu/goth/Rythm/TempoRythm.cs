@@ -17,13 +17,12 @@ public class TempoRythm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sr.sprite = noteSkin[Random.Range(0, 2)];
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.left * vitesseRythm;
+        transform.position += Vector3.up * vitesseRythm;
 
         if (tempoState == 2)
         {
@@ -33,7 +32,7 @@ public class TempoRythm : MonoBehaviour
             tempoState++;
         }
 
-        if (transform.position.x < -2.3f)
+        if (transform.position.y > 5.6f)
         {
             if (tempoState != 3)
             {

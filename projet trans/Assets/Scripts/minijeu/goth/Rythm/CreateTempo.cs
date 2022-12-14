@@ -26,9 +26,17 @@ public class CreateTempo : MonoBehaviour
     public int variableTimer;
 
     public TempoRythm maNote;
+
+    [Range(1f, 3f)]
+    public int nombreRangee;
+
+    [Range(1f, 5f)]
+    public int errorMax;
     // Start is called before the first frame update
     void Start()
     {
+        maJaugeValue = FindObjectOfType<IndestructibleObject>();
+
         variableTimer = Random.Range(1, 3);
     }
 
@@ -42,7 +50,19 @@ public class CreateTempo : MonoBehaviour
             variableTimer = Random.Range(1, 3);
             timerTempo = 0;
 
-            TempoRythm noteTempo = Instantiate(maNote, new Vector3(3, 3, 0), Quaternion.identity);
+            var tempTypeNote = Random.Range(0, nombreRangee);
+            var tempPosition = 0f;
+
+            switch (tempTypeNote)
+            {
+                case 0: tempPosition = -1.5f;  break;
+                case 1: tempPosition = 0;  break;
+                case 2: tempPosition = 1.5f; break;
+            }
+
+            TempoRythm noteTempo = Instantiate(maNote, new Vector3(tempPosition, -4.4f, 0), Quaternion.identity);
+            noteTempo.sr.sprite = noteTempo.noteSkin[tempTypeNote];
+
             noteTempo.IDchecker = self;
             noteTempo.noteID = noteNumber;
             noteNumber++;
@@ -58,7 +78,7 @@ public class CreateTempo : MonoBehaviour
             if (isTouch == false)
             {
                 rythmNumber++;
-                if ((rythmNumber > 19) && (errorCheck < 3))
+                if ((rythmNumber > 19) && (errorCheck < errorMax))
                 {
                     if (fini == false)
                     {

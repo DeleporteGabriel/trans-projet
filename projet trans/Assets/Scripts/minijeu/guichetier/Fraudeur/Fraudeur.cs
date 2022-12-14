@@ -44,7 +44,7 @@ public class Fraudeur : MonoBehaviour
             }
             else
             {
-                srBulleBadge.sprite = listBadge[Random.Range(1, 4)];
+                srBulleBadge.sprite = listBadge[Random.Range(1, 5)];
                 refBulle = Instantiate(bulleBadge, new Vector3(parent.position.x + 0.25f, parent.position.y + 0.5f, parent.position.z), Quaternion.identity, parent);
             }
             timerMax = 99999999999999999999f;
