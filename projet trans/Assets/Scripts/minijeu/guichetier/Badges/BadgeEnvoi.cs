@@ -88,12 +88,8 @@ public class BadgeEnvoi : MonoBehaviour
                         }
                     }
                 }
-                isTouch = true;
             }
-            else
-            {
-                isTouch = false;
-            }
+
         }
         else
         {
@@ -102,7 +98,7 @@ public class BadgeEnvoi : MonoBehaviour
             if (transform.position.y > 15f)
             {
                 caDegage = false;
-                transform.position = new Vector3(0, 1.5f, 0);
+                transform.position = new Vector3(0, 2.7f, 0);
                 transform.rotation = Quaternion.identity;
                 sr.sprite = typeBadgeColor[0];
                 srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
@@ -130,6 +126,15 @@ public class BadgeEnvoi : MonoBehaviour
                 isTouch = true;
             }
             else { isTouch = false; }
+        }
+
+        if (Input.touchCount > 0)
+        {
+            isTouch = true;
+        }
+        else
+        {
+            isTouch = false;
         }
     }
 }

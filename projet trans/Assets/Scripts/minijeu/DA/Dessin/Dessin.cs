@@ -26,14 +26,14 @@ public class Dessin : FramedUpdateMonoBehaviour
         allLineRenderer = new List<LineRenderer>(); //On initialise la liste car sinon ça ne marche pas
 
         monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
-        if (Input.touchCount > 0) { isTouch = true; }
+        if (Input.touchCount > 0) { isTouch = true;}
     }
 
     public override void OnEveryXFrameUpdate()
     {
-        if(shouldDraw)
+        if(shouldDraw && !isTouch)
         {
-            if(currentLineRenderer.positionCount<=0 || Vector3.Distance(currentLineRenderer.GetPosition(lineIndex-1), transform.position) >= 1) //Si on doit dessiner ET que soit cest le premier points soit on est suffisament eloigné du dernier point on en crée un nouveau 
+            if(currentLineRenderer.positionCount<=0 || Vector3.Distance(currentLineRenderer.GetPosition(lineIndex-1), transform.position) >= 0.5f) //Si on doit dessiner ET que soit cest le premier points soit on est suffisament eloigné du dernier point on en crée un nouveau 
             {
                 currentLineRenderer.positionCount = lineIndex + 1; // mise a jour de la taille de la liste de points
                 currentLineRenderer.SetPosition(lineIndex, transform.position); // on ajoute la position actuelle en tant que nouveau point 
@@ -49,12 +49,16 @@ public class Dessin : FramedUpdateMonoBehaviour
             {
                 debut = false;
                 Destroy(monIntro);
+                shouldDraw = true;
+                isTouch = true;
             }
 
             if (Input.touchCount == 0) { isTouch = false; }
             return;
         }
 
+        if (Input.touchCount == 0) { isTouch = false; }
+        if (isTouch) { return; }
         if (Input.touchCount>0)
         {
             var mousPos = Input.touches[0].position;
@@ -75,7 +79,7 @@ public class Dessin : FramedUpdateMonoBehaviour
             if(shouldDraw==true)
             {
                 i++;
-                if(i>=2)
+                if(i>=3)
                 {
                     //Appel du check de dessin 
                     CheckForSimilarities();

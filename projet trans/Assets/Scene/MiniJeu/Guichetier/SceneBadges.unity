@@ -164,7 +164,7 @@ MonoBehaviour:
   listBonBadge: 0300000002000000020000000100000004000000
   badgeAvancement: 0
   nombreErreur: 0
-  nombreEnvoiMax: 3
+  nombreEnvoiMax: 5
   nombrenvoi: 0
   typeBadgeNumber: 0
   sr: {fileID: 60087867}
@@ -229,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60087865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 2.7, z: 9.734689}
+  m_LocalPosition: {x: 0, y: 2.7, z: 9.734689}
   m_LocalScale: {x: 0.3428136, y: 0.3428136, z: 0.3428136}
   m_ConstrainProportionsScale: 0
   m_Children: []

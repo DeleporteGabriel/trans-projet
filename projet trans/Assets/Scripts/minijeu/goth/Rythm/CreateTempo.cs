@@ -55,6 +55,7 @@ public class CreateTempo : MonoBehaviour
             {
                 debut = false;
                 Destroy(monIntro);
+                isTouch = true;
             }
 
             if (Input.touchCount == 0) { isTouch = false; }

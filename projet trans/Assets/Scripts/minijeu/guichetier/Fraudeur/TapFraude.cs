@@ -81,25 +81,19 @@ public class TapFraude : MonoBehaviour
                     }
                 }
             }
-
-            activeTouch = true;
-        }
-        else
-        {
-            activeTouch = false;
         }
 
         if (fraudeCount >= 3)
         {
             Debug.Log("t'as perdu");
         }
-        if (pnjCount >= pnjMax && pnjCount == pnjPass && fraudeCount <= margeFraude)
+        if (pnjCount >= pnjMax && pnjCount <= pnjPass && fraudeCount <= margeFraude)
         {
             if (fini == false)
             {
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
                 fini = true;
-                maJaugeValue.removeMJ(3, 0);
+                maJaugeValue.removeMJ(1, 0);
             }
 
             if (Input.touchCount > 0)
@@ -114,6 +108,15 @@ public class TapFraude : MonoBehaviour
                 activeTouch = true;
             }
             else { activeTouch = false; }
+        }
+
+        if (Input.touchCount > 0)
+        {
+            activeTouch = true;
+        }
+        else
+        {
+            activeTouch = false;
         }
     }
 }
