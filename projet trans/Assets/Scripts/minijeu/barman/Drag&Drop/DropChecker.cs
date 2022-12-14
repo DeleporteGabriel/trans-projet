@@ -15,11 +15,45 @@ public class DropChecker : MonoBehaviour
 
     public GameObject victor;
 
+    public List<GameObject> listeIngredients;
+    public List<GameObject> bonIngredient;
+    public List<GameObject> mauvaisIngredient;
+
+    
+
     private bool isTouch = false;
     // Start is called before the first frame update
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        for (var i = 0; i < listeIngredients.Count; i++)
+        {
+            if (Random.Range(0, 2) == 0)
+            {
+                bonIngredient.Add(listeIngredients[i]);
+            }
+            else
+            {
+                mauvaisIngredient.Add(listeIngredients[i]);
+            }
+        }
+
+        for (int i = 0; i < 6; i++)
+        {
+            var tempRand = Random.Range(0, 2);
+
+            if (tempRand == 0)
+            {
+                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(0 + 0.5f*i, 0, 0), Quaternion.identity);
+                tempIngredient.GetComponent<DraggedObject>().isGood = false;
+            }
+            else
+            {
+                var tempIngredient = Instantiate(bonIngredient[Random.Range(1, bonIngredient.Count)], new Vector3(0 + 0.5f * i, 0, 0), Quaternion.identity);
+                tempIngredient.GetComponent<DraggedObject>().isGood = true;
+            }
+        }
+
     }
 
     // Update is called once per frame
