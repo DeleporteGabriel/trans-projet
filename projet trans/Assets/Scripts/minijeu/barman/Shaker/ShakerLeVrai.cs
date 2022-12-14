@@ -98,7 +98,7 @@ public class ShakerLeVrai : MonoBehaviour
 
         }
 
-        if (shakeNumber == shakeVictoire)
+        if (shakeNumber >= shakeVictoire)
         {
             if (fini == false)
             {

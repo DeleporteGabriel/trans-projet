@@ -7,6 +7,10 @@ public class DropChecker : MonoBehaviour
 {
     private IndestructibleObject maJaugeValue;
 
+    public List<Sprite> verreVide;
+    public List<Sprite> verreRempli;
+    private int numeroVerre;
+
     public int totalDrop;
     public int currentDrop;
     public int isCorrect;
@@ -20,17 +24,18 @@ public class DropChecker : MonoBehaviour
 
     public GameObject victor;
 
-    public SpriteRenderer SkinVerre;
+    public SpriteRenderer skinVerre;
 
     public List<GameObject> listeIngredients;
     public List<GameObject> bonIngredient;
     public List<GameObject> mauvaisIngredient;
-    public List<Sprite> listSkinVerre;
 
     private bool isTouch = false;
     // Start is called before the first frame update
     void Start()
     {
+        numeroVerre = Random.Range(0, 3);
+        skinVerre.sprite = verreVide[numeroVerre];
 
         if (diffucltLevel==1)
         {
@@ -83,8 +88,6 @@ public class DropChecker : MonoBehaviour
             }
         }
 
-        SkinVerre.sprite = listSkinVerre[Random.Range(0, listSkinVerre.Count)];
-
     }
 
     // Update is called once per frame
@@ -97,6 +100,7 @@ public class DropChecker : MonoBehaviour
             maJaugeValue.DragDrop = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneLightGirl");*/
+            skinVerre.sprite = verreRempli[numeroVerre];
             if (fini == false)
             {
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);

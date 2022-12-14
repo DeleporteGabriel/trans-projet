@@ -26,7 +26,7 @@ public class CaisseRanger : MonoBehaviour
             }
         }
 
-        transform.position = new Vector3(mesColonnes[colonneProche].transform.position.x, transform.position.y, 0);
+        transform.position = new Vector3(mesColonnes[colonneProche].transform.position.x, transform.position.y, -1);
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class CaisseRanger : MonoBehaviour
         {
             if (stopBloc == false)
             {
-                transform.position = new Vector3(transform.position.x, 5.75f - (positionColonne * 1.25f), 0);
+                transform.position = new Vector3(transform.position.x, 5.75f - (positionColonne * 1f), -1);
                 stopBloc = true;
             }
         }

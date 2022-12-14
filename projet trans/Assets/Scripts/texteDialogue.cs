@@ -77,7 +77,7 @@ public class texteDialogue : MonoBehaviour
                 {
                     Instantiate(mesOptions, new Vector3(-1f, -0.6f, -1), Quaternion.identity);
                     var nextMJ = Instantiate(mesOptions, new Vector3(1, -0.6f, -1), Quaternion.identity);
-                    nextMJ.GetComponent<SwitchScene>().sr.color = Color.green;
+                    nextMJ.GetComponent<SwitchScene>().sr.sprite = nextMJ.GetComponent<SwitchScene>().spriteValide;
                     nextMJ.GetComponent<SwitchScene>().maScene = nextSceneA;
                 }
                 else

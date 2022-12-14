@@ -12,6 +12,8 @@ public class SwitchScene : MonoBehaviour
 
     public float timer;
     public float timerMax;
+
+    public Sprite spriteValide;
     // Start is called before the first frame update
     void Start()
     {

@@ -83,7 +83,7 @@ public class ShakerLeFaux : MonoBehaviour
                     if (other.collider.GetComponent<ZoneDetect>() != null)
                     {
                         
-                        var monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                        var monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
 
                         tempProche = 99999;
                         for (int i = 0; i <= mesColonnes.Count - 1; i++)
@@ -110,7 +110,7 @@ public class ShakerLeFaux : MonoBehaviour
 
         rgbd.velocity = new Vector3 ((Input.gyro.rotationRate.z) * -force, 0, 0);
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.60f), -1.5f, 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.60f), -0.5f, 0);
 
         /*if (shakeNumber == shakeVictoire)
         {
