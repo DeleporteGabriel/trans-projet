@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -327,8 +327,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -237, y: -307}
-  m_SizeDelta: {x: 437.8369, y: -4.3628}
+  m_AnchoredPosition: {x: -221.8, y: -324.9}
+  m_SizeDelta: {x: 428.4, y: -4.3628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632859581
 MonoBehaviour:
@@ -343,13 +343,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Hey l'ami, une boisson ?
   - "Bha non d\xE9sol\xE9, j'ai pas vraiment le temps..."
-  - "Je suis d\xE9bord\xE9 avec l'inventaire. Tu peux t'occuper du shaker s'il te
-    pla\xEEt ?"
+  - "Tu pourrais secouer quelques cocktails pour moi s'il te pla\xEEt ?"
   mesDialoguesB:
-  - "T'es super mon gars. J'ai fini avec l'arri\xE8re boutique, tu peux y aller,
-    encore merci."
+  - Merci l'ami ! La prochaine est pour moi d'accord ? A plus tard.
+  - "C'est pas donner \xE0 tout le monde de savoir utiliser un shaker..."
+  mesDialoguesC:
+  - "J'ai besoin d'un coup de main avec les cocktails, je suis d\xE9bord\xE9 et j'ai
+    pas le temps d'en faire certains."
+  - "Tu pourrais faire des cocktails le temps que je me r\xE9organise ?"
+  mesDialoguesD:
+  - Merci bien ! J'ai finis de m'organiser, tu peux y aller.
+  - "Je vais prendre le relais d'accords ? Hors de question que quelqu'un boive \xE7a..."
+  mesDialoguesE:
+  - Salut l'ami, il faut que je m'absente quelques minutes pour aller chercher une
+    commande.
+  - "Tu pourrais tirer quelques bi\xE8res \xE0 ma place ?"
+  mesDialoguesF:
+  - Super boulot, j'ai tout ce qu'il me faut, tu peux aller voire les autres.
+  - "Tans pis pour ceux qui aiment la bi\xE8re... Au moins il nous reste les cocktails."
   monTexte: {fileID: 632859582}
   numeroDialogue: 0
   nextSceneA: SceneShaker

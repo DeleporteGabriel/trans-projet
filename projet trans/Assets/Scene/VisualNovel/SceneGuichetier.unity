@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -377,16 +377,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Ho bonjour Super Manager, quel plaisir de vous voir. Vous arrivez au bon moment.
-  - Pour les tampons j'ai besoin d'encre. Mais je n'ai plus la couleur, aidez moi
-    je vous prie !
+  - "Oh s'il vous pla\xEEt ! J'ai tellement besoin d'aide"
+  - "J'ai des probl\xE8mes car des gens rentrent avec des fausses cartes ! C'est
+    inacceptable !"
+  - "Aidez-moi \xE0 attraper les fraudeurs !"
   mesDialoguesB:
-  - 'Ho vous me sauvez la vie, merci. '
+  - "Magnifique ! Ils y penseront \xE0 deux fois avant de frauder chez nous ! Merci
+    !"
+  - "Oh mis\xE8re ! On va devoir aller le chercher dans le festival... \xC7a va pas
+    \xEAtre facile."
+  mesDialoguesC:
+  - "R\xE9gisseur, aidez-moi ! Il y a tellement de monde qui demande des Pass que
+    je suis perdu !"
+  - "Vous pourriez donner les bon Pass aux bonnes personnes s'il vous pla\xEEt ?"
+  mesDialoguesD:
+  - "Parfait ! Tout le monde \xE0 son Pass et il n'y a plus personne ! merci du coup
+    de main"
+  - Je doute que cet enfant de 8 ans fasse partit d'un groupe...
+  mesDialoguesE:
+  - "Mais qu'est-ce que... AH vous tombez \xE0 pique !"
+  - "J'ai l'impression que certains badges sont des contrefa\xE7ons ! Mais j'ai du
+    mal \xE0 les diff\xE9rencier des notres..."
+  - Vous pourriez me donner un coup de main ?
+  mesDialoguesF:
+  - "Parfait ! Je ne vois plus aucune contrefa\xE7ons ! Merci bien !"
+  - "On arrive m\xEAme pas \xE0 reconna\xEEtre nos propres badges... Mis\xE8re."
   monTexte: {fileID: 506038657}
   numeroDialogue: 0
   nextSceneA: SceneSlider
   nextSceneB: SceneMap
   mesOptions: {fileID: 6126608344249178347, guid: 0982af7dacee71c45b8558ffb8d47411, type: 3}
+  monPerso: 0
 --- !u!1 &536586798
 GameObject:
   m_ObjectHideFlags: 0

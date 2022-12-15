@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -778,14 +778,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - Bonjour... Super... Manager...
-  - "Je... crois... que... j'ai... m\xEAl\xE9e... mes... affaires..."
-  - "Mais... il... reste... tellement... \xE0...faire..."
+  - "Bonjour R\xE9gisseur... Vous auriez 5 minutes s'il vous pla\xEEt ?"
+  - "J'ai du mal \xE0 r\xE9gler ma lumi\xE8re sur la bonne couleur, vous pourriez
+    me donner un coup de main ?"
   mesDialoguesB:
-  - ' Merci !'
-  - Beaucoup !
-  - Super !
-  - ' Manager !'
+  - "Merci beaucoup ! Je vais enfin pouvoir pr\xE9parer le prochain show !"
+  - "Vous aussi vous avez du mal... Tans pis, je r\xE8glerais \xE7a plus tard."
+  mesDialoguesC:
+  - Hey ! J'aurais besoin d'aide !
+  - "Mes lumi\xE8res font n'importe quoi et mes boutons en allument et \xE9teignent
+    certaines d'entre elles n'importe comment !"
+  - "Vous pourriez m'aider \xE0 toutes les allum\xE9s ?"
+  mesDialoguesD:
+  - "Parfait ! Toutes les lumi\xE8res sont en place, on va pouvoir commenc\xE9 !
+    Merci."
+  - "Un vrai casse-t\xEAte... Je m'en occuperais plus tard."
+  mesDialoguesE:
+  - "R\xE9gisseur ! Un coup de main s'il vous pla\xEEt !"
+  - "Ma tablette n'en fait qu'\xE0 sa t\xEAte et des couleurs s'illuminent, il faut
+    recopier le pattern pour pouvoir allumer les lumi\xE8res correctement !"
+  - Vous pourriez m'aider ?
+  mesDialoguesF:
+  - Merci ! Mes couleurs fonctionnent enfin ! Bonne nouvelle pour les groupes qui
+    vont passer.
+  - "Quel enfer ! J'esp\xE8re qu'on arrivera \xE0 r\xE9gler le probl\xE8me avant
+    l'arriv\xE9 du prochain groupe"
   monTexte: {fileID: 1848320805}
   numeroDialogue: 0
   nextSceneA: SceneDrag&Drop

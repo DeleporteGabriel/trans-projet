@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,13 +175,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - HEY !
-  - '[Mon dieu, pourquoi elle hurle ?]'
-  - SUPER MANAGER, BESOIN D'AIDE !
-  - '[Retire ton casque...]'
+  - OH REGISSEUR !! ...
+  - "D\xE9sole pour avoir cri\xE9, c'est mon casque... BREF j'ai besoin d'un coup
+    de main."
+  - Il faut que je recopie une piste musicale mais j'ai du mal, vous pourriez m'aider
+    ?
   mesDialoguesB:
+  - Super ! C'est parfait, merci !
   - "Ho d\xE9sol\xE9 pour le casque, je l'oublie \xE0 chaque fois. Merci d'avoir
     branch\xE9 mon matos d'ailleurs !"
+  mesDialoguesC:
+  - "Bah mince alors... Oh tiens, tu tombes \xE0 pique."
+  - "J'ai l'impression que le son est mal r\xE9gl\xE9... Tu pourrais m'aider avec
+    la table de mixage ?"
+  mesDialoguesD:
+  - Parfait ! Le son est redevenu normal, on entends parfaitement ! Merci.
+  - Je doute que ces 2 courbes soient identiques...
+  mesDialoguesE:
+  - Salut ! Tu pourrais venir 2 secondes ?
+  - "Faut que j'ailles faire une course, tu pourrais r\xE9gler la nouvelle table
+    de mixage qu'on a re\xE7u ? J'ai une fiche mod\xE8le t'inqui\xE8tes pas !"
+  mesDialoguesF:
+  - Parfait ! Tout m'a l'air en ordre ! Merci bien.
+  - "Mince ! Ma table de mixage est toute d\xE9r\xE9gl\xE9e... Je vais devoir r\xE9gler
+    \xE7a."
   monTexte: {fileID: 147216189}
   numeroDialogue: 0
   nextSceneA: ScenePlaceAuBonEndroit
