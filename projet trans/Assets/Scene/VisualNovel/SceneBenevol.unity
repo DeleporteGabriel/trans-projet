@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - "Vous \xEAtes un r\xE9gisseur ? J'aurais besoin d'un coup de main."
+  - "Vous \xEAtes Super-R\xE9gisseur ? J'aurais besoin d'un coup de main."
   - "On nous a demand\xE9 de ranger des caisses dans le m\xEAme ordre que l'ann\xE9e
     derni\xE8re... Sauf que j'\xE9tais pas l\xE0 l'ann\xE9e derni\xE8re."
   - Vous pouvez m'aidez ?

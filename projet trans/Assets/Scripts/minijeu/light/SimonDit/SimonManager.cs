@@ -104,7 +104,7 @@ public class SimonManager : MonoBehaviour
             }
             if (maSerie.Count != 0)
             {
-                for (int i = 0; i <= maSerie.Count - 1; i++)
+                for (int i = 0; i <= maSerie.Count - 1 && i <= mesReponses.Count - 1; i++)
                 {
                     if (mesReponses[i] == maSerie[i])
                     {
