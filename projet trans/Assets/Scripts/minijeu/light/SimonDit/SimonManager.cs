@@ -8,6 +8,7 @@ public class SimonManager : MonoBehaviour
     private bool fini = false;
     private bool debut = true;
     public GameObject victor;
+    public GameObject defat;
     public GameObject intro;
 
     private GameObject monIntro;
@@ -125,6 +126,26 @@ public class SimonManager : MonoBehaviour
                         if (isTouch == false)
                         {
                             maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                            maJaugeValue.faitOuPasFait[18] = 1;
+                            maJaugeValue.minijeuTermines++;
+                            SceneManager.LoadScene("SceneLightGirl");
+                        }
+                    }
+                }
+                else if (maSerie.Count >= mesReponses.Count)
+                {
+                    if (fini == false)
+                    {
+                        Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
+                        fini = true;
+                        maJaugeValue.removeMJ(18, 5);
+                    }
+
+                    if (Input.touchCount > 0)
+                    {
+                        if (isTouch == false)
+                        {
+                            //maJaugeValue.AugmenteJaugeValue(1f / 6f);
                             maJaugeValue.faitOuPasFait[18] = 1;
                             maJaugeValue.minijeuTermines++;
                             SceneManager.LoadScene("SceneLightGirl");

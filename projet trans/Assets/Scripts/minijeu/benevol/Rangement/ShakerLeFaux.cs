@@ -8,6 +8,7 @@ public class ShakerLeFaux : MonoBehaviour
     private bool fini = false;
     private bool debut = true;
     public GameObject victor;
+    public GameObject defat;
     public GameObject intro;
 
     private GameObject monIntro;
@@ -126,7 +127,7 @@ public class ShakerLeFaux : MonoBehaviour
             {
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
                 fini = true;
-                maJaugeValue.removeMJ(3, 0);
+                maJaugeValue.removeMJ(5, 1);
             }
 
             if (Input.touchCount > 0)
@@ -134,9 +135,29 @@ public class ShakerLeFaux : MonoBehaviour
                 if (isTouch == false)
                 {
                     maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[3] = 1;
+                    maJaugeValue.faitOuPasFait[5] = 1;
                     maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneGuichetier");
+                    SceneManager.LoadScene("SceneBenevol");
+                }
+            }
+        }
+        if (currentError > errorRange)
+        {
+            if (fini == false)
+            {
+                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
+                fini = true;
+                maJaugeValue.removeMJ(5, 1);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                if (isTouch == false)
+                {
+                    //maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.faitOuPasFait[5] = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneBenevol");
                 }
             }
         }

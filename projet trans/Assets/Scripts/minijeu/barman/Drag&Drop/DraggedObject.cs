@@ -26,7 +26,12 @@ public class DraggedObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (uniteCentrale.totalDrop == uniteCentrale.currentDrop)
+        {
+            Destroy(gameObject);
+        }
+
+
         if (Input.touchCount > 0)
         {
             var tempPosition = Input.touches[0].position;
@@ -66,6 +71,7 @@ public class DraggedObject : MonoBehaviour
                         uniteCentrale.isCorrect += 1;
                     }
                     sr.enabled = false;
+                    Destroy(gameObject);
                 }
             }
             else
@@ -79,6 +85,7 @@ public class DraggedObject : MonoBehaviour
                         uniteCentrale.isCorrect -= 1;
                     }
                     sr.enabled = true;
+                    Destroy(gameObject);
                 }
             }
         }
