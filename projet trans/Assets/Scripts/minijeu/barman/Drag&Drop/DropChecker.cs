@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DropChecker : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DropChecker : MonoBehaviour
 
     public List<Sprite> verreVide;
     public List<Sprite> verreRempli;
+
     private int numeroVerre;
 
     public int totalDrop;
@@ -22,8 +24,12 @@ public class DropChecker : MonoBehaviour
 
     private bool fini = false;
     private bool debut = true;
+
+    private string textAffiche;
+
     public GameObject victor;
     public GameObject intro;
+    public TextMeshProUGUI monTexte;
 
     private GameObject monIntro;
 
@@ -32,6 +38,10 @@ public class DropChecker : MonoBehaviour
     public List<GameObject> listeIngredients;
     public List<GameObject> bonIngredient;
     public List<GameObject> mauvaisIngredient;
+    public List<string> feur;
+    public List<string> feurBon;
+    public List<string> feurMauvais;
+
 
     private bool isTouch = false;
     // Start is called before the first frame update
@@ -68,10 +78,12 @@ public class DropChecker : MonoBehaviour
             if (Random.Range(0, 2) == 0 && numberGood >= 0)
             {
                 bonIngredient.Add(listeIngredients[i]) ;
+                feurBon.Add(feur[i]);
             }
             else
             {
                 mauvaisIngredient.Add(listeIngredients[i]);
+                feurMauvais.Add(feur[i]);
             }
         }
 
@@ -80,8 +92,11 @@ public class DropChecker : MonoBehaviour
 
             if (numberGood > 0)
             {
-                var tempIngredient = Instantiate(bonIngredient[Random.Range(1, bonIngredient.Count)], new Vector3(-1 + 0.5f * i, 2, 0), Quaternion.identity);
+                var tempRand = Random.Range(1, bonIngredient.Count);
+                var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(-1 + 0.5f * i, 2, 0), Quaternion.identity);
                 tempIngredient.GetComponent<DraggedObject>().isGood = true;
+                textAffiche += feurBon[tempRand-1];
+                textAffiche += "\n";
                 numberGood--;
             }
             else
@@ -90,7 +105,7 @@ public class DropChecker : MonoBehaviour
                 tempIngredient.GetComponent<DraggedObject>().isGood = false;
             }
         }
-
+        monTexte.text = textAffiche;
         monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
 

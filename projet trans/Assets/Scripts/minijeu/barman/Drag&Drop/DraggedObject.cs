@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class DraggedObject : MonoBehaviour
 {
-    
-
     public bool isDragged = false;
     
     public bool isGood = false;
