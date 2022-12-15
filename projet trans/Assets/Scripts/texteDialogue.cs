@@ -10,6 +10,10 @@ public class texteDialogue : MonoBehaviour
 
     public List<string> mesDialoguesA;
     public List<string> mesDialoguesB;
+    public List<string> mesDialoguesC;
+    public List<string> mesDialoguesD;
+    public List<string> mesDialoguesE;
+    public List<string> mesDialoguesF;
 
     private List<string> mesDialogues;
 
