@@ -103,6 +103,7 @@ public class ShakerLeFaux : MonoBehaviour
                         {
                             quantiteColonne[colonneProche] += 1;
                             monObjet.GetComponent<CaisseRanger>().positionColonne = quantiteColonne[colonneProche];
+                            monObjet.GetComponent<CaisseRanger>().colonneProche = colonneProche;
                             monObjet.GetComponent<CaisseRanger>().isShoot = true;
                             monObjet.GetComponent<CaisseRanger>().transform.position = new Vector3(mesColonnes[colonneProche].transform.position.x, transform.position.y, -1);
 
@@ -112,12 +113,6 @@ public class ShakerLeFaux : MonoBehaviour
                     }
                 }
             }
-
-            isTouch = true;
-        }
-        else
-        {
-            isTouch = false;
         }
 
         rgbd.velocity = new Vector3 ((Input.gyro.rotationRate.z) * -force, 0, 0);
@@ -144,6 +139,15 @@ public class ShakerLeFaux : MonoBehaviour
                     SceneManager.LoadScene("SceneGuichetier");
                 }
             }
+        }
+
+        if (Input.touchCount > 0)
+        {
+            isTouch = true;
+        }
+        else
+        {
+            isTouch = false;
         }
 
         /*if (shakeNumber == shakeVictoire)
