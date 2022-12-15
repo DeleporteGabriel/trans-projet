@@ -7,30 +7,38 @@ public class DropChecker : MonoBehaviour
 {
     private IndestructibleObject maJaugeValue;
 
+    public List<Sprite> verreVide;
+    public List<Sprite> verreRempli;
+    private int numeroVerre;
+
     public int totalDrop;
     public int currentDrop;
     public int isCorrect;
 
     public int diffucltLevel = 1;//niveau de difficulter 1-3 ********INFLUENCE LES TROIS VALEUR SUIVANTE********
-        public int numberGood = 1;//nombre de bon ingredient
-        public int totalNumber = 1;//nombre total d'ingredients
-        public int errortCount = 1;//nombre d'erreur avant echec
+    public int numberGood = 1;//nombre de bon ingredient
+    public int totalNumber = 1;//nombre total d'ingredients
+    public int errortCount = 1;//nombre d'erreur avant echec
 
     private bool fini = false;
-
+    private bool debut = true;
     public GameObject victor;
+    public GameObject intro;
 
-    public SpriteRenderer SkinVerre;
+    private GameObject monIntro;
+
+    public SpriteRenderer skinVerre;
 
     public List<GameObject> listeIngredients;
     public List<GameObject> bonIngredient;
     public List<GameObject> mauvaisIngredient;
-    public List<Sprite> listSkinVerre;
 
     private bool isTouch = false;
     // Start is called before the first frame update
     void Start()
     {
+        numeroVerre = Random.Range(0, 3);
+        skinVerre.sprite = verreVide[numeroVerre];
 
         if (diffucltLevel==1)
         {
@@ -78,18 +86,31 @@ public class DropChecker : MonoBehaviour
             }
             else
             {
-                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(-1 + 0.5f * i, 4, 0), Quaternion.identity);
+                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(-1 + 0.5f * (i - totalDrop), 4, 0), Quaternion.identity);
                 tempIngredient.GetComponent<DraggedObject>().isGood = false;
             }
         }
 
-        SkinVerre.sprite = listSkinVerre[Random.Range(0, listSkinVerre.Count)];
+        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        if (Input.touchCount > 0) { isTouch = true; }
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (debut == true)
+        {
+            if (Input.touchCount > 0 && isTouch == false)
+            {
+                debut = false;
+                Destroy(monIntro);
+            }
+
+            if (Input.touchCount == 0) { isTouch = false; }
+            return;
+        }
+
         if (totalDrop == currentDrop && isCorrect == 0)
         {
             //maJaugeValue.jaugeHype += 70;
@@ -97,6 +118,7 @@ public class DropChecker : MonoBehaviour
             maJaugeValue.DragDrop = 1;
             maJaugeValue.minijeuTermines++;
             SceneManager.LoadScene("SceneLightGirl");*/
+            skinVerre.sprite = verreRempli[numeroVerre];
             if (fini == false)
             {
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);

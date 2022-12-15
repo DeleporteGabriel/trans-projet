@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class CaisseRanger : MonoBehaviour
 {
+    public int caisseType;
+    public List<Sprite> mesCaisses;
+
     public List<GameObject> mesColonnes;
     public GameObject monElevateur;
+    public SpriteRenderer sr;
 
     public int colonneProche;
     public float tempProche;
@@ -14,9 +18,15 @@ public class CaisseRanger : MonoBehaviour
     public List<int> quantiteColonne;
 
     public int positionColonne;
+
+    public bool isShoot = false;
     // Start is called before the first frame update
     void Start()
     {
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        caisseType = Random.Range(0, 4);
+        sr.sprite = mesCaisses[caisseType];
+
         for (int i = 0; i <= mesColonnes.Count - 1; i++)
         {
             if (Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x) < tempProche)
@@ -25,23 +35,36 @@ public class CaisseRanger : MonoBehaviour
                 tempProche = Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x);
             }
         }
-
-        transform.position = new Vector3(mesColonnes[colonneProche].transform.position.x, transform.position.y, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 5 && stopBloc == false)
+        if (isShoot == false)
         {
-            transform.position += new Vector3(0, 0.05f, 0);
+            transform.position = new Vector3(monElevateur.transform.position.x, monElevateur.transform.position.y + 0.5f, -1);
         }
         else
         {
-            if (stopBloc == false)
+            if (transform.position.y < 5.75f - (positionColonne * 1f) && stopBloc == false)
             {
-                transform.position = new Vector3(transform.position.x, 5.75f - (positionColonne * 1.25f), 0);
-                stopBloc = true;
+                transform.position += new Vector3(0, 0.05f, 0);
+            }
+            else
+            {
+                if (stopBloc == false)
+                {
+                    transform.position = new Vector3(transform.position.x, 5.75f - (positionColonne * 1f), -1);
+                    if (colonneProche == caisseType)
+                    {
+                        monElevateur.GetComponent<ShakerLeFaux>().currentScore++;
+                    }
+                    else 
+                    { 
+                        monElevateur.GetComponent<ShakerLeFaux>().currentError++;
+                    }
+                    stopBloc = true;
+                }
             }
         }
     }

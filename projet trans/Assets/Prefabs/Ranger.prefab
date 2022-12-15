@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5148878577354875313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.09, y: 2.53, z: 0.013342053}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1213557, y: 0.1213557, z: 0.1213557}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.735849, g: 0.61749524, b: 0.09371662, a: 1}
+  m_Sprite: {fileID: 21300000, guid: aeaf2760aff0b1f4b8fe26fea48fdad4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,11 +97,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d314feb97e5ee04fbd56f996c00cb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  caisseType: 0
+  mesCaisses:
+  - {fileID: 21300000, guid: 19dc24f6ffb03c74288af04ce77f99c0, type: 3}
+  - {fileID: 21300000, guid: 2a8b0825ee467244fbbb2c5aad2e3c98, type: 3}
+  - {fileID: 21300000, guid: ed9b52d6179e11441ae38e85cbe3e62e, type: 3}
+  - {fileID: 21300000, guid: 7c5623fb09fb54c47a606509236d1f94, type: 3}
   mesColonnes:
   - {fileID: 2991680827210621441, guid: b4390a22196ffc2469226d6b7550dc3a, type: 3}
   - {fileID: 1683663223766172900, guid: 6e5283d4b3538d6478375359bd5a988c, type: 3}
   - {fileID: 5951032685365624311, guid: 183fa1bb90181a040aa46b1f4d2245c5, type: 3}
   - {fileID: 1667471760620853198, guid: 29c687f54cc497c4c9967cd667e4c410, type: 3}
   monElevateur: {fileID: 2756434170568972657, guid: ec302b21a0e7d11488e46d6642095a14, type: 3}
+  sr: {fileID: 0}
   colonneProche: 0
   tempProche: 99999
+  quantiteColonne: 
+  positionColonne: 0
+  isShoot: 0

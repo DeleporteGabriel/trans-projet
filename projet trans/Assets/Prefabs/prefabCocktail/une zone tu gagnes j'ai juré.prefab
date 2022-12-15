@@ -124,10 +124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ddaee2f54e038409ce11221a16a196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verreVide: []
+  verreRempli: []
   totalDrop: 6
   currentDrop: 0
   isCorrect: 0
+  diffucltLevel: 1
+  numberGood: 1
+  totalNumber: 1
+  errortCount: 1
   victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
+  skinVerre: {fileID: 0}
   listeIngredients:
   - {fileID: 5030159591969575401, guid: b11ece8b2ebf5924199e5976c4ff88de, type: 3}
   - {fileID: 2938688331225537163, guid: bd6a5b8dabb1c7c4e93357dc26f2c901, type: 3}

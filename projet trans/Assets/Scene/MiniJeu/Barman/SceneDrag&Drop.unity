@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -314,6 +314,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: intro
+      value: 
+      objectReference: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: SkinVerre
       value: 
       objectReference: {fileID: 493235177}
@@ -321,6 +325,10 @@ PrefabInstance:
       propertyPath: isCorrect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: skinVerre
+      value: 
+      objectReference: {fileID: 493235177}
     - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: totalDrop
       value: 0
@@ -331,8 +339,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: diffucltLevel
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreVide.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreRempli.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreVide.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: dcf0f0a6a5e15cf4c862218c65083b0e, type: 3}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreVide.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 72ca33c70efcf594fa9d5ac96cf00386, type: 3}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreVide.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2bb1a505dec19894ca68b548980d4bcf, type: 3}
     - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: bonIngredient.Array.size
       value: 1
@@ -341,6 +369,18 @@ PrefabInstance:
       propertyPath: listSkinVerre.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreRempli.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 63e12671d48533d46b6eab2f44cf72e5, type: 3}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreRempli.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0baea417f7dcd77458babba07fcc6d6e, type: 3}
+    - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+      propertyPath: verreRempli.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 16de541e0ebc62d4ea022fe3fba90578, type: 3}
     - target: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
       propertyPath: bonIngredient.Array.data[0]
       value: 

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CibleCount : MonoBehaviour
 {
     public bool isTouch = false;
-    private bool fini = false;
+    public bool fini = false;
     private bool debut = true;
     public GameObject victor;
     public GameObject intro;

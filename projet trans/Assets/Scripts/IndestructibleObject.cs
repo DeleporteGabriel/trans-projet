@@ -58,7 +58,7 @@ public class IndestructibleObject : MonoBehaviour
             for (int i = 0; i < 4; i++)
             {
                 var isHere = true;
-                while (isHere == true)
+                while (isHere == true || addMonMJ == 2 || addMonMJ == 6 || addMonMJ == 7 || addMonMJ == 12 || addMonMJ == 14 || addMonMJ == 17 || faitOuPasFait[addMonMJ] == 1)
                 {
                     isHere = false;
 

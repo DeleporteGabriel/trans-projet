@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ShakerLeFaux : MonoBehaviour
 {
+    private bool fini = false;
     private bool debut = true;
     public GameObject victor;
     public GameObject intro;
@@ -15,10 +16,11 @@ public class ShakerLeFaux : MonoBehaviour
 
     public float force;
     public Rigidbody rgbd;
-    public float shakingMax;
 
-    public float shakeNumber;
-    public float shakeVictoire;
+    public int currentScore;
+    public int scoreMax;
+    public int currentError;
+    public int errorRange;
 
     public int positionLigne;
 
@@ -33,6 +35,8 @@ public class ShakerLeFaux : MonoBehaviour
     public float tempProche;
 
     public GameObject ocmoi;
+
+    public GameObject monObjet;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +44,9 @@ public class ShakerLeFaux : MonoBehaviour
 
         monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
+
+        monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+        monObjet.GetComponent<CaisseRanger>().monElevateur = gameObject;
     }
 
     // Update is called once per frame
@@ -82,9 +89,6 @@ public class ShakerLeFaux : MonoBehaviour
                 {
                     if (other.collider.GetComponent<ZoneDetect>() != null)
                     {
-                        
-                        var monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-
                         tempProche = 99999;
                         for (int i = 0; i <= mesColonnes.Count - 1; i++)
                         {
@@ -95,8 +99,16 @@ public class ShakerLeFaux : MonoBehaviour
                             }
                         }
 
-                        quantiteColonne[colonneProche] += 1;
-                        monObjet.GetComponent<CaisseRanger>().positionColonne = quantiteColonne[colonneProche];
+                        if (quantiteColonne[colonneProche] <= 4)
+                        {
+                            quantiteColonne[colonneProche] += 1;
+                            monObjet.GetComponent<CaisseRanger>().positionColonne = quantiteColonne[colonneProche];
+                            monObjet.GetComponent<CaisseRanger>().isShoot = true;
+                            monObjet.GetComponent<CaisseRanger>().transform.position = new Vector3(mesColonnes[colonneProche].transform.position.x, transform.position.y, -1);
+
+                            monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+                            monObjet.GetComponent<CaisseRanger>().monElevateur = gameObject;
+                        }
                     }
                 }
             }
@@ -110,7 +122,29 @@ public class ShakerLeFaux : MonoBehaviour
 
         rgbd.velocity = new Vector3 ((Input.gyro.rotationRate.z) * -force, 0, 0);
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.60f), -1.5f, 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1.5f, 1.60f), -0.5f, 0);
+
+        if (currentScore >= scoreMax && currentError <= errorRange)
+        {
+            //c'est la gagne
+            if (fini == false)
+            {
+                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+                fini = true;
+                maJaugeValue.removeMJ(3, 0);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                if (isTouch == false)
+                {
+                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.faitOuPasFait[3] = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneGuichetier");
+                }
+            }
+        }
 
         /*if (shakeNumber == shakeVictoire)
         {

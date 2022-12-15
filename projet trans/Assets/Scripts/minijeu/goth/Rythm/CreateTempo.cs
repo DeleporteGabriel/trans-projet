@@ -9,6 +9,7 @@ public class CreateTempo : MonoBehaviour
     private bool debut = true;
     public GameObject victor;
     public GameObject intro;
+    public GameObject defat;
 
     private GameObject monIntro;
 
@@ -89,8 +90,24 @@ public class CreateTempo : MonoBehaviour
 
         if (errorCheck >= 3)
         {
-            Debug.Log("défaite");
-        }
+            if (fini == false)
+            {
+                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
+                fini = true;
+                maJaugeValue.removeMJ(13, 4);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                if (isTouch == false)
+                {
+                    //maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.faitOuPasFait[12] = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneGoth");
+                }
+            }
+           }
 
         if (Input.touchCount > 0)
         {
@@ -103,7 +120,7 @@ public class CreateTempo : MonoBehaviour
                     {
                         Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
                         fini = true;
-                        maJaugeValue.removeMJ(12, 4);
+                        maJaugeValue.removeMJ(13, 4);
                     }
 
                     if (Input.touchCount > 0)
