@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - "Vous \xEAtes r\xE9gisseur ? J'aurais besoin d'un coup de main."
+  - "Vous \xEAtes Super-R\xE9gisseur ? J'aurais besoin d'un coup de main."
   - "On nous a demand\xE9 de ranger des caisses dans le m\xEAme ordre que l'ann\xE9e
     derni\xE8re... Sauf que j'\xE9tais pas l\xE0 l'ann\xE9e derni\xE8re."
   - Vous pouvez m'aidez ?
@@ -183,12 +183,12 @@ MonoBehaviour:
   - "Super ! Maintenant je sais o\xF9 ranger les autres ! Merci !"
   - "C'est aussi votre premi\xE8re ann\xE9e ici ? On risque pas de s'en sortir..."
   mesDialoguesC:
-  - "S'il vous pla\xEEt ! On aurait besoin d'un coup de main !"
-  - On doit ranger des caisses dans leurs zones respectives, vous pouvez nous aider
+  - "S'il vous pla\xEEt ! On aurais besoin d'un coup de main !"
+  - On doit ranger des caisses dans leurs zones respectives, vous pouvez nous aidez
     ?
   mesDialoguesD:
   - "C'\xE9tait facile en fait... Merci quand m\xEAme !"
-  - e doute que ces caisses doivent aller ici... On va devoir tout replacer, pas
+  - Je doute que ces caisses doivent aller ici... On va devoir tout replacer, pas
     grave...
   mesDialoguesE:
   - "Excusez-moi, je dois mettre des d\xE9chets dans les bonnes poubelles mais je

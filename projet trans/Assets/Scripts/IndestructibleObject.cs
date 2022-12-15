@@ -50,7 +50,7 @@ public class IndestructibleObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentMJ.Count == 0 && SceneManager.GetActiveScene().name == "SceneMap")
+        if (currentMJ.Count == 0 && SceneManager.GetActiveScene().name == "SceneMap" && minijeuTermines < 12)
         {
             currentMJ.Clear();
             currentPerso.Clear();
