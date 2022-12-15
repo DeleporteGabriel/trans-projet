@@ -101,7 +101,10 @@ public class BadgeEnvoi : MonoBehaviour
                 transform.position = new Vector3(0, 2.7f, 0);
                 transform.rotation = Quaternion.identity;
                 sr.sprite = typeBadgeColor[0];
-                srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
+                if (badgeAvancement < listBonBadge.Count)
+                {
+                    srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
+                }
             }
         }
 

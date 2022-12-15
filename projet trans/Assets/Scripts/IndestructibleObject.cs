@@ -24,6 +24,7 @@ public class IndestructibleObject : MonoBehaviour
     public List<List<int>> mesPersos = new List<List<int>>();
     public List<int> currentMJ;
     public List<int> currentPerso;
+    public List<int> dejaPerso;
 
     public int minijeuTermines;
 
@@ -62,22 +63,62 @@ public class IndestructibleObject : MonoBehaviour
                 {
                     isHere = false;
 
-                    var tempPerso = Random.Range(0, 6);
-                    var tempMJ = Random.Range(0, 3);
-
-                    addMonMJ = mesPersos[tempPerso][tempMJ];
-                    addMonPerso = tempPerso;
-
-                    for (int j = 0; j <= currentMJ.Count - 1; j++)
+                    if (minijeuTermines == 4 && currentMJ.Count < 2)
                     {
-                        if (currentPerso[j] == addMonPerso)
+                        var pasLa = false;
+                        Debug.Log("bonjour");
+
+                        while (pasLa == false)
                         {
-                            isHere = true;
+                            pasLa = true;
+
+                            var tempPerso = Random.Range(0, 6);
+                            var tempMJ = Random.Range(0, 3);
+
+                            addMonMJ = mesPersos[tempPerso][tempMJ];
+                            addMonPerso = tempPerso;
+
+                            for (int l = 0; l <= currentMJ.Count - 1; l++)
+                            {
+                                if (currentPerso[l] == addMonPerso)
+                                {
+                                    isHere = true;
+                                }
+                            }
+
+                            for (int k = 0; k <= currentMJ.Count - 1; k++)
+                            {
+                                if (dejaPerso[k] == addMonPerso)
+                                {
+                                    pasLa = false;
+                                }
+                            }
+                        }
+                        dejaPerso.Add(addMonPerso);
+                    }
+                    else
+                    {
+                        var tempPerso = Random.Range(0, 6);
+                        var tempMJ = Random.Range(0, 3);
+
+                        addMonMJ = mesPersos[tempPerso][tempMJ];
+                        addMonPerso = tempPerso;
+
+                        for (int j = 0; j <= currentMJ.Count - 1; j++)
+                        {
+                            if (currentPerso[j] == addMonPerso)
+                            {
+                                isHere = true;
+                            }
                         }
                     }
                 }
                 currentMJ.Add(addMonMJ);
                 currentPerso.Add(addMonPerso);
+            }
+            if (minijeuTermines == 0)
+            {
+                dejaPerso = currentPerso;
             }
         }
 

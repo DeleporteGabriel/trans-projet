@@ -60,7 +60,7 @@ public class DropChecker : MonoBehaviour
             numberGood = 2;
             totalDrop = numberGood;
             totalNumber = 4;
-            errorMax = 3;
+            errorMax = 2;
             etapeMax = 3;
         }
         if (diffucltLevel == 2)
@@ -226,7 +226,7 @@ public class DropChecker : MonoBehaviour
             {
                 Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
                 fini = true;
-                maJaugeValue.removeMJ(11, 4);
+                maJaugeValue.removeMJ(11, 3);
             }
 
             if (Input.touchCount > 0)
