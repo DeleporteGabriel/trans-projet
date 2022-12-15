@@ -17,10 +17,14 @@ public class DropChecker : MonoBehaviour
     public int currentDrop;
     public int isCorrect;
 
+    public int etapeFini;
+    public int etapeMax;
+
     public int diffucltLevel = 1;//niveau de difficulter 1-3 ********INFLUENCE LES TROIS VALEUR SUIVANTE********
     public int numberGood = 1;//nombre de bon ingredient
     public int totalNumber = 1;//nombre total d'ingredients
-    public int errortCount = 1;//nombre d'erreur avant echec
+    public int errorMax = 1;//nombre d'erreur avant echec
+    public int currentError;
 
     private bool fini = false;
     private bool debut = true;
@@ -28,6 +32,7 @@ public class DropChecker : MonoBehaviour
     private string textAffiche;
 
     public GameObject victor;
+    public GameObject defat;
     public GameObject intro;
     public TextMeshProUGUI monTexte;
 
@@ -55,21 +60,24 @@ public class DropChecker : MonoBehaviour
             numberGood = 2;
             totalDrop = numberGood;
             totalNumber = 4;
-            errortCount = 3;
+            errorMax = 3;
+            etapeMax = 3;
         }
         if (diffucltLevel == 2)
         {
             numberGood = 4;
             totalDrop = numberGood;
             totalNumber = 6;
-            errortCount = 1;
+            errorMax = 1;
+            etapeMax = 3;
         }
         if (diffucltLevel == 3)
         {
             numberGood = 6;
             totalDrop = numberGood;
             totalNumber = 8;
-            errortCount = 0;
+            errorMax = 0;
+            etapeMax = 4;
         }
 
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
@@ -93,7 +101,7 @@ public class DropChecker : MonoBehaviour
             if (numberGood > 0)
             {
                 var tempRand = Random.Range(1, bonIngredient.Count);
-                var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(-1 + 0.5f * i, 2, 0), Quaternion.identity);
+                var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
                 tempIngredient.GetComponent<DraggedObject>().isGood = true;
                 textAffiche += feurBon[tempRand-1];
                 textAffiche += "\n";
@@ -101,7 +109,7 @@ public class DropChecker : MonoBehaviour
             }
             else
             {
-                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(-1 + 0.5f * (i - totalDrop), 4, 0), Quaternion.identity);
+                var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
                 tempIngredient.GetComponent<DraggedObject>().isGood = false;
             }
         }
@@ -126,7 +134,64 @@ public class DropChecker : MonoBehaviour
             return;
         }
 
-        if (totalDrop == currentDrop && isCorrect == 0)
+        if (totalDrop == currentDrop)
+        {
+            etapeFini++;
+            if (isCorrect != 0)
+            {
+                currentError++;
+            }
+
+            currentDrop = 0;
+            numberGood = totalDrop;
+            textAffiche = "";
+
+            bonIngredient.Clear();
+            bonIngredient.Add(listeIngredients[0]);
+            feurBon.Clear();
+            mauvaisIngredient.Clear();
+            mauvaisIngredient.Add(listeIngredients[0]);
+            feurMauvais.Clear();
+
+            if (etapeFini < etapeMax)
+            {
+                for (var i = 0; i < listeIngredients.Count; i++)
+                {
+                    if (Random.Range(0, 2) == 0 && numberGood >= 0)
+                    {
+                        bonIngredient.Add(listeIngredients[i]);
+                        feurBon.Add(feur[i]);
+                    }
+                    else
+                    {
+                        mauvaisIngredient.Add(listeIngredients[i]);
+                        feurMauvais.Add(feur[i]);
+                    }
+                }
+
+                for (int i = 0; i < totalNumber; i++)
+                {
+
+                    if (numberGood > 0)
+                    {
+                        var tempRand = Random.Range(1, bonIngredient.Count);
+                        var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
+                        tempIngredient.GetComponent<DraggedObject>().isGood = true;
+                        textAffiche += feurBon[tempRand - 1];
+                        textAffiche += "\n";
+                        numberGood--;
+                    }
+                    else
+                    {
+                        var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
+                        tempIngredient.GetComponent<DraggedObject>().isGood = false;
+                    }
+                }
+                monTexte.text = textAffiche;
+            }
+        }
+
+        if (etapeFini == etapeMax &&  currentError <= errorMax)
         {
             //maJaugeValue.jaugeHype += 70;
             /*maJaugeValue.AugmenteJaugeValue(1f / 6f);
@@ -153,6 +218,27 @@ public class DropChecker : MonoBehaviour
                 isTouch = true;
             }
             else { isTouch = false; }
+        }
+
+        if (currentError > errorMax)
+        {
+            if (fini == false)
+            {
+                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
+                fini = true;
+                maJaugeValue.removeMJ(11, 4);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                if (isTouch == false)
+                {
+                    //maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.faitOuPasFait[11] = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneBarman");
+                }
+            }
         }
     }
 }

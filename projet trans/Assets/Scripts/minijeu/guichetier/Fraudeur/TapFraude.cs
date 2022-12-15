@@ -9,6 +9,7 @@ public class TapFraude : MonoBehaviour
     private bool fini = false;
     private bool debut = true;
     public GameObject victor;
+    public GameObject defat;
     public GameObject intro;
 
     private GameObject monIntro;
@@ -85,7 +86,23 @@ public class TapFraude : MonoBehaviour
 
         if (fraudeCount >= 3)
         {
-            Debug.Log("t'as perdu");
+            if (fini == false)
+            {
+                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
+                fini = true;
+                maJaugeValue.removeMJ(1, 4);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                if (activeTouch == false)
+                {
+                    //maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.faitOuPasFait[1] = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneGuichetier");
+                }
+            }
         }
         if (pnjCount >= pnjMax && pnjCount <= pnjPass && fraudeCount <= margeFraude)
         {

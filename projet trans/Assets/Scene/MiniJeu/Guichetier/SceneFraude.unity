@@ -427,6 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeTouch: 0
   victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
+  defat: {fileID: 192298658477478449, guid: 7383fe58973e756449edf9e4bd15a1db, type: 3}
   intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
   fraudeCount: 0
   margeFraude: 2

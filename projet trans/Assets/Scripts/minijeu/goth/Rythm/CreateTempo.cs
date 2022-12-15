@@ -102,12 +102,12 @@ public class CreateTempo : MonoBehaviour
                 if (isTouch == false)
                 {
                     //maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[12] = 1;
+                    maJaugeValue.faitOuPasFait[13] = 1;
                     maJaugeValue.minijeuTermines++;
                     SceneManager.LoadScene("SceneGoth");
                 }
             }
-           }
+        }
 
         if (Input.touchCount > 0)
         {
@@ -128,7 +128,7 @@ public class CreateTempo : MonoBehaviour
                         if (isTouch == false)
                         {
                             maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                            maJaugeValue.faitOuPasFait[12] = 1;
+                            maJaugeValue.faitOuPasFait[13] = 1;
                             maJaugeValue.minijeuTermines++;
                             SceneManager.LoadScene("SceneGoth");
                         }
