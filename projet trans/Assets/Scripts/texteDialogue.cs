@@ -49,7 +49,13 @@ public class texteDialogue : MonoBehaviour
                         //récupère la valeur du mj
                         monMiniJeu = monMiniJeuChecker.currentMJ[i] - 1;
                         nextSceneA = monMiniJeuChecker.mesMinijeux[monMiniJeu];
-                        mesDialogues = mesDialoguesA;
+
+                        switch (j)
+                        {
+                            case 0 : mesDialogues = mesDialoguesA; break;
+                            case 1: mesDialogues = mesDialoguesC; break;
+                            case 2: mesDialogues = mesDialoguesE; break;
+                        }
                     }
                 }
             }
@@ -77,7 +83,7 @@ public class texteDialogue : MonoBehaviour
             if (numeroDialogue == mesDialogues.Count - 1)
             {
                 stopDialogue = true;
-                if (mesDialogues == mesDialoguesA)
+                if (mesDialogues == mesDialoguesA || mesDialogues == mesDialoguesC || mesDialogues == mesDialoguesE)
                 {
                     Instantiate(mesOptions, new Vector3(-1f, -0.6f, -1), Quaternion.identity);
                     var nextMJ = Instantiate(mesOptions, new Vector3(1, -0.6f, -1), Quaternion.identity);

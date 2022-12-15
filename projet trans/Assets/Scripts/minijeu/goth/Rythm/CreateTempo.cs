@@ -109,32 +109,36 @@ public class CreateTempo : MonoBehaviour
             }
         }
 
+        if ((rythmNumber > 19) && (errorCheck < errorMax))
+        {
+            if (fini == false)
+            {
+                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+                fini = true;
+                maJaugeValue.removeMJ(13, 4);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                if (isTouch == false)
+                {
+                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
+                    maJaugeValue.faitOuPasFait[13] = 1;
+                    maJaugeValue.minijeuTermines++;
+                    SceneManager.LoadScene("SceneGoth");
+                }
+                isTouch = true;
+            }
+            else { isTouch = false; }
+        }
+
         if (Input.touchCount > 0)
         {
             if (isTouch == false)
             {
-                rythmNumber++;
-                if ((rythmNumber > 19) && (errorCheck < errorMax))
+                if (rythmNumber+1 < noteNumber)
                 {
-                    if (fini == false)
-                    {
-                        Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                        fini = true;
-                        maJaugeValue.removeMJ(13, 4);
-                    }
-
-                    if (Input.touchCount > 0)
-                    {
-                        if (isTouch == false)
-                        {
-                            maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                            maJaugeValue.faitOuPasFait[13] = 1;
-                            maJaugeValue.minijeuTermines++;
-                            SceneManager.LoadScene("SceneGoth");
-                        }
-                        isTouch = true;
-                    }
-                    else { isTouch = false; }
+                    rythmNumber++;
                 }
             }
             isTouch = true;

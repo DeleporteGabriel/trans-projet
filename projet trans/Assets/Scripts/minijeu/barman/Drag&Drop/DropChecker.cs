@@ -103,6 +103,7 @@ public class DropChecker : MonoBehaviour
                 var tempRand = Random.Range(1, bonIngredient.Count);
                 var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
                 tempIngredient.GetComponent<DraggedObject>().isGood = true;
+                tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
                 textAffiche += feurBon[tempRand-1];
                 textAffiche += "\n";
                 numberGood--;
@@ -111,6 +112,7 @@ public class DropChecker : MonoBehaviour
             {
                 var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
                 tempIngredient.GetComponent<DraggedObject>().isGood = false;
+                tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
             }
         }
         monTexte.text = textAffiche;
@@ -144,6 +146,7 @@ public class DropChecker : MonoBehaviour
 
             currentDrop = 0;
             numberGood = totalDrop;
+            isCorrect = 0;
             textAffiche = "";
 
             bonIngredient.Clear();
@@ -177,6 +180,7 @@ public class DropChecker : MonoBehaviour
                         var tempRand = Random.Range(1, bonIngredient.Count);
                         var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
                         tempIngredient.GetComponent<DraggedObject>().isGood = true;
+                        tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
                         textAffiche += feurBon[tempRand - 1];
                         textAffiche += "\n";
                         numberGood--;
@@ -185,6 +189,7 @@ public class DropChecker : MonoBehaviour
                     {
                         var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
                         tempIngredient.GetComponent<DraggedObject>().isGood = false;
+                        tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
                     }
                 }
                 monTexte.text = textAffiche;

@@ -16,21 +16,21 @@ public class DraggedObject : MonoBehaviour
     public SpriteRenderer sr;
 
     public DropChecker uniteCentrale;
+    private int etapeActuel;
 
     // Start is called before the first frame update
     void Start()
     {
-        uniteCentrale = FindObjectOfType<DropChecker>();
+        etapeActuel = uniteCentrale.etapeFini;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (uniteCentrale.totalDrop == uniteCentrale.currentDrop)
+        if (uniteCentrale.etapeFini != etapeActuel)
         {
             Destroy(gameObject);
         }
-
 
         if (Input.touchCount > 0)
         {

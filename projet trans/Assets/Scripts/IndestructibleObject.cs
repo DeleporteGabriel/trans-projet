@@ -24,7 +24,7 @@ public class IndestructibleObject : MonoBehaviour
     public List<List<int>> mesPersos = new List<List<int>>();
     public List<int> currentMJ;
     public List<int> currentPerso;
-    public List<int> dejaPerso;
+    public List<int> futurPersos;
 
     public int minijeuTermines;
 
@@ -56,7 +56,7 @@ public class IndestructibleObject : MonoBehaviour
             currentMJ.Clear();
             currentPerso.Clear();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; currentMJ.Count < 4; i++)
             {
                 var isHere = true;
                 while (isHere == true || addMonMJ == 2 || addMonMJ == 6 || addMonMJ == 7 || addMonMJ == 12 || addMonMJ == 14 || addMonMJ == 17 || faitOuPasFait[addMonMJ] == 1)
@@ -65,36 +65,15 @@ public class IndestructibleObject : MonoBehaviour
 
                     if (minijeuTermines == 4 && currentMJ.Count < 2)
                     {
-                        var pasLa = false;
-                        Debug.Log("bonjour");
 
-                        while (pasLa == false)
+                        var pasPossible = true;
+                        while (pasPossible == true || addMonMJ == 2 || addMonMJ == 6 || addMonMJ == 7 || addMonMJ == 12 || addMonMJ == 14 || addMonMJ == 17)
                         {
-                            pasLa = true;
-
-                            var tempPerso = Random.Range(0, 6);
-                            var tempMJ = Random.Range(0, 3);
-
-                            addMonMJ = mesPersos[tempPerso][tempMJ];
-                            addMonPerso = tempPerso;
-
-                            for (int l = 0; l <= currentMJ.Count - 1; l++)
-                            {
-                                if (currentPerso[l] == addMonPerso)
-                                {
-                                    isHere = true;
-                                }
-                            }
-
-                            for (int k = 0; k <= currentMJ.Count - 1; k++)
-                            {
-                                if (dejaPerso[k] == addMonPerso)
-                                {
-                                    pasLa = false;
-                                }
-                            }
+                            addMonMJ = mesPersos[futurPersos[i]][Random.Range(0, 3)];
+                            pasPossible = false;
                         }
-                        dejaPerso.Add(addMonPerso);
+
+                        addMonPerso = futurPersos[i];
                     }
                     else
                     {
@@ -118,7 +97,17 @@ public class IndestructibleObject : MonoBehaviour
             }
             if (minijeuTermines == 0)
             {
-                dejaPerso = currentPerso;
+                futurPersos.Add(0); futurPersos.Add(1); futurPersos.Add(2); futurPersos.Add(3); futurPersos.Add(4); futurPersos.Add(5);
+                for (int k = 0; k < 4; k++)
+                {
+                    for (int l = 0; l < futurPersos.Count; l++)
+                    {
+                        if (currentPerso[k] == futurPersos[l])
+                        {
+                            futurPersos.Remove(futurPersos[l]);
+                        }
+                    }
+                }
             }
         }
 

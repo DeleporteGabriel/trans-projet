@@ -44,6 +44,7 @@ public class TempoRythm : MonoBehaviour
         {
             if (isTouch == false)
             {
+
                 if (tempoState == 0)
                 {
                     if (IDchecker.rythmNumber == noteID)
@@ -55,10 +56,10 @@ public class TempoRythm : MonoBehaviour
                 }
                 else if (tempoState == 1)
                 {
-                    if ((sr.sprite = noteSkin[3]) && (IDchecker.rythmNumber == noteID))
+                    if (IDchecker.rythmNumber == noteID)
                     {
                         sr.enabled = false;
-                        tempoState = 3;
+                        tempoState = 3; 
                     }
                 }
             }
