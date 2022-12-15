@@ -343,25 +343,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - "Bha non d\xE9sol\xE9, j'ai pas vraiment le temps..."
+  - "Hey l'ami ! Je suis tellement d\xE9bord\xE9 avec les clients que j'ai pas le
+    temps d'utiliser le shaker."
   - "Tu pourrais secouer quelques cocktails pour moi s'il te pla\xEEt ?"
   mesDialoguesB:
-  - Merci l'ami ! La prochaine est pour moi d'accord ? A plus tard.
-  - "C'est pas donner \xE0 tout le monde de savoir utiliser un shaker..."
+  - "Merci l'ami ! La prochaine est pour moi d'accord ? \xC0 plus tard."
+  - "C'est pas donn\xE9 \xE0 tout le monde de savoir utiliser un shaker..."
   mesDialoguesC:
   - "J'ai besoin d'un coup de main avec les cocktails, je suis d\xE9bord\xE9 et j'ai
     pas le temps d'en faire certains."
   - "Tu pourrais faire des cocktails le temps que je me r\xE9organise ?"
   mesDialoguesD:
-  - Merci bien ! J'ai finis de m'organiser, tu peux y aller.
-  - "Je vais prendre le relais d'accords ? Hors de question que quelqu'un boive \xE7a..."
+  - Merci bien ! J'ai fini de m'organiser, tu peux y aller.
+  - "Je vais prendre le relais d'accord ? Hors de question que quelqu'un boive \xE7a..."
   mesDialoguesE:
   - Salut l'ami, il faut que je m'absente quelques minutes pour aller chercher une
     commande.
   - "Tu pourrais tirer quelques bi\xE8res \xE0 ma place ?"
   mesDialoguesF:
-  - Super boulot, j'ai tout ce qu'il me faut, tu peux aller voire les autres.
-  - "Tans pis pour ceux qui aiment la bi\xE8re... Au moins il nous reste les cocktails."
+  - Super boulot, j'ai tout ce qu'il me faut, tu peux aller voir les autres.
+  - "Tans pis pour ceux qui aiment la bi\xE8re... Au moins, il nous reste les cocktails."
   monTexte: {fileID: 632859582}
   numeroDialogue: 0
   nextSceneA: SceneShaker

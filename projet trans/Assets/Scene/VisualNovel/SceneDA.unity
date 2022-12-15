@@ -986,26 +986,22 @@ MonoBehaviour:
   - Attends ! ... L'inspiration me vient...
   - Prends un crayon ! On va dessiner...
   mesDialoguesB:
-  - SU-BLIME ! C'est ce que j'appelle de l'ART !SU-BLIME ! C'est ce que j'appelle
-    de l'ART !
-  - C'est passsable... C'est moyen... C'est nul, laisse moi faire.
+  - SU-BLIME ! C'est ce que j'appelle de l'ART !
+  - C'est passable... C'est moyen... C'est nul, laisse moi seul.
   mesDialoguesC:
   - Oh tiens ! Tu vas pouvoir me donner un coup de main pour une affiche !
-  - "On va devoir placer des couleurs aux bons endroits et j'ai du mal \xE0 me d\xE9cider.
-    Donne moi un coup de main !"
+  - "Aide moi \xE0 choisir la bonne affiche !"
   mesDialoguesD:
   - "Magnifique affiche mon ami ! \xC7a va rendre super ! Merci !"
   - Les couleurs c'est pas ton truc hein ? Tans pis, je retravaillerais dessus.
   mesDialoguesE:
-  - " Hey le r\xE9gisseur, tu aurais 2 minutes ?Hey le r\xE9gisseur, tu aurais 2
-    minutes ?"
+  - "Hey le r\xE9gisseur, tu aurais 2 minutes ?"
   - Il faut que je place les stands dans des zones importantes, mais personne ne
     me donne son avis et en tant qu'artiste, les critiques j'en ai besoin !
-  - "Tu veux bien m'aider \xE0 placer les stands ?Tu veux bien m'aider \xE0 placer
-    les stands ?"
+  - "Tu veux bien m'aider \xE0 placer les stands ?"
   mesDialoguesF:
   - "L\xE0 \xE7a ressemble \xE0 quelque chose ! Merci du coup de main."
-  - "Je doute que ce sois les endroits les plus appropri\xE9s pour ces stands...
+  - "Je doute que ce soit les endroits les plus appropri\xE9s pour ces stands...
     On va replacer tout \xE7a."
   monTexte: {fileID: 2129918777}
   numeroDialogue: 0
