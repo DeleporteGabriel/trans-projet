@@ -90,7 +90,7 @@ public class TapFraude : MonoBehaviour
             {
                 Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
                 fini = true;
-                maJaugeValue.removeMJ(1, 4);
+                maJaugeValue.removeMJ(1, 0);
             }
 
             if (Input.touchCount > 0)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PannelPart : MonoBehaviour
 {
-    public List<Color> graphics;
+    public List<Sprite> graphics;
     public int currentGraphics;
 
     public int rightPannel;
@@ -17,17 +17,17 @@ public class PannelPart : MonoBehaviour
     {
         animObject = GetComponent<Animator>();
 
-        currentGraphics = Random.Range(0, 6);
+        currentGraphics = Random.Range(0, graphics.Count);
         while (currentGraphics == rightPannel)
         {
-            currentGraphics = Random.Range(0, 6);
+            currentGraphics = Random.Range(0, graphics.Count);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        sr.color = graphics[currentGraphics];
+        sr.sprite = graphics[currentGraphics];
     }
 
     public void onTapTrigger()
