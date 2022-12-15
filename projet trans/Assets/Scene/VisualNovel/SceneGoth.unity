@@ -175,29 +175,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesDialoguesA:
-  - OH REGISSEUR !! ...
-  - "D\xE9sole pour avoir cri\xE9, c'est mon casque... BREF j'ai besoin d'un coup
+  - "OH R\xC9GISSEUR !! ..."
+  - "D\xE9sol\xE9 pour avoir cri\xE9, c'est mon casque... BREF j'ai besoin d'un coup
     de main."
   - Il faut que je recopie une piste musicale mais j'ai du mal, vous pourriez m'aider
     ?
   mesDialoguesB:
   - Super ! C'est parfait, merci !
-  - "Ho d\xE9sol\xE9 pour le casque, je l'oublie \xE0 chaque fois. Merci d'avoir
-    branch\xE9 mon matos d'ailleurs !"
+  - "Je doute que la musique colle, on va refaire \xE7a illico."
   mesDialoguesC:
-  - "Bah mince alors... Oh tiens, tu tombes \xE0 pique."
-  - "J'ai l'impression que le son est mal r\xE9gl\xE9... Tu pourrais m'aider avec
+  - "Bah mince alors... Oh tiens, vous tombez \xE0 pique."
+  - "J'ai l'impression que le son est mal r\xE9gl\xE9... Vous pourriez m'aider avec
     la table de mixage ?"
   mesDialoguesD:
-  - Parfait ! Le son est redevenu normal, on entends parfaitement ! Merci.
-  - Je doute que ces 2 courbes soient identiques...
+  - Parfait ! Le son est redevenu normal, on entend parfaitement ! Merci.
+  - Je doute que cela sonne pareil...
   mesDialoguesE:
-  - Salut ! Tu pourrais venir 2 secondes ?
-  - "Faut que j'ailles faire une course, tu pourrais r\xE9gler la nouvelle table
-    de mixage qu'on a re\xE7u ? J'ai une fiche mod\xE8le t'inqui\xE8tes pas !"
+  - Salut ! Vous pourriez venir 2 secondes ?
+  - "Faut que j'aille faire une course, vous pourriez r\xE9gler la nouvelle table
+    de mixage qu'on a re\xE7u ? J'ai une fiche mod\xE8le ne vous inqui\xE8tez pas
+    !"
   mesDialoguesF:
   - Parfait ! Tout m'a l'air en ordre ! Merci bien.
-  - "Mince ! Ma table de mixage est toute d\xE9r\xE9gl\xE9e... Je vais devoir r\xE9gler
+  - "Mince ! Ma table de mixage est toute d\xE9r\xE9gl\xE9e... Je vais devoir corriger
     \xE7a."
   monTexte: {fileID: 147216189}
   numeroDialogue: 0
