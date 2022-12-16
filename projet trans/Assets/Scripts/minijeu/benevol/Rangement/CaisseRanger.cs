@@ -13,6 +13,7 @@ public class CaisseRanger : MonoBehaviour
 
     public int colonneProche;
     public float tempProche;
+    public float vitesseCaisse;
     private bool stopBloc = false;
 
     public List<int> quantiteColonne;
@@ -48,7 +49,7 @@ public class CaisseRanger : MonoBehaviour
         {
             if (transform.position.y < 5.75f - (positionColonne * 1f) && stopBloc == false)
             {
-                transform.position += new Vector3(0, 0.05f, 0);
+                transform.position += new Vector3(0, vitesseCaisse, 0);
             }
             else
             {

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFraudeur: 0
   refBulle: {fileID: 5527147638509395992, guid: c700fc801e1d59d4caa7dae48d9649a9, type: 3}
-  vitesse: 0.05
+  vitesse: 0.5
   sr: {fileID: 1772625175561174286}
   listBadge:
   - {fileID: 21300000, guid: 761310d13a7373c498dbe9e8a3286032, type: 3}
@@ -113,7 +113,7 @@ MonoBehaviour:
   parent: {fileID: 6180160998515672486}
   timerMax: 2
   timer: 0
-  tempVitesse: 3
+  tempVitesse: 30
 --- !u!135 &2067563342932164594
 SphereCollider:
   m_ObjectHideFlags: 0
