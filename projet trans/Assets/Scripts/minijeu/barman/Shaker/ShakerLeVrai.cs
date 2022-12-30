@@ -58,7 +58,7 @@ public class ShakerLeVrai : MonoBehaviour
         Input.gyro.enabled = true;
 
        // rgbd.velocity = Vector3.up * Input.gyro.userAcceleration.magnitude*Mathf.Sign(Input.gyro.userAcceleration.z);
-        t += Input.gyro.userAcceleration.magnitude*force;
+        t += Input.gyro.userAcceleration.magnitude*force*Time.deltaTime;
         transform.position = Vector3.Lerp(down.position, up.position, (Mathf.Sin(t)+1)/2);
 
         if (((Mathf.Sin(t)+1)/2) <= 0.05 || ((Mathf.Sin(t) + 1) / 2) >= 0.95)

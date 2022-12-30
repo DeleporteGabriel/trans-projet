@@ -66,6 +66,7 @@ public class TapFraude : MonoBehaviour
             var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
             if (Physics.Raycast(tempRay, out var other) && activeTouch == false)
             {
+                //detecte le fraudeur
                 if (other.collider.GetComponent<Fraudeur>() != null)
                 {
                     var targetObject = other.collider.GetComponent<Fraudeur>();
@@ -74,6 +75,22 @@ public class TapFraude : MonoBehaviour
                     {
                         targetObject.sr.enabled = false;
                         targetObject.refBulle.GetComponent<SpriteRenderer>().enabled =false ;
+                        pnjPass++;
+                    }
+                    else
+                    {
+                        fraudeCount++;
+                    }
+                }
+                //detecte sa bulle
+                if (other.collider.GetComponent<BulleFraude>() != null)
+                {
+                    var targetObject = other.collider.GetComponent<BulleFraude>().monFraudeur;
+
+                    if (targetObject.isFraudeur == true)
+                    {
+                        targetObject.sr.enabled = false;
+                        targetObject.refBulle.GetComponent<SpriteRenderer>().enabled = false;
                         pnjPass++;
                     }
                     else

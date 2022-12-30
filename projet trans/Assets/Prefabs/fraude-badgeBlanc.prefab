@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2275904370647873}
   - component: {fileID: 3003843098112660332}
+  - component: {fileID: 2413510748468135851}
+  - component: {fileID: 7099152975510168448}
   m_Layer: 0
   m_Name: fraude-badgeBlanc
   m_TagString: Untagged
@@ -84,3 +86,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!136 &2413510748468135851
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527147638509395992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.3137132
+  m_Height: 3.701521
+  m_Direction: 0
+  m_Center: {x: -0.8426585, y: 0.5063635, z: 0}
+--- !u!114 &7099152975510168448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527147638509395992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63017851a4e8ea3458a1e453a98b3680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

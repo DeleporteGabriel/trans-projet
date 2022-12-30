@@ -21,7 +21,7 @@ public class CreateTempo : MonoBehaviour
     public int errorCheck;
 
     public float delaisTempo;
-    public int timerTempo;
+    public float timerTempo;
     private int noteNumber = 1;
     public CreateTempo self;
 
@@ -63,7 +63,7 @@ public class CreateTempo : MonoBehaviour
             return;
         }
 
-        timerTempo++;
+        timerTempo += Time.deltaTime;
 
         if ((timerTempo > variableTimer * delaisTempo) && (tempoTotal != noteNumber - 1))
         {

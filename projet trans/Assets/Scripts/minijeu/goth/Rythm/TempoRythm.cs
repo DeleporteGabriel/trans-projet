@@ -22,7 +22,7 @@ public class TempoRythm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.up * vitesseRythm;
+        transform.position += Vector3.up * vitesseRythm * Time.deltaTime;
 
         if (tempoState == 2)
         {

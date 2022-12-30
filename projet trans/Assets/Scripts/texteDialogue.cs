@@ -98,14 +98,16 @@ public class texteDialogue : MonoBehaviour
             }
             numeroDialogue = Mathf.Clamp(numeroDialogue + 1, 0, mesDialogues.Count - 1);
 
-            stayTouch = true;
-
             textAffiche = "";
             lettreAffiche = 0;
+        }
+        else if ((Input.touchCount > 0) && (stayTouch == false))
+        {
+            textAffiche = mesDialogues[numeroDialogue];
         }
         if (stopDialogue == true) { textAffiche = ""; }
         monTexte.text = textAffiche;
 
-        if (Input.touchCount == 0) { stayTouch = false; }
+        if (Input.touchCount == 0) { stayTouch = false; } else { stayTouch = true; }
     }
 }

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e289208a3faa474ab836a651f0daa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesseRythm: 0.1
+  vitesseRythm: 2
   tempoState: 0
   sr: {fileID: 2668002192976549061}
   noteID: 0

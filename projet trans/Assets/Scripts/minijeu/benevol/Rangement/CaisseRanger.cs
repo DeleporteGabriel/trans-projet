@@ -49,7 +49,7 @@ public class CaisseRanger : MonoBehaviour
         {
             if (transform.position.y < 5.75f - (positionColonne * 1f) && stopBloc == false)
             {
-                transform.position += new Vector3(0, vitesseCaisse, 0);
+                transform.position += new Vector3(0, vitesseCaisse * Time.deltaTime, 0);
             }
             else
             {

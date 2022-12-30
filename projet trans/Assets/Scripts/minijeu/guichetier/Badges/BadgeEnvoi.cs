@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class BadgeEnvoi : MonoBehaviour
 {
+
+    public float vitesseEnvoie;
+
     private bool fini = false;
     private bool debut = true;
     public GameObject victor;
@@ -93,7 +96,7 @@ public class BadgeEnvoi : MonoBehaviour
         }
         else
         {
-            transform.position += new Vector3(0, 0.12f, 0);
+            transform.position += new Vector3(0, 0.12f, 0) * Time.deltaTime * vitesseEnvoie;
             transform.Rotate(0, 0, 5f);
             if (transform.position.y > 15f)
             {

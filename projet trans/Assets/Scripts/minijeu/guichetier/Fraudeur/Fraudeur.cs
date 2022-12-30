@@ -29,7 +29,7 @@ public class Fraudeur : MonoBehaviour
             isFraudeur = true;
         }
 
-        vitesse = Random.Range(0.0005f*tempVitesse, 0.002f*tempVitesse);
+        vitesse = Random.Range(0.02f*tempVitesse*Time.deltaTime, 0.04f* tempVitesse*Time.deltaTime);
         timerMax = Random.Range(2f, 2.3f);
     }
 
@@ -49,6 +49,7 @@ public class Fraudeur : MonoBehaviour
                 refBulle = Instantiate(bulleBadge, new Vector3(parent.position.x + 0.25f, parent.position.y + 0.5f, parent.position.z), Quaternion.identity, parent);
                 refBulle.GetComponent<SpriteRenderer>().sprite = listBadge[Random.Range(1, 5)];
             }
+            refBulle.GetComponent<BulleFraude>().monFraudeur = gameObject.GetComponent<Fraudeur>();
             timerMax = 99999999999999999999f;
         }
         transform.position += Vector3.down * vitesse;

@@ -112,7 +112,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   colonneProche: 0
   tempProche: 99999
-  vitesseCaisse: 0.5
+  vitesseCaisse: 10
   quantiteColonne: 
   positionColonne: 0
   isShoot: 0
