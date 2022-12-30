@@ -63,15 +63,15 @@ public class SimonManager : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timerMax / 2 && iModele != 0)
         {
-            mesModeles[mesReponses[iModele - 1]].color = colorModele[mesReponses[iModele - 1]];
+            mesModeles[mesReponses[iModele-1]].color = new Vector4(1, 1, 1, 0.5f);
         }
         if (simonIsPlaying)
         {
             if (timer >= timerMax)
             {
-                mesModeles[mesReponses[iModele]].color = Color.white;
-                timer = 0;
                 iModele++;
+                mesModeles[mesReponses[iModele-1]].color = colorModele[mesReponses[iModele-1]];
+                timer = 0;
             }
             if (iModele >= mesReponses.Count)
             {
