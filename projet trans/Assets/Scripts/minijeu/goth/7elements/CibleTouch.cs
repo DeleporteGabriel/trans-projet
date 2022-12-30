@@ -5,6 +5,8 @@ using UnityEngine;
 public class CibleTouch : MonoBehaviour
 {
     public List<Color> listColor;
+    public List<float> listRotation;
+    public List<GameObject> listPositions;
 
     public CibleCount uniteCentral;
     public int etat;
@@ -13,6 +15,7 @@ public class CibleTouch : MonoBehaviour
     public SpriteRenderer sr;
 
     public bool isTouch = false;
+    public int typeBouton;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,14 @@ public class CibleTouch : MonoBehaviour
         }
         etatMax = listColor.Count - 1;
 
-        sr.color = listColor[bonneCouleur];
+        if (typeBouton == 0)
+        {
+            sr.color = listColor[bonneCouleur];
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
     }
 
     // Update is called once per frame
@@ -41,22 +51,22 @@ public class CibleTouch : MonoBehaviour
                     {
                         if (other.collider.GetComponent<CibleTouch>().isTouch == false)
                         {
-                            var tempEtat = other.collider.GetComponent<CibleTouch>().etat;
+                            var tempEtat = other.collider.GetComponent<CibleTouch>();
                             other.collider.GetComponent<CibleTouch>().etat++;
-                            if (other.collider.GetComponent<CibleTouch>().etat > other.collider.GetComponent<CibleTouch>().etatMax)
+                            if (tempEtat.etat > tempEtat.etatMax)
                             {
-                                other.collider.GetComponent<CibleTouch>().etat = 0;
+                                tempEtat.etat = 0;
                             }
-                            if (other.collider.GetComponent<CibleTouch>().etat == other.collider.GetComponent<CibleTouch>().bonneCouleur)
+                            if (tempEtat.etat == tempEtat.bonneCouleur)
                             {
-                                other.collider.GetComponent<CibleTouch>().uniteCentral.cibleTrouver++;
+                                tempEtat.uniteCentral.cibleTrouver++;
                             }
-                            else if (tempEtat == other.collider.GetComponent<CibleTouch>().bonneCouleur)
+                            else if (tempEtat.etat - 1 == tempEtat.bonneCouleur)
                             {
-                                other.collider.GetComponent<CibleTouch>().uniteCentral.cibleTrouver--;
+                                tempEtat.uniteCentral.cibleTrouver--;
                             }
-                            other.collider.GetComponent<CibleTouch>().uniteCentral.isTouch = true;
-                            other.collider.GetComponent<CibleTouch>().isTouch = true;
+                            tempEtat.uniteCentral.isTouch = true;
+                            tempEtat.isTouch = true;
                         }
                     }
                 }
@@ -67,7 +77,18 @@ public class CibleTouch : MonoBehaviour
                 isTouch = false;
             }
 
-            sr.color = listColor[etat];
+            if (typeBouton == 0)
+            {
+                sr.color = listColor[etat];
+            }
+            else if (typeBouton == 1)
+            {
+                transform.eulerAngles = new Vector3(0, 0, listRotation[etat]);
+            }
+            else if (typeBouton == 2)
+            {
+                transform.position = new Vector3(transform.position.x, listPositions[etat].transform.position.y, transform.position.z);
+            }
         }
 
 
