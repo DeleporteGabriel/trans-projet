@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monObjet: {fileID: 0}
   monPrefab: {fileID: 2949873094969807774, guid: e62611e7a57be6a42b818d8bda564072, type: 3}
+  monPrefab2: {fileID: 1636798405345749310, guid: bac2c92857f58654897d725bd67aa4a6, type: 3}
   maListe: []
   maDispo: 
 --- !u!4 &1244516593
@@ -466,7 +467,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492782433}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -540,6 +541,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correspondance: 2
   monTableau: {fileID: 1244516592}
+  colonne: 0
+  ligne: 0
 --- !u!65 &1492782437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -824,7 +827,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914993163}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -898,6 +901,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correspondance: 1
   monTableau: {fileID: 1244516592}
+  colonne: 0
+  ligne: 0
 --- !u!65 &1914993167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -909,8 +914,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.781311, y: 6.550771, z: 0.2}
-  m_Center: {x: 3.1174643, y: -0.6654318, z: 0}
+  m_Size: {x: 11.743931, y: 6.7003016, z: 0.2}
+  m_Center: {x: 3.8464208, y: -1.2261665, z: 0}
 --- !u!65 &1914993168
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -922,8 +927,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.209541, y: 6.1591096, z: 0.1999999}
-  m_Center: {x: 1.387871, y: -6.962903, z: 0.000000049670536}
+  m_Size: {x: 7.947865, y: 5.8226695, z: 0.1999999}
+  m_Center: {x: 2.0046802, y: -7.542329, z: 0.000000049670536}
 --- !u!1 &1962271955
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +955,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962271955}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1024,6 +1029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correspondance: 0
   monTableau: {fileID: 1244516592}
+  colonne: 0
+  ligne: 0
 --- !u!65 &1962271959
 BoxCollider:
   m_ObjectHideFlags: 0

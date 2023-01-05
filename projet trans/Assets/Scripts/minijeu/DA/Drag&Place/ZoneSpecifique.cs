@@ -6,46 +6,94 @@ public class ZoneSpecifique : MonoBehaviour
 {
     public int correspondance;
     public TableauPlacement monTableau;
-    private int colonne;
-    private int ligne;
+    public int colonne;
+    public int ligne;
+
+    private bool canPlace = false;
     // Start is called before the first frame update
     void Start()
     {
-        ligne = Random.Range(0, 6);
-        colonne = Random.Range(0, 5);
+        //check placement
 
-        transform.position = monTableau.maListe[colonne + 7*ligne].transform.position;
-
-        /*if (correspondance == 0)
+        while (canPlace == false)
         {
-            for (int i = 0; i < 3; i++)
+            canPlace = true;
+            ligne = Random.Range(0, 8);
+            colonne = Random.Range(0, 5);
+            //coin
+            if (correspondance == 1)
             {
-                for (int j = 0; j < 2; j++)
+                for (int i = 0; i < 3; i++)
                 {
-                    monTableau.maDispo[colonne + i + (7 + i) * ligne] = true;
+                    for (int j = 0; j < 2; j++)
+                    {
+                        if (monTableau.maDispo[colonne + i + (7 * (ligne + j))] == true) { canPlace = false; }
+                    }
+                }
+                if (monTableau.maDispo[colonne + (7 * (ligne + 2))] == true) { canPlace = false; }
+                if (monTableau.maDispo[colonne + 1 + (7 * (ligne + 2))] == true) { canPlace = false; }
+                }
+                //long
+                if (correspondance == 0)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 2; j++)
+                        {
+                            if (monTableau.maDispo[colonne + i + (7 * (ligne + j))] == true) { canPlace = false; }
+                        }
+                    }
+                }
+                //carré
+                if (correspondance == 2)
+                {
+                    for (int i = 0; i < 2; i++)
+                    {
+                        for (int j = 0; j < 2; j++)
+                        {
+                            if (monTableau.maDispo[colonne + i + (7 * (ligne + j))] == true) { canPlace = false; }
+                        }
+                    }
                 }
             }
-        }*/
+
+        transform.position = monTableau.maListe[colonne + (7*ligne)].transform.position;
+
+        //coin
         if (correspondance == 1)
         {
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    monTableau.maDispo[colonne + i + (7 + j) * ligne] = true;
+                    monTableau.maDispo[colonne + i + (7 * (ligne + j))] = true;
                 }
             }
+            monTableau.maDispo[colonne + (7 * (ligne + 2))] = true;
+            monTableau.maDispo[colonne + 1 + (7 * (ligne+2))] = true;
         }
-        /*if (correspondance == 0)
+        //long
+        if (correspondance == 0)
         {
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    monTableau.maDispo[colonne + i + (7 + i) * ligne] = true;
+                    monTableau.maDispo[colonne + i + (7 * (ligne + j))] = true;
                 }
             }
-        }*/
+        }
+        //carré
+        if (correspondance == 2)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    monTableau.maDispo[colonne + i + (7 * (ligne + j))] = true;
+                }
+            }
+        }
     }
 
     // Update is called once per frame
