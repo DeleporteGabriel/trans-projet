@@ -18,6 +18,6 @@ public class ModeleTri : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(2.6f, mesPositions[monOrdre.ordreCorrect[positionModele]].transform.position.y, -1);
+        transform.position = new Vector3(2f, mesPositions[monOrdre.ordreCorrect[positionModele]].transform.position.y, -1);
     }
 }
