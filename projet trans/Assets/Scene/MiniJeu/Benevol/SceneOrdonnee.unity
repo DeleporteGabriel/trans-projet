@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -389,6 +389,7 @@ MonoBehaviour:
   - {fileID: 1900215087}
   isDragged: 0
   isTouched: 0
+  monLogo: {fileID: 421218148, guid: 9940afe095371db4294dec2ca57cb15c, type: 3}
 --- !u!212 &244059518
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -594,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765e6aaac3f59b84882ce5abb3da1eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  couleurBloc: {r: 0.038342, g: 0, b: 1, a: 1}
+  couleurBloc: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   sr: {fileID: 589419778}
   placeBloc: 5
   listPosition:
@@ -607,6 +608,7 @@ MonoBehaviour:
   - {fileID: 1900215087}
   isDragged: 0
   isTouched: 0
+  monLogo: {fileID: -1419190644, guid: 9940afe095371db4294dec2ca57cb15c, type: 3}
 --- !u!212 &589419778
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -762,6 +764,7 @@ MonoBehaviour:
   - {fileID: 1900215087}
   isDragged: 0
   isTouched: 0
+  monLogo: {fileID: 0}
 --- !u!212 &685128426
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1024,6 +1027,7 @@ MonoBehaviour:
   - {fileID: 1900215087}
   isDragged: 0
   isTouched: 0
+  monLogo: {fileID: 730968509, guid: 9940afe095371db4294dec2ca57cb15c, type: 3}
 --- !u!212 &962815122
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1148,6 +1152,7 @@ MonoBehaviour:
   - {fileID: 1900215087}
   isDragged: 0
   isTouched: 0
+  monLogo: {fileID: 876332053, guid: 9940afe095371db4294dec2ca57cb15c, type: 3}
 --- !u!212 &964284123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1550,6 +1555,7 @@ MonoBehaviour:
   - {fileID: 1900215087}
   isDragged: 0
   isTouched: 0
+  monLogo: {fileID: 152998591, guid: 9940afe095371db4294dec2ca57cb15c, type: 3}
 --- !u!212 &1444829923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1781,6 +1787,7 @@ MonoBehaviour:
   - {fileID: 1900215087}
   isDragged: 0
   isTouched: 0
+  monLogo: {fileID: -1460015356, guid: 9940afe095371db4294dec2ca57cb15c, type: 3}
 --- !u!212 &1675437675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2219,7 +2226,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.4568648, g: 0.4568648, b: 0.4716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

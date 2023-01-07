@@ -12,15 +12,24 @@ public class TriBloc : MonoBehaviour
 
     public bool isDragged = false;
     public bool isTouched = false;
+
+    public Sprite monLogo;
+    private GameObject maCaisse;
     // Start is called before the first frame update
     void Start()
     {
         sr.color = couleurBloc;
+
+        maCaisse = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+        SpriteRenderer sc = maCaisse.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
+        sc.sprite = monLogo;
+        maCaisse.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        maCaisse.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
         if (Input.touchCount > 0)
         {
             var tempPosition = Input.touches[0].position;
