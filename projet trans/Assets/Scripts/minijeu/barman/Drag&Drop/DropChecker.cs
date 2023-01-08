@@ -136,6 +136,7 @@ public class DropChecker : MonoBehaviour
             return;
         }
 
+        //reset étape
         if (totalDrop == currentDrop)
         {
             etapeFini++;
@@ -144,56 +145,15 @@ public class DropChecker : MonoBehaviour
                 currentError++;
             }
 
+            skinVerre.sprite = verreRempli[numeroVerre];
+
             currentDrop = 0;
             numberGood = totalDrop;
             isCorrect = 0;
             textAffiche = "";
 
-            bonIngredient.Clear();
-            bonIngredient.Add(listeIngredients[0]);
-            feurBon.Clear();
-            mauvaisIngredient.Clear();
-            mauvaisIngredient.Add(listeIngredients[0]);
-            feurMauvais.Clear();
-
-            if (etapeFini < etapeMax)
-            {
-                for (var i = 0; i < listeIngredients.Count; i++)
-                {
-                    if (Random.Range(0, 2) == 0 && numberGood >= 0)
-                    {
-                        bonIngredient.Add(listeIngredients[i]);
-                        feurBon.Add(feur[i]);
-                    }
-                    else
-                    {
-                        mauvaisIngredient.Add(listeIngredients[i]);
-                        feurMauvais.Add(feur[i]);
-                    }
-                }
-
-                for (int i = 0; i < totalNumber; i++)
-                {
-
-                    if (numberGood > 0)
-                    {
-                        var tempRand = Random.Range(1, bonIngredient.Count);
-                        var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
-                        tempIngredient.GetComponent<DraggedObject>().isGood = true;
-                        tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
-                        textAffiche += feurBon[tempRand - 1];
-                        textAffiche += "\n";
-                        numberGood--;
-                    }
-                    else
-                    {
-                        var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
-                        tempIngredient.GetComponent<DraggedObject>().isGood = false;
-                        tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
-                    }
-                }
-                monTexte.text = textAffiche;
-            }
+            Invoke("ResetRound", 2);
+            
         }
 
         if (etapeFini == etapeMax &&  currentError <= errorMax)
@@ -244,6 +204,58 @@ public class DropChecker : MonoBehaviour
                     SceneManager.LoadScene("SceneBarman");
                 }
             }
+        }
+    }
+
+    public void ResetRound()
+    {
+        bonIngredient.Clear();
+        bonIngredient.Add(listeIngredients[0]);
+        feurBon.Clear();
+        mauvaisIngredient.Clear();
+        mauvaisIngredient.Add(listeIngredients[0]);
+        feurMauvais.Clear();
+
+        numeroVerre = Random.Range(0, verreVide.Count);
+        skinVerre.sprite = verreVide[numeroVerre];
+
+        if (etapeFini < etapeMax)
+        {
+            for (var i = 0; i < listeIngredients.Count; i++)
+            {
+                if (Random.Range(0, 2) == 0 && numberGood >= 0)
+                {
+                    bonIngredient.Add(listeIngredients[i]);
+                    feurBon.Add(feur[i]);
+                }
+                else
+                {
+                    mauvaisIngredient.Add(listeIngredients[i]);
+                    feurMauvais.Add(feur[i]);
+                }
+            }
+
+            for (int i = 0; i < totalNumber; i++)
+            {
+
+                if (numberGood > 0)
+                {
+                    var tempRand = Random.Range(1, bonIngredient.Count);
+                    var tempIngredient = Instantiate(bonIngredient[tempRand], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
+                    tempIngredient.GetComponent<DraggedObject>().isGood = true;
+                    tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
+                    textAffiche += feurBon[tempRand - 1];
+                    textAffiche += "\n";
+                    numberGood--;
+                }
+                else
+                {
+                    var tempIngredient = Instantiate(mauvaisIngredient[Random.Range(1, mauvaisIngredient.Count)], new Vector3(Random.Range(-1f, 1f), Random.Range(2f, 5f), 0), Quaternion.identity);
+                    tempIngredient.GetComponent<DraggedObject>().isGood = false;
+                    tempIngredient.GetComponent<DraggedObject>().uniteCentrale = gameObject.GetComponent<DropChecker>();
+                }
+            }
+            monTexte.text = textAffiche;
         }
     }
 }

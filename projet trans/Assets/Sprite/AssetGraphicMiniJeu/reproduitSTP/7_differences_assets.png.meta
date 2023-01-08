@@ -125,7 +125,7 @@ TextureImporter:
         width: 994
         height: 758
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +146,7 @@ TextureImporter:
         width: 329
         height: 251
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,7 +209,7 @@ TextureImporter:
         width: 164
         height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,7 +230,7 @@ TextureImporter:
         width: 160
         height: 75
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,7 +251,7 @@ TextureImporter:
         width: 167
         height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,6 +259,132 @@ TextureImporter:
       bones: []
       spriteID: 1e945f4fb9e76c8449acebe1a07ce622
       internalID: -1264034712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_differences_assets_7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1959
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea5cc1b2bc61a548afae4cfa11b8b6b
+      internalID: -795601598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_differences_assets_8
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1959
+        width: 118
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e28b64ad371194490fa4263d077f65
+      internalID: -1091765434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_differences_assets_9
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1965
+        width: 146
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c730adde6256348a87fbc494c5008d
+      internalID: 1254997474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_differences_assets_10
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1965
+        width: 167
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5940888cd8ee5ea4aa45ff498543daeb
+      internalID: 940220118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_differences_assets_11
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1962
+        width: 129
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85fbfc94f937b642886cbe5cce26984
+      internalID: -21889522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 7_differences_assets_12
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 1955
+        width: 142
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62fdd3be421d36449c0526021dd1cd1
+      internalID: 613357009
       vertices: []
       indices: 
       edges: []
@@ -275,11 +401,17 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       7_differences_assets_3: 693228013
+      7_differences_assets_12: 613357009
       7_differences_assets_0: -169115354
       7_differences_assets_4: 1246610325
+      7_differences_assets_11: -21889522
+      7_differences_assets_10: 940220118
       7_differences_assets_2: 980954214
+      7_differences_assets_8: -1091765434
       7_differences_assets_6: -1264034712
       7_differences_assets_1: -582179126
+      7_differences_assets_7: -795601598
+      7_differences_assets_9: 1254997474
       7_differences_assets_5: 1447287420
   spritePackingTag: 
   pSDRemoveMatte: 0

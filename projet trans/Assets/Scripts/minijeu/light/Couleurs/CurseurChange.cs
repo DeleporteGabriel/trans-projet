@@ -34,6 +34,10 @@ public class CurseurChange : MonoBehaviour
     private float modelC;
 
     public float margeSlide;
+
+    public SpriteRenderer srValideA;
+    public SpriteRenderer srValideB;
+    public SpriteRenderer srValideC;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +56,10 @@ public class CurseurChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        srValideA.color = Color.Lerp(Color.green, Color.red, Mathf.Abs(modelA - sliderA));
+        srValideB.color = Color.Lerp(Color.green, Color.red, Mathf.Abs(modelB - sliderB));
+        srValideC.color = Color.Lerp(Color.green, Color.red, Mathf.Abs(modelC - sliderC));
+
         if (debut == true)
         {
             if (Input.touchCount > 0 && isTouch == false)
