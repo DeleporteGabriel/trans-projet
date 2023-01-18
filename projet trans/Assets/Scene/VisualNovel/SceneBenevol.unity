@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,23 +179,26 @@ MonoBehaviour:
   - "On nous a demand\xE9 de ranger des caisses dans le m\xEAme ordre que l'ann\xE9e
     derni\xE8re... Sauf que j'\xE9tais pas l\xE0 l'ann\xE9e derni\xE8re."
   - Vous pouvez m'aidez ?
-  mesDialoguesB:
+  mesDialoguesB1:
   - "Super ! Maintenant je sais o\xF9 ranger les autres ! Merci !"
+  mesDialoguesB2:
   - "C'est aussi votre premi\xE8re ann\xE9e ici ? On risque pas de s'en sortir..."
   mesDialoguesC:
   - "S'il vous pla\xEEt ! On aurais besoin d'un coup de main !"
   - On doit ranger des caisses dans leurs zones respectives, vous pouvez nous aidez
     ?
-  mesDialoguesD:
+  mesDialoguesD1:
   - "C'\xE9tait facile en fait... Merci quand m\xEAme !"
+  mesDialoguesD2:
   - Je doute que ces caisses doivent aller ici... On va devoir tout replacer, pas
     grave...
   mesDialoguesE:
   - "Excusez-moi, je dois mettre des d\xE9chets dans les bonnes poubelles mais je
     ne comprends pas comment fonctionne la balance."
   - Vous pourriez me donnez un coup de main ?
-  mesDialoguesF:
+  mesDialoguesF1:
   - Impeccable ! Tout est super propre et au bon endroit ! Merci !
+  mesDialoguesF2:
   - "C'est pas tr\xE8s \xE9colo tout \xE7a ! Il faut pas que la direction le sache..."
   monTexte: {fileID: 78906113}
   numeroDialogue: 0
@@ -838,7 +841,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &2116809384
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -855,7 +858,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!212 &2116809385
 SpriteRenderer:
   m_ObjectHideFlags: 0

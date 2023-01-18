@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -985,23 +985,26 @@ MonoBehaviour:
   mesDialoguesA:
   - Attends ! ... L'inspiration me vient...
   - Prends un crayon ! On va dessiner...
-  mesDialoguesB:
+  mesDialoguesB1:
   - SU-BLIME ! C'est ce que j'appelle de l'ART !
+  mesDialoguesB2:
   - C'est passable... C'est moyen... C'est nul, laisse moi seul.
   mesDialoguesC:
   - Oh tiens ! Tu vas pouvoir me donner un coup de main pour une affiche !
   - "Aide moi \xE0 choisir la bonne affiche !"
-  mesDialoguesD:
+  mesDialoguesD1:
   - "Magnifique affiche mon ami ! \xC7a va rendre super ! Merci !"
+  mesDialoguesD2:
   - Les couleurs c'est pas ton truc hein ? Tans pis, je retravaillerais dessus.
   mesDialoguesE:
   - "Hey le r\xE9gisseur, tu aurais 2 minutes ?"
   - Il faut que je place les stands dans des zones importantes, mais personne ne
     me donne son avis et en tant qu'artiste, les critiques j'en ai besoin !
   - "Tu veux bien m'aider \xE0 placer les stands ?"
-  mesDialoguesF:
+  mesDialoguesF1:
   - "L\xE0 \xE7a ressemble \xE0 quelque chose ! Merci du coup de main."
-  - "Je doute que ce soit les endroits les plus appropri\xE9s pour ces stands...
+  mesDialoguesF2:
+  - "-Je doute que ce soit les endroits les plus appropri\xE9s pour ces stands...
     On va replacer tout \xE7a."
   monTexte: {fileID: 2129918777}
   numeroDialogue: 0

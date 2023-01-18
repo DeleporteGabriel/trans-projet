@@ -128,6 +128,7 @@ public class CurseurChange : MonoBehaviour
             if (fini == false)
             {
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+                maJaugeValue.isMinigameWin = true;
                 fini = true;
                 maJaugeValue.removeMJ(16, 5);
             }

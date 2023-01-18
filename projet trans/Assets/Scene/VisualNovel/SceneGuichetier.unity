@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,7 +143,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &215282553
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -160,7 +160,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!212 &215282554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -381,9 +381,10 @@ MonoBehaviour:
   - "J'ai des probl\xE8mes car des gens rentrent avec des fausses cartes ! C'est
     inacceptable !"
   - "Aidez-moi \xE0 attraper les fraudeurs !"
-  mesDialoguesB:
+  mesDialoguesB1:
   - "Magnifique ! Ils y penseront \xE0 deux fois avant de frauder chez nous ! Merci
     !"
+  mesDialoguesB2:
   - "Oh mis\xE8re ! On va devoir aller les chercher dans le festival... \xC7a va
     pas \xEAtre facile."
   mesDialoguesC:
@@ -391,17 +392,19 @@ MonoBehaviour:
     je suis perdu !"
   - "Vous pourriez donner les bon Pass aux bonnes personnes s'il vous pla\xEEt ?
     APRES :"
-  mesDialoguesD:
+  mesDialoguesD1:
   - "Parfait ! Tout le monde \xE0 son Pass et il n'y a plus personne ! Merci du coup
     de main"
+  mesDialoguesD2:
   - Je doute que cet enfant de 8 ans fasse partit d'un groupe...
   mesDialoguesE:
   - "Mais qu'est-ce que... AH vous tombez \xE0 pique !"
   - "J'ai l'impression que certains badges sont des contrefa\xE7ons ! Mais j'ai du
     mal \xE0 les diff\xE9rencier des n\xF4tres..."
   - Vous pourriez me donner un coup de main ?
-  mesDialoguesF:
+  mesDialoguesF1:
   - "Parfait ! Je ne vois plus aucune contrefa\xE7ons ! Merci bien !"
+  mesDialoguesF2:
   - "On arrive m\xEAme pas \xE0 reconna\xEEtre nos propres badges... Mis\xE8re."
   monTexte: {fileID: 506038657}
   numeroDialogue: 0

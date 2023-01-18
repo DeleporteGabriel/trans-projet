@@ -35,6 +35,9 @@ public class IndestructibleObject : MonoBehaviour
 
     private IconeColors[] allIcones;
     private bool isInScene = false;
+
+    public int LastPlayedMinigame;
+    public bool isMinigameWin;
     // Start is called before the first frame update
     void Start()
     {
@@ -154,5 +157,6 @@ public class IndestructibleObject : MonoBehaviour
     {
         currentMJ.Remove(monMinijeuRemove);
         currentPerso.Remove(monPersoRemove);
+        LastPlayedMinigame = monMinijeuRemove;
     }
 }

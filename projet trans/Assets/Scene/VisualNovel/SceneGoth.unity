@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,23 +180,26 @@ MonoBehaviour:
     de main."
   - Il faut que je recopie une piste musicale mais j'ai du mal, vous pourriez m'aider
     ?
-  mesDialoguesB:
+  mesDialoguesB1:
   - Super ! C'est parfait, merci !
+  mesDialoguesB2:
   - "Je doute que la musique colle, on va refaire \xE7a illico."
   mesDialoguesC:
   - "Bah mince alors... Oh tiens, vous tombez \xE0 pique."
   - "J'ai l'impression que le son est mal r\xE9gl\xE9... Vous pourriez m'aider avec
     la table de mixage ?"
-  mesDialoguesD:
+  mesDialoguesD1:
   - Parfait ! Le son est redevenu normal, on entend parfaitement ! Merci.
+  mesDialoguesD2:
   - Je doute que cela sonne pareil...
   mesDialoguesE:
   - Salut ! Vous pourriez venir 2 secondes ?
   - "Faut que j'aille faire une course, vous pourriez r\xE9gler la nouvelle table
     de mixage qu'on a re\xE7u ? J'ai une fiche mod\xE8le ne vous inqui\xE8tez pas
     !"
-  mesDialoguesF:
+  mesDialoguesF1:
   - Parfait ! Tout m'a l'air en ordre ! Merci bien.
+  mesDialoguesF2:
   - "Mince ! Ma table de mixage est toute d\xE9r\xE9gl\xE9e... Je vais devoir corriger
     \xE7a."
   monTexte: {fileID: 147216189}

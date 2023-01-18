@@ -167,6 +167,7 @@ public class DropChecker : MonoBehaviour
             if (fini == false)
             {
                 Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
+                maJaugeValue.isMinigameWin = true;
                 fini = true;
                 maJaugeValue.removeMJ(11, 3);
             }
@@ -190,6 +191,7 @@ public class DropChecker : MonoBehaviour
             if (fini == false)
             {
                 Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
+                maJaugeValue.isMinigameWin = false;
                 fini = true;
                 maJaugeValue.removeMJ(11, 3);
             }

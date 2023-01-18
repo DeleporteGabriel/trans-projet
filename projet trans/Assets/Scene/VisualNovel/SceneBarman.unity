@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -346,22 +346,25 @@ MonoBehaviour:
   - "Hey l'ami ! Je suis tellement d\xE9bord\xE9 avec les clients que j'ai pas le
     temps d'utiliser le shaker."
   - "Tu pourrais secouer quelques cocktails pour moi s'il te pla\xEEt ?"
-  mesDialoguesB:
+  mesDialoguesB1:
   - "Merci l'ami ! La prochaine est pour moi d'accord ? \xC0 plus tard."
+  mesDialoguesB2:
   - "C'est pas donn\xE9 \xE0 tout le monde de savoir utiliser un shaker..."
   mesDialoguesC:
   - "J'ai besoin d'un coup de main avec les cocktails, je suis d\xE9bord\xE9 et j'ai
     pas le temps d'en faire certains."
   - "Tu pourrais faire des cocktails le temps que je me r\xE9organise ?"
-  mesDialoguesD:
+  mesDialoguesD1:
   - Merci bien ! J'ai fini de m'organiser, tu peux y aller.
+  mesDialoguesD2:
   - "Je vais prendre le relais d'accord ? Hors de question que quelqu'un boive \xE7a..."
   mesDialoguesE:
   - Salut l'ami, il faut que je m'absente quelques minutes pour aller chercher une
     commande.
   - "Tu pourrais tirer quelques bi\xE8res \xE0 ma place ?"
-  mesDialoguesF:
+  mesDialoguesF1:
   - Super boulot, j'ai tout ce qu'il me faut, tu peux aller voir les autres.
+  mesDialoguesF2:
   - "Tans pis pour ceux qui aiment la bi\xE8re... Au moins, il nous reste les cocktails."
   monTexte: {fileID: 632859582}
   numeroDialogue: 0
@@ -883,7 +886,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1489715151
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -900,7 +903,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1521950639
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,14 @@ public class texteDialogue : MonoBehaviour
     private IndestructibleObject monMiniJeuChecker;
 
     public List<string> mesDialoguesA;
-    public List<string> mesDialoguesB;
+    public List<string> mesDialoguesB1;
+    public List<string> mesDialoguesB2;
     public List<string> mesDialoguesC;
-    public List<string> mesDialoguesD;
+    public List<string> mesDialoguesD1;
+    public List<string> mesDialoguesD2;
     public List<string> mesDialoguesE;
-    public List<string> mesDialoguesF;
+    public List<string> mesDialoguesF1;
+    public List<string> mesDialoguesF2;
 
     private List<string> mesDialogues;
 
@@ -63,7 +66,42 @@ public class texteDialogue : MonoBehaviour
 
         if (mesDialogues == null)
         {
-            mesDialogues = mesDialoguesB;
+            if (SceneManager.GetActiveScene().name != "SceneIntro")
+            {
+                Debug.Log(monMiniJeuChecker.LastPlayedMinigame);
+                Debug.Log(monMiniJeuChecker.mesPersos[monPerso][1]);
+                Debug.Log(monMiniJeuChecker.mesPersos[monPerso][0]);
+                Debug.Log(monMiniJeuChecker.mesPersos[monPerso][2]);
+                for (int h = 0; h < 3; h++)
+                {
+                    if (monMiniJeuChecker.LastPlayedMinigame == monMiniJeuChecker.mesPersos[monPerso][h])
+                    {
+                        if (monMiniJeuChecker.isMinigameWin == true)
+                        {
+                            //mesDialogues.Clear();
+                            switch (h)
+                            {
+                                case 0: mesDialogues = mesDialoguesB1; break;
+                                case 1: mesDialogues = mesDialoguesD1; break;
+                                case 2: mesDialogues = mesDialoguesF1; break;
+                            }
+                        }
+                        else
+                        {
+                            switch (h)
+                            {
+                                case 0: mesDialogues = mesDialoguesB2; break;
+                                case 1: mesDialogues = mesDialoguesD2; break;
+                                case 2: mesDialogues = mesDialoguesF2; break;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                mesDialogues = mesDialoguesB1;
+            }
         }
     }
 
