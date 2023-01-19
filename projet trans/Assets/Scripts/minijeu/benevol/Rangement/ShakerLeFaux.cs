@@ -59,6 +59,7 @@ public class ShakerLeFaux : MonoBehaviour
             {
                 debut = false;
                 Destroy(monIntro);
+                isTouch = true;
             }
             return;
         }
@@ -83,32 +84,26 @@ public class ShakerLeFaux : MonoBehaviour
         {
             if (isTouch == false)
             {
-                var tempPosition = Input.touches[0].position;
-
-                var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
-                if (Physics.Raycast(tempRay, out var other))
+                tempProche = 99999;
+                for (int i = 0; i <= mesColonnes.Count - 1; i++)
                 {
-                    tempProche = 99999;
-                    for (int i = 0; i <= mesColonnes.Count - 1; i++)
+                    if (Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x) < tempProche)
                     {
-                        if (Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x) < tempProche)
-                        {
-                            colonneProche = i;
-                            tempProche = Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x);
-                        }
+                        colonneProche = i;
+                        tempProche = Mathf.Abs(transform.position.x - mesColonnes[i].transform.position.x);
                     }
+                }
 
-                    if (quantiteColonne[colonneProche] <= 4)
-                    {
-                        quantiteColonne[colonneProche] += 1;
-                        monObjet.GetComponent<CaisseRanger>().positionColonne = quantiteColonne[colonneProche];
-                        monObjet.GetComponent<CaisseRanger>().colonneProche = colonneProche;
-                        monObjet.GetComponent<CaisseRanger>().isShoot = true;
-                        monObjet.GetComponent<CaisseRanger>().transform.position = new Vector3(mesColonnes[colonneProche].transform.position.x, transform.position.y, -1);
+                if (quantiteColonne[colonneProche] <= 4)
+                {
+                    quantiteColonne[colonneProche] += 1;
+                    monObjet.GetComponent<CaisseRanger>().positionColonne = quantiteColonne[colonneProche];
+                    monObjet.GetComponent<CaisseRanger>().colonneProche = colonneProche;
+                    monObjet.GetComponent<CaisseRanger>().isShoot = true;
+                    monObjet.GetComponent<CaisseRanger>().transform.position = new Vector3(mesColonnes[colonneProche].transform.position.x, transform.position.y, -1);
 
-                        monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-                        monObjet.GetComponent<CaisseRanger>().monElevateur = gameObject;
-                    }
+                    monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+                    monObjet.GetComponent<CaisseRanger>().monElevateur = gameObject;
                 }
             }
         }
@@ -144,8 +139,8 @@ public class ShakerLeFaux : MonoBehaviour
             if (fini == false)
             {
                 Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = false;
                 fini = true;
+                maJaugeValue.isMinigameWin = false;
                 maJaugeValue.removeMJ(5, 1);
             }
 
