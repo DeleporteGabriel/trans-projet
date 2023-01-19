@@ -68,10 +68,6 @@ public class texteDialogue : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name != "SceneIntro")
             {
-                Debug.Log(monMiniJeuChecker.LastPlayedMinigame);
-                Debug.Log(monMiniJeuChecker.mesPersos[monPerso][1]);
-                Debug.Log(monMiniJeuChecker.mesPersos[monPerso][0]);
-                Debug.Log(monMiniJeuChecker.mesPersos[monPerso][2]);
                 for (int h = 0; h < 3; h++)
                 {
                     if (monMiniJeuChecker.LastPlayedMinigame == monMiniJeuChecker.mesPersos[monPerso][h])
