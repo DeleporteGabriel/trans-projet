@@ -125,7 +125,7 @@ TextureImporter:
         width: 557
         height: 568
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +146,7 @@ TextureImporter:
         width: 569
         height: 540
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,6 +242,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: logo_characters_6
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 574
+        width: 526
+        height: 554
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003fbc0c9fa73c746b4e5c6230bcd413
+      internalID: -651162124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -256,6 +277,7 @@ TextureImporter:
       logo_characters_3: 152998591
       logo_characters_4: 876332053
       logo_characters_1: 421218148
+      logo_characters_6: -651162124
       logo_characters_2: -1460015356
       logo_characters_5: -1419190644
       logo_characters_0: 730968509
