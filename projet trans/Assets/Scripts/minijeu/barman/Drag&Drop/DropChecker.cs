@@ -31,12 +31,9 @@ public class DropChecker : MonoBehaviour
 
     private string textAffiche;
 
-    public GameObject victor;
-    public GameObject defat;
-    public GameObject intro;
     public TextMeshProUGUI monTexte;
 
-    private GameObject monIntro;
+    public VictoireDefaite maFin;
 
     public SpriteRenderer skinVerre;
 
@@ -116,7 +113,6 @@ public class DropChecker : MonoBehaviour
             }
         }
         monTexte.text = textAffiche;
-        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
 
     }
@@ -124,15 +120,8 @@ public class DropChecker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (debut == true)
-        {
-            if (Input.touchCount > 0 && isTouch == false)
-            {
-                debut = false;
-                Destroy(monIntro);
-            }
-
-            if (Input.touchCount == 0) { isTouch = false; }
+        if (maFin.debut == true)
+        { 
             return;
         }
 
@@ -152,35 +141,16 @@ public class DropChecker : MonoBehaviour
             isCorrect = 0;
             textAffiche = "";
 
-            Invoke("ResetRound", 2);
-            
+            Invoke("ResetRound", 2);            
         }
 
         if (etapeFini == etapeMax &&  currentError <= errorMax)
         {
-            //maJaugeValue.jaugeHype += 70;
-            /*maJaugeValue.AugmenteJaugeValue(1f / 6f);
-            maJaugeValue.DragDrop = 1;
-            maJaugeValue.minijeuTermines++;
-            SceneManager.LoadScene("SceneLightGirl");*/
             skinVerre.sprite = verreRempli[numeroVerre];
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(11, 3);
-            }
+            maFin.Victoire(11, 3);
 
             if (Input.touchCount > 0)
             {
-                if (isTouch == false)
-                {
-                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[11] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneBarman");
-                }
                 isTouch = true;
             }
             else { isTouch = false; }
@@ -188,24 +158,7 @@ public class DropChecker : MonoBehaviour
 
         if (currentError > errorMax)
         {
-            if (fini == false)
-            {
-                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = false;
-                fini = true;
-                maJaugeValue.removeMJ(11, 3);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (isTouch == false)
-                {
-                    //maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[11] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneBarman");
-                }
-            }
+            maFin.Defaite(11, 3);
         }
     }
 

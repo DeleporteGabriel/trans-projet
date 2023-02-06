@@ -5,13 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class CreateTempo : MonoBehaviour
 {
-    private bool fini = false;
-    private bool debut = true;
-    public GameObject victor;
-    public GameObject intro;
-    public GameObject defat;
-
-    private GameObject monIntro;
+    [SerializeField]
+    private VictoireDefaite maFin;
 
     private IndestructibleObject maJaugeValue;
 
@@ -43,23 +38,14 @@ public class CreateTempo : MonoBehaviour
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
         variableTimer = Random.Range(1, 3);
-        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (debut == true)
+        if (maFin.debut == true || maFin.fini == true)
         {
-            if (Input.touchCount > 0 && isTouch == false)
-            {
-                debut = false;
-                Destroy(monIntro);
-                isTouch = true;
-            }
-
-            if (Input.touchCount == 0) { isTouch = false; }
             return;
         }
 
@@ -90,13 +76,7 @@ public class CreateTempo : MonoBehaviour
 
         if (errorCheck >= 3)
         {
-            if (fini == false)
-            {
-                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = false;
-                fini = true;
-                maJaugeValue.removeMJ(13, 4);
-            }
+            maFin.Defaite(13, 4);
 
             if (Input.touchCount > 0)
             {
@@ -112,26 +92,7 @@ public class CreateTempo : MonoBehaviour
 
         if ((rythmNumber > 19) && (errorCheck < errorMax))
         {
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(13, 4);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (isTouch == false)
-                {
-                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[13] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneGoth");
-                }
-                isTouch = true;
-            }
-            else { isTouch = false; }
+            maFin.Victoire(13, 4);
         }
 
         if (Input.touchCount > 0)

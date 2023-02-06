@@ -6,13 +6,9 @@ using UnityEngine.SceneManagement;
 public class TapFraude : MonoBehaviour
 {
     public bool activeTouch = false;
-    private bool fini = false;
-    private bool debut = true;
-    public GameObject victor;
-    public GameObject defat;
-    public GameObject intro;
 
-    private GameObject monIntro;
+    [SerializeField]
+    private VictoireDefaite maFin;
 
     private IndestructibleObject maJaugeValue;
 
@@ -32,22 +28,14 @@ public class TapFraude : MonoBehaviour
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
-        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { activeTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (debut == true)
+        if (maFin.debut == true || maFin.fini == true)
         {
-            if (Input.touchCount > 0 && activeTouch == false)
-            {
-                debut = false;
-                Destroy(monIntro);
-            }
-
-            if (Input.touchCount == 0) { activeTouch = false; }
             return;
         }
 
@@ -103,47 +91,11 @@ public class TapFraude : MonoBehaviour
 
         if (fraudeCount >= 3)
         {
-            if (fini == false)
-            {
-                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = false;
-                fini = true;
-                maJaugeValue.removeMJ(1, 0);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (activeTouch == false)
-                {
-                    //maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[1] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneGuichetier");
-                }
-            }
+            maFin.Defaite(1, 0);
         }
         if (pnjCount >= pnjMax && pnjCount <= pnjPass && fraudeCount <= margeFraude)
         {
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(1, 0);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (activeTouch == false)
-                {
-                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[1] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneGuichetier");
-                }
-                activeTouch = true;
-            }
-            else { activeTouch = false; }
+            maFin.Victoire(1, 0);
         }
 
         if (Input.touchCount > 0)

@@ -6,12 +6,9 @@ using UnityEngine.SceneManagement;
 public class CurseurChange : MonoBehaviour
 {
     private bool isTouch = false;
-    private bool fini = false;
-    private bool debut = true;
-    public GameObject victor;
-    public GameObject intro;
 
-    private GameObject monIntro;
+    [SerializeField]
+    private VictoireDefaite maFin;
 
     private IndestructibleObject maJaugeValue;
 
@@ -49,7 +46,6 @@ public class CurseurChange : MonoBehaviour
 
         srModel.color = new Vector4(modelA, modelB, modelC, 255);
 
-        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
     }
 
@@ -60,15 +56,8 @@ public class CurseurChange : MonoBehaviour
         srValideB.color = Color.Lerp(Color.green, Color.red, Mathf.Abs(modelB - sliderB));
         srValideC.color = Color.Lerp(Color.green, Color.red, Mathf.Abs(modelC - sliderC));
 
-        if (debut == true)
+        if (maFin.debut == true || maFin.fini == true)
         {
-            if (Input.touchCount > 0 && isTouch == false)
-            {
-                debut = false;
-                Destroy(monIntro);
-            }
-
-            if (Input.touchCount == 0) { isTouch = false; }
             return;
         }
 
@@ -125,26 +114,7 @@ public class CurseurChange : MonoBehaviour
         //VICTORY
         if ((sliderA > (modelA-margeSlide) && sliderA < (modelA + margeSlide)) && (sliderB > (modelB - margeSlide) && sliderB < (modelB + margeSlide)) && (sliderC > (modelC - margeSlide) && sliderC < (modelC + margeSlide)))
         {
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(16, 5);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (isTouch == false)
-                {
-                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[16] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneLightGirl");
-                }
-                isTouch = true;
-            }
-            else { isTouch = false; }
+            maFin.Victoire(16, 5);
         }
 
     }

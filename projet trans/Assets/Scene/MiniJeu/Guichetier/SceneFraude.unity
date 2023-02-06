@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 1418091432}
   - component: {fileID: 1418091433}
   - component: {fileID: 1418091434}
+  - component: {fileID: 1418091435}
   m_Layer: 0
   m_Name: Entree
   m_TagString: Untagged
@@ -510,9 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeTouch: 0
-  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
-  defat: {fileID: 192298658477478449, guid: 7383fe58973e756449edf9e4bd15a1db, type: 3}
-  intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+  maFin: {fileID: 1418091435}
   fraudeCount: 0
   margeFraude: 2
   timerMax: 1.5
@@ -520,6 +519,26 @@ MonoBehaviour:
   pnjMax: 15
   pnjPass: 0
   mesFraudeurs: {fileID: 2986804858714494926, guid: b94a95b5797f65c4c9becb4da87856a9, type: 3}
+--- !u!114 &1418091435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418091429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e9656f3e0402445824c0af582cc12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
+  defat: {fileID: 192298658477478449, guid: 7383fe58973e756449edf9e4bd15a1db, type: 3}
+  intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+  fini: 0
+  activeTouch: 0
+  debut: 1
+  activeMJ: 1
+  nextScene: SceneGuichetier
 --- !u!1 &1644314068
 GameObject:
   m_ObjectHideFlags: 0

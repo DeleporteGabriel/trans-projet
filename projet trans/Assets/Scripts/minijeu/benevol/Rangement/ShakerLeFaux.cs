@@ -5,13 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ShakerLeFaux : MonoBehaviour
 {
-    private bool fini = false;
-    private bool debut = true;
-    public GameObject victor;
-    public GameObject defat;
-    public GameObject intro;
-
-    private GameObject monIntro;
+    [SerializeField]
+    private VictoireDefaite maFin;
 
     private IndestructibleObject maJaugeValue;
 
@@ -43,7 +38,6 @@ public class ShakerLeFaux : MonoBehaviour
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
-        monIntro = Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
 
         monObjet = Instantiate(monPrefab, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
@@ -53,32 +47,12 @@ public class ShakerLeFaux : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (debut == true)
+        if (maFin.debut == true || maFin.fini == true)
         {
-            if (Input.touchCount > 0)
-            {
-                debut = false;
-                Destroy(monIntro);
-                isTouch = true;
-            }
             return;
         }
 
         Input.gyro.enabled = true;
-
-        // rgbd.velocity = Vector3.up * Input.gyro.userAcceleration.magnitude*Mathf.Sign(Input.gyro.userAcceleration.z);
-        /*t += Input.gyro.userAcceleration.magnitude * force;
-        transform.position = Vector3.Lerp(down.position, up.position, (Mathf.Sin(t) + 1) / 2);
-
-        if (Mathf.Sin(t) == 0 || Mathf.Sin(t) == 1)
-        {
-            shakeNumber++;
-        }
-
-        if (shakeNumber == shakeVictoire)
-        {
-            Debug.Log("ON A GAGNÉ");
-        }*/
 
         if (Input.touchCount > 0)
         {
@@ -114,14 +88,7 @@ public class ShakerLeFaux : MonoBehaviour
 
         if (currentScore >= scoreMax && currentError <= errorRange)
         {
-            //c'est la gagne
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(5, 1);
-            }
+            maFin.Victoire(5, 1);
 
             if (Input.touchCount > 0)
             {
@@ -136,24 +103,7 @@ public class ShakerLeFaux : MonoBehaviour
         }
         if (currentError > errorRange)
         {
-            if (fini == false)
-            {
-                Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
-                fini = true;
-                maJaugeValue.isMinigameWin = false;
-                maJaugeValue.removeMJ(5, 1);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (isTouch == false)
-                {
-                    //maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[5] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneBenevol");
-                }
-            }
+            maFin.Defaite(5, 1);
         }
 
         if (Input.touchCount > 0)

@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Combine : MonoBehaviour
 {
-    private bool fini = false;
-    private bool debut = true;
-    public GameObject victor;
-    public GameObject intro;
 
-    private GameObject monIntro;
+    [SerializeField]
+    private VictoireDefaite maFin;
 
     private IndestructibleObject maJaugeValue;
 
@@ -23,47 +20,36 @@ public class Combine : MonoBehaviour
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
-        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { activeTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (debut == true)
+        if (maFin.debut == true || maFin.fini == true)
         {
-            if (Input.touchCount > 0 && activeTouch == false)
-            {
-                debut = false;
-                Destroy(monIntro);
-            }
-
-            if (Input.touchCount == 0) { activeTouch = false; }
             return;
         }
 
         if (Input.touchCount > 0)
         {
-            if (fini == false)
+            var tempPosition = Input.touches[0].position;
+
+            var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
+            if (Physics.Raycast(tempRay, out var other) && activeTouch == false)
             {
-                var tempPosition = Input.touches[0].position;
-
-                var tempRay = Camera.main.ScreenPointToRay(new Vector3(tempPosition.x, tempPosition.y, Camera.main.nearClipPlane)); //crée un rayon depuis le touch 0
-                if (Physics.Raycast(tempRay, out var other) && activeTouch == false)
+                if (other.collider.GetComponent<PannelPart>() != null)
                 {
-                    if (other.collider.GetComponent<PannelPart>() != null)
+                    var targetObject = other.collider.GetComponent<PannelPart>();
+                    targetObject.currentGraphics++;
+                    targetObject.onTapTrigger();
+                    activeTouch = true;
+
+                    if (targetObject.currentGraphics >= targetObject.graphics.Count)
                     {
-                        var targetObject = other.collider.GetComponent<PannelPart>();
-                        targetObject.currentGraphics++;
-                        targetObject.onTapTrigger();
-                        activeTouch = true;
-
-                        if (targetObject.currentGraphics >= targetObject.graphics.Count)
-                        {
-                            targetObject.currentGraphics = 0;
-                        }
-
+                        targetObject.currentGraphics = 0;
                     }
+
                 }
             }
         }
@@ -83,26 +69,7 @@ public class Combine : MonoBehaviour
 
         if (isGoodPannel == listPannel.Count)
         {
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(8, 2);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (activeTouch == false)
-                {
-                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[8] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneDA");
-                }
-                activeTouch = true;
-            }
-            else { activeTouch = false; }
+            maFin.Victoire(8, 2);
         }
 
         if (Input.touchCount > 0)

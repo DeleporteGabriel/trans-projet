@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 1471791420}
   - component: {fileID: 1471791419}
   - component: {fileID: 1471791422}
+  - component: {fileID: 1471791423}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -437,10 +438,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee98aea5adde484eb72b981d6236bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
-  intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+  maFin: {fileID: 1471791423}
   totalDrop: 3
   currentDrop: 0
+--- !u!114 &1471791423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471791418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e9656f3e0402445824c0af582cc12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
+  defat: {fileID: 192298658477478449, guid: 7383fe58973e756449edf9e4bd15a1db, type: 3}
+  intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+  fini: 0
+  activeTouch: 0
+  debut: 1
+  activeMJ: 9
+  nextScene: SceneDA
 --- !u!1 &1492782433
 GameObject:
   m_ObjectHideFlags: 0

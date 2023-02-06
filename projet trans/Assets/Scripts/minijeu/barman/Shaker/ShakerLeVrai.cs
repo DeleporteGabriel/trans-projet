@@ -6,12 +6,6 @@ using UnityEngine.SceneManagement;
 public class ShakerLeVrai : MonoBehaviour
 {
     private bool isTouch = false;
-    private bool fini = false;
-    private bool debut = true;
-    public GameObject victor;
-    public GameObject intro;
-
-    private GameObject monIntro;
 
     private IndestructibleObject maJaugeValue;
 
@@ -21,6 +15,9 @@ public class ShakerLeVrai : MonoBehaviour
     public Transform up, down;
     public SpriteRenderer mousse;
     public List<Sprite> mousseEtape;
+
+    [SerializeField]
+    private VictoireDefaite maFin;
 
     public GameObject bulle;
     public Transform parent;
@@ -36,24 +33,12 @@ public class ShakerLeVrai : MonoBehaviour
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
         mousse.sprite = mousseEtape[0];
 
-        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (debut == true)
-        {
-            if (Input.touchCount > 0 && isTouch == false)
-            {
-                debut = false;
-                Destroy(monIntro);
-            }
-
-            if (Input.touchCount == 0) { isTouch = false; }
-            return;
-        }
 
         Input.gyro.enabled = true;
 
@@ -100,26 +85,7 @@ public class ShakerLeVrai : MonoBehaviour
 
         if (shakeNumber >= shakeVictoire)
         {
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(10, 3);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (isTouch == false)
-                {
-                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[10] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneBarman");
-                }
-                isTouch = true;
-            }
-            else { isTouch = false; }
+            maFin.Victoire(10, 3);
         }
 
         //rgbd.velocity = new Vector3 (0, (Input.gyro.rotationRate.z + compensation) * force, 0);

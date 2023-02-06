@@ -8,12 +8,8 @@ public class BadgeEnvoi : MonoBehaviour
 
     public float vitesseEnvoie;
 
-    private bool fini = false;
-    private bool debut = true;
-    public GameObject victor;
-    public GameObject intro;
-
-    private GameObject monIntro;
+    [SerializeField]
+    private VictoireDefaite maFin;
 
     private IndestructibleObject maJaugeValue;
 
@@ -40,22 +36,14 @@ public class BadgeEnvoi : MonoBehaviour
         srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
         sr.sprite = typeBadgeColor[0];
 
-        monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
         if (Input.touchCount > 0) { isTouch = true; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (debut == true)
+        if (maFin.debut == true || maFin.fini == true)
         {
-            if (Input.touchCount > 0 && isTouch == false)
-            {
-                debut = false;
-                Destroy(monIntro);
-            }
-
-            if (Input.touchCount == 0) { isTouch = false; }
             return;
         }
 
@@ -113,26 +101,7 @@ public class BadgeEnvoi : MonoBehaviour
 
         if (nombrenvoi == nombreEnvoiMax)
         {
-            if (fini == false)
-            {
-                Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
-                maJaugeValue.isMinigameWin = true;
-                fini = true;
-                maJaugeValue.removeMJ(3, 0);
-            }
-
-            if (Input.touchCount > 0)
-            {
-                if (isTouch == false)
-                {
-                    maJaugeValue.AugmenteJaugeValue(1f / 6f);
-                    maJaugeValue.faitOuPasFait[3] = 1;
-                    maJaugeValue.minijeuTermines++;
-                    SceneManager.LoadScene("SceneGuichetier");
-                }
-                isTouch = true;
-            }
-            else { isTouch = false; }
+            maFin.Victoire(3, 0);
         }
 
         if (Input.touchCount > 0)

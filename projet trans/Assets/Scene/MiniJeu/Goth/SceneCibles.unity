@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3655,6 +3655,7 @@ GameObject:
   - component: {fileID: 1990104273}
   - component: {fileID: 1990104272}
   - component: {fileID: 1990104275}
+  - component: {fileID: 1990104276}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3741,11 +3742,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTouch: 0
-  fini: 0
-  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
-  intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+  maFin: {fileID: 1990104276}
   totalCible: 6
   cibleTrouver: 0
+--- !u!114 &1990104276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990104271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e9656f3e0402445824c0af582cc12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
+  defat: {fileID: 192298658477478449, guid: 7383fe58973e756449edf9e4bd15a1db, type: 3}
+  intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+  fini: 0
+  activeTouch: 0
+  debut: 1
+  activeMJ: 15
+  nextScene: SceneGoth
 --- !u!1 &2123755753
 GameObject:
   m_ObjectHideFlags: 0
