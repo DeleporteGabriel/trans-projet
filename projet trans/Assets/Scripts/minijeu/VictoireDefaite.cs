@@ -36,7 +36,6 @@ public class VictoireDefaite : MonoBehaviour
                 Destroy(monIntro);
             }
         }
-        if (Input.touchCount == 0) { activeTouch = false; } else { activeTouch = true; }
 
         if (fini == true)
         {
@@ -50,6 +49,8 @@ public class VictoireDefaite : MonoBehaviour
                 }
             }
         }
+        
+        if (Input.touchCount == 0) { activeTouch = false; } else { activeTouch = true; }
     }
 
     public void Victoire(int MJ, int Perso)
