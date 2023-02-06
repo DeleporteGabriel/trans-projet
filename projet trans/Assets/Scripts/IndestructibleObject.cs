@@ -27,6 +27,7 @@ public class IndestructibleObject : MonoBehaviour
     public List<int> futurPersos;
 
     public int minijeuTermines;
+    public int minijeuGagne;
 
     public JaugeParametre jp;
 
@@ -38,6 +39,9 @@ public class IndestructibleObject : MonoBehaviour
 
     public int LastPlayedMinigame;
     public bool isMinigameWin;
+
+    public float tempsDeJeu_ = 0;
+    private bool lanceTimer = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +58,11 @@ public class IndestructibleObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (lanceTimer == true)
+        {
+            tempsDeJeu_ += Time.deltaTime;
+        }
+
         if (currentMJ.Count == 0 && SceneManager.GetActiveScene().name == "SceneMap" && minijeuTermines < 12)
         {
             currentMJ.Clear();
@@ -131,6 +140,7 @@ public class IndestructibleObject : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "FirstScene" && (Input.touchCount > 0))
         {
+            lanceTimer = true;
             SceneManager.LoadScene("SceneIntro");
         }
     }

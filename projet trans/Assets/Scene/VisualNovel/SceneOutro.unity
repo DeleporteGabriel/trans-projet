@@ -774,30 +774,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848320802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a6e66cd8444d0418e3a1d64a513a9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 07f6b1d765b81cf47a0ae1ea144dd5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesDialoguesA:
-  - Bonjour... Super... Manager...
-  - "Je... crois... que... j'ai... m\xEAl\xE9e... mes... affaires..."
-  - "Mais... il... reste... tellement... \xE0...faire..."
-  mesDialoguesB1:
-  - "Super-R\xE9gisseur ! Tu tombes \xE0 pique !"
-  - "On a besoin de ton aide pour sauver ce festival ! Fonce voir les intervenants
-    pour voir si tu n'as pas l'occasion d'aider \xE0 droite \xE0 gauche"
-  mesDialoguesB2: []
-  mesDialoguesC: []
-  mesDialoguesD1: []
-  mesDialoguesD2: []
-  mesDialoguesE: []
-  mesDialoguesF1: []
-  mesDialoguesF2: []
+  mesDialogues:
+  - "Te revoil\xE0 !"
+  - "F\xE9licitation, encore une mission r\xE9ussi pour Super-R\xE9gisseur !"
+  - bravo.
+  - "Et tout \xE7a sans acheter de vues sur YouVues"
+  - Par contre mauvaise nouvelle mon pote
+  - 'Tu as fini le jeu en '
+  - "Et tu as seulement r\xE9ussi "
   monTexte: {fileID: 1848320805}
   numeroDialogue: 0
-  nextSceneA: SceneDrag&Drop
-  nextSceneB: SceneOutro
-  mesOptions: {fileID: 6126608344249178347, guid: 0982af7dacee71c45b8558ffb8d47411, type: 3}
-  monPerso: -1
 --- !u!114 &1848320805
 MonoBehaviour:
   m_ObjectHideFlags: 0

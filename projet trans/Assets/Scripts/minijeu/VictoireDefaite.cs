@@ -61,6 +61,7 @@ public class VictoireDefaite : MonoBehaviour
             fini = true;
             maJaugeValue.isMinigameWin = true;
             maJaugeValue.removeMJ(MJ, Perso);
+            maJaugeValue.minijeuGagne++;
         }
     }
 
