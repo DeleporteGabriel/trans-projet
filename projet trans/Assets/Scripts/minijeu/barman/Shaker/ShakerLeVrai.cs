@@ -27,10 +27,36 @@ public class ShakerLeVrai : MonoBehaviour
 
     public float shakeNumber;
     public float shakeVictoire;
+
+    private int diffulctLevel;
+
+    [SerializeField]
+    private TimerDefeat monTimer;
     // Start is called before the first frame update
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        diffulctLevel = maJaugeValue.difficulty;
+
+        if (diffulctLevel == 1)
+        {
+            monTimer.timerMax *= 1;
+            monTimer.currentTimer = monTimer.timerMax;
+            shakeVictoire = 10;
+        }
+        else if (diffulctLevel == 2)
+        {
+            monTimer.timerMax *= 0.8f;
+            monTimer.currentTimer = monTimer.timerMax;
+            shakeVictoire = 15;
+        }
+        else if (diffulctLevel == 3)
+        {
+            monTimer.timerMax *= 0.5f;
+            monTimer.currentTimer = monTimer.timerMax;
+            shakeVictoire = 20;
+        }
+
         mousse.sprite = mousseEtape[0];
 
         if (Input.touchCount > 0) { isTouch = true; }
@@ -76,7 +102,7 @@ public class ShakerLeVrai : MonoBehaviour
             mousse.sprite = mousseEtape[1];
 
         }
-        if (shakeNumber == shakeVictoire-4)
+        if (shakeNumber == shakeVictoire-3)
         {
 
             mousse.sprite = mousseEtape[2];

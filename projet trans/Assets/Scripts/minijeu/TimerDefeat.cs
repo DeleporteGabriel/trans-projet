@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class TimerDefeat : MonoBehaviour
 {
-    [SerializeField]
-    private float timerMax_, currentTimer_;
+    public float timerMax, currentTimer;
     [SerializeField]
     private Image maJauge_;
     [SerializeField]
@@ -17,7 +16,7 @@ public class TimerDefeat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTimer_ = timerMax_;
+        currentTimer = timerMax;
     }
 
     // Update is called once per frame
@@ -28,9 +27,9 @@ public class TimerDefeat : MonoBehaviour
             return;
         }
 
-        currentTimer_ -= Time.deltaTime;
-        maJauge_.fillAmount = (currentTimer_/timerMax_);
-        if (currentTimer_ <= 0)
+        currentTimer -= Time.deltaTime;
+        maJauge_.fillAmount = (currentTimer/timerMax);
+        if (currentTimer <= 0)
         {
             maDefaite_.Defaite(monMJ_, monPerso_);
         }

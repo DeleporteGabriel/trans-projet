@@ -9,10 +9,16 @@ public class PeonManager : MonoBehaviour
     [SerializeField]
     private GameObject monPrefabsPeon_;
 
+    private int nombrePeon;
+    private IndestructibleObject nombrePeonCheck;
+
     // Update is called once per frame
     void Start()
     {
-        for (int i = 0; i < 500; i++)
+        nombrePeonCheck = FindObjectOfType<IndestructibleObject>();
+        nombrePeon = nombrePeonCheck.minijeuGagne*20;
+
+        for (int i = 0; i < nombrePeon; i++)
         {
             var monPeonX = Random.Range(-2.26f, 2.6f);
             var monPeonY = Random.Range(-4f, 6f);

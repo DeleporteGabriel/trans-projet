@@ -33,10 +33,29 @@ public class ShakerLeFaux : MonoBehaviour
     public GameObject ocmoi;
 
     public GameObject monObjet;
+
+    private int diffucltLevel;
     // Start is called before the first frame update
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        diffucltLevel = maJaugeValue.difficulty;
+
+        if (diffucltLevel == 1)
+        {
+            errorRange = 3;
+            scoreMax = 6;
+        }
+        else if (diffucltLevel == 2)
+        {
+            errorRange = 2;
+            scoreMax = 8;
+        }
+        else if (diffucltLevel == 3)
+        {
+            errorRange = 0;
+            scoreMax = 10;
+        }
 
         if (Input.touchCount > 0) { isTouch = true; }
 

@@ -26,9 +26,6 @@ public class DropChecker : MonoBehaviour
     public int errorMax = 1;//nombre d'erreur avant echec
     public int currentError;
 
-    private bool fini = false;
-    private bool debut = true;
-
     private string textAffiche;
 
     public TextMeshProUGUI monTexte;
@@ -44,11 +41,12 @@ public class DropChecker : MonoBehaviour
     public List<string> feurBon;
     public List<string> feurMauvais;
 
-
-    private bool isTouch = false;
     // Start is called before the first frame update
     void Start()
     {
+        maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        diffucltLevel = maJaugeValue.difficulty;
+
         numeroVerre = Random.Range(0, 3);
         skinVerre.sprite = verreVide[numeroVerre];
 
@@ -77,7 +75,6 @@ public class DropChecker : MonoBehaviour
             etapeMax = 4;
         }
 
-        maJaugeValue = FindObjectOfType<IndestructibleObject>();
         for (var i = 0; i < listeIngredients.Count; i++)
         {
             if (Random.Range(0, 2) == 0 && numberGood >= 0)
@@ -113,7 +110,6 @@ public class DropChecker : MonoBehaviour
             }
         }
         monTexte.text = textAffiche;
-        if (Input.touchCount > 0) { isTouch = true; }
 
     }
 
@@ -148,12 +144,6 @@ public class DropChecker : MonoBehaviour
         {
             skinVerre.sprite = verreRempli[numeroVerre];
             maFin.Victoire(11, 3);
-
-            if (Input.touchCount > 0)
-            {
-                isTouch = true;
-            }
-            else { isTouch = false; }
         }
 
         if (currentError > errorMax)
