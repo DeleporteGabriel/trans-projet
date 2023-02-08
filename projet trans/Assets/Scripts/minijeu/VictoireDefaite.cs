@@ -8,6 +8,7 @@ public class VictoireDefaite : MonoBehaviour
     [SerializeField]
     private GameObject victor, defat, intro;
     private GameObject monIntro;
+    private GameObject monTuto;
     public bool fini = false, activeTouch = false, debut = true;
 
     private IndestructibleObject maJaugeValue;
