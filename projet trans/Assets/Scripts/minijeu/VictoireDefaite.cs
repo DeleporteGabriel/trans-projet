@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class VictoireDefaite : MonoBehaviour
 {
     [SerializeField]
-    private GameObject victor, defat, intro;
-    private GameObject monIntro;
-    private GameObject monTuto;
-    public bool fini = false, activeTouch = false, debut = true;
+    private GameObject victor, defat, intro, tuto;
+    private GameObject monIntro, monTuto;
+    public bool fini = false, activeTouch = false, debut = true, tutoBool = false;
 
+    
     private IndestructibleObject maJaugeValue;
 
     [SerializeField]
@@ -23,6 +23,8 @@ public class VictoireDefaite : MonoBehaviour
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
 
         monIntro = Instantiate(intro, new Vector3(0, 1, 0), Quaternion.identity);
+        monTuto = Instantiate(tuto, new Vector3(0, 1, 0), Quaternion.identity);
+        monTuto.SetActive(false);
         if (Input.touchCount > 0) { activeTouch = true; }
     }
 
@@ -34,7 +36,19 @@ public class VictoireDefaite : MonoBehaviour
             if (Input.touchCount > 0 && activeTouch == false)
             {
                 debut = false;
+                tutoBool = true;
+                activeTouch = true;
                 Destroy(monIntro);
+                monTuto.SetActive(true);
+            }
+        }
+
+        if (tutoBool == true && debut == false)
+        {
+            if (Input.touchCount > 0 && activeTouch == false)
+            {
+                tutoBool = false;
+                Destroy(monTuto);
             }
         }
 

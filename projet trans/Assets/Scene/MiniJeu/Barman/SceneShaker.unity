@@ -270,9 +270,11 @@ MonoBehaviour:
   victor: {fileID: 4869497473207020207, guid: b7b22de8a110e8a4583196dcf675ec35, type: 3}
   defat: {fileID: 192298658477478449, guid: 7383fe58973e756449edf9e4bd15a1db, type: 3}
   intro: {fileID: 408955051787959422, guid: 12b7748eb3edf964a9a3f9db1a2e393e, type: 3}
+  tuto: {fileID: 5002457921495043869, guid: e438d285c1c550841aaf1b78bbe22cdd, type: 3}
   fini: 0
   activeTouch: 0
   debut: 1
+  tutoBool: 0
   activeMJ: 10
   nextScene: SceneBarman
 --- !u!1 &192524865
