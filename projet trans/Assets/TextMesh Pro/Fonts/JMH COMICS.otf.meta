@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f835584a3013e364c9ef4b40bc043d8e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - JMH COMICS
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6bf13e72f4103ed4e962596c64c43668, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
