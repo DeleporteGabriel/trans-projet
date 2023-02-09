@@ -73,6 +73,7 @@ public class VictoireDefaite : MonoBehaviour
         {
             Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
             fini = true;
+            activeTouch = true;
             maJaugeValue.isMinigameWin = true;
             maJaugeValue.removeMJ(MJ, Perso);
             maJaugeValue.minijeuGagne++;
@@ -85,6 +86,7 @@ public class VictoireDefaite : MonoBehaviour
         {
             Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
             fini = true;
+            activeTouch = true;
             maJaugeValue.isMinigameWin = false;
             maJaugeValue.removeMJ(MJ, Perso);
         }

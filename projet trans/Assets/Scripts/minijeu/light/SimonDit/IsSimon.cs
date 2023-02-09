@@ -13,6 +13,8 @@ public class IsSimon : MonoBehaviour
     public float timerMax;
 
     public bool isWhite = false;
+    [SerializeField]
+    private SimonManager monManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class IsSimon : MonoBehaviour
                 timer = 0;
                 isWhite = false;
                 sr.color = myColor;
+                monManager.mesModeles[quelSimon].color = new Vector4(1, 1, 1, 0.5f);
             }
         }
     }
