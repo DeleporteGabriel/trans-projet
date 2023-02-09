@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -462,7 +462,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1008705913
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -479,7 +479,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1165603550
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,10 +781,7 @@ MonoBehaviour:
   - "Te revoil\xE0 !"
   - "F\xE9licitation, encore une mission r\xE9ussi pour Super-R\xE9gisseur !"
   - bravo.
-  - "Et tout \xE7a sans acheter de vues sur YouVues"
-  - Par contre mauvaise nouvelle mon pote
-  - 'Tu as fini le jeu en '
-  - "Et tu as seulement r\xE9ussi "
+  - "Maintenant, voyons voir tes r\xE9sultats !"
   monTexte: {fileID: 1700207333}
   numeroDialogue: 0
 --- !u!114 &1700207333
@@ -939,10 +936,7 @@ MonoBehaviour:
   - "Te revoil\xE0 !"
   - "F\xE9licitation, encore une mission r\xE9ussi pour Super-R\xE9gisseur !"
   - bravo.
-  - "Et tout \xE7a sans acheter de vues sur YouVues"
-  - Par contre mauvaise nouvelle mon pote
-  - 'Tu as fini le jeu en '
-  - "Et tu as seulement r\xE9ussi "
+  - "Maintenant, voyons voir tes r\xE9sultats !"
   monTexte: {fileID: 1848320805}
   numeroDialogue: 0
 --- !u!114 &1848320805

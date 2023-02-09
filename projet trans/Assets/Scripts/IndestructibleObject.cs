@@ -45,6 +45,8 @@ public class IndestructibleObject : MonoBehaviour
     private bool lanceTimer = false;
     //difficulté
     public int difficulty;
+    [SerializeField]
+    private AudioSource maMusique;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,14 @@ public class IndestructibleObject : MonoBehaviour
         mesPersos.Add(lightMJ);
 
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Awake()
+    {
+        if (!maMusique.isPlaying)
+        {
+            maMusique.Play();
+        }
     }
 
     // Update is called once per frame
