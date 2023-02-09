@@ -18,6 +18,9 @@ public class DraggedObject : MonoBehaviour
     public DropChecker uniteCentrale;
     private int etapeActuel;
 
+    [SerializeField]
+    private GameObject mesParticules;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +72,10 @@ public class DraggedObject : MonoBehaviour
                     if (isGood == false)
                     {
                         uniteCentrale.isCorrect += 1;
+                    }
+                    else
+                    {
+                        Instantiate(mesParticules, transform.position, Quaternion.identity);
                     }
                     sr.enabled = false;
                     Destroy(gameObject);

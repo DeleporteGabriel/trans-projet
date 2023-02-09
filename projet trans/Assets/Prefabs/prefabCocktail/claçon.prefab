@@ -116,3 +116,4 @@ MonoBehaviour:
   isPut: 0
   sr: {fileID: 3070373066991517963}
   uniteCentrale: {fileID: 6855544746697830772, guid: 994e1e3817e24ff4983620893313f8ab, type: 3}
+  mesParticules: {fileID: 4275959269938542849, guid: e89ecc69d1d117d40a5a60b9ce961ea0, type: 3}
