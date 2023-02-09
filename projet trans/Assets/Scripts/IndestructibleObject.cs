@@ -120,7 +120,7 @@ public class IndestructibleObject : MonoBehaviour
                 }
             }
         }
-        if (currentMJ.Count == 0 && minijeuTermines == 12)
+        if (currentMJ.Count == 0 && minijeuTermines == 12 && SceneManager.GetActiveScene().name != "SceneOutro")
         {
             SceneManager.LoadScene("SceneOutro");
         }
