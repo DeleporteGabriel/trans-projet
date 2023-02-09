@@ -32,10 +32,33 @@ public class CreateTempo : MonoBehaviour
 
     [Range(1f, 5f)]
     public int errorMax;
+
+    private int diffulctLevel;
+    private float vitesseNote;
     // Start is called before the first frame update
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        diffulctLevel = maJaugeValue.difficulty;
+
+        if (diffulctLevel == 1)
+        {
+            errorMax = 5;
+            nombreRangee = 1;
+            vitesseNote = 1;
+        }
+        else if (diffulctLevel == 2)
+        {
+            errorMax = 3;
+            nombreRangee = 2;
+            vitesseNote = 1.2f;
+        }
+        else if (diffulctLevel == 3)
+        {
+            errorMax = 0;
+            nombreRangee = 3;
+            vitesseNote = 1.5f;
+        }
 
         variableTimer = Random.Range(1, 3);
         if (Input.touchCount > 0) { isTouch = true; }
@@ -68,6 +91,7 @@ public class CreateTempo : MonoBehaviour
 
             TempoRythm noteTempo = Instantiate(maNote, new Vector3(tempPosition, -4.4f, 0), Quaternion.identity);
             noteTempo.sr.sprite = noteTempo.noteSkin[tempTypeNote];
+            noteTempo.vitesseRythm *= vitesseNote;
 
             noteTempo.IDchecker = self;
             noteTempo.noteID = noteNumber;

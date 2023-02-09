@@ -12,12 +12,16 @@ public class BadgeEnvoi : MonoBehaviour
     private VictoireDefaite maFin;
 
     private IndestructibleObject maJaugeValue;
+    [SerializeField]
+    private TimerDefeat monTimer;
 
     public List<Sprite> typeBadgeColor;
     public List<int> listBonBadge;
     public int badgeAvancement;
 
     public int nombreErreur;
+    [SerializeField]
+    private int errorMax;
 
     public int nombreEnvoiMax;
     public int nombrenvoi;
@@ -29,14 +33,50 @@ public class BadgeEnvoi : MonoBehaviour
     private bool isTouch = false;
     private bool caDegage = false;
     // Start is called before the first frame update
+
+    private int diffulctLevel;
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        diffulctLevel = maJaugeValue.difficulty;
+
+        if (diffulctLevel == 1)
+        {
+            errorMax = 3;
+            monTimer.timerMax *= 1;
+            monTimer.currentTimer = monTimer.timerMax;
+            nombreEnvoiMax = 4;
+        }
+        else if (diffulctLevel == 2)
+        {
+            errorMax = 1;
+            monTimer.timerMax *= 0.8f;
+            monTimer.currentTimer = monTimer.timerMax;
+            nombreEnvoiMax = 4;
+        }
+        else if (diffulctLevel == 3)
+        {
+            errorMax = 0;
+            monTimer.timerMax *= 0.5f;
+            monTimer.currentTimer = monTimer.timerMax;
+            nombreEnvoiMax = 4;
+        }
+
+        RemplirListe();
 
         srModele.sprite = typeBadgeColor[listBonBadge[badgeAvancement]];
         sr.sprite = typeBadgeColor[0];
 
         if (Input.touchCount > 0) { isTouch = true; }
+    }
+
+    void RemplirListe()
+    {
+        listBonBadge.Clear();
+        for (int i = 0; i < nombreEnvoiMax; i++)
+        {
+            listBonBadge.Add(Random.Range(1, 5));
+        }
     }
 
     // Update is called once per frame
@@ -99,6 +139,10 @@ public class BadgeEnvoi : MonoBehaviour
             }
         }
 
+        if (nombreErreur >= errorMax)
+        {
+            maFin.Defaite(3, 0);
+        }
         if (nombrenvoi == nombreEnvoiMax)
         {
             maFin.Victoire(3, 0);

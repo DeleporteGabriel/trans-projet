@@ -9,15 +9,21 @@ public class PeonDeplacement : MonoBehaviour
     private Vector3 newPosition;
     private float t_;
     private int timer_;
+
+    private IndestructibleObject hypePeon;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hypePeon = FindObjectOfType<IndestructibleObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hypePeon.isMinigameWin == false)
+        {
+            return;
+        }
         timer_++;
         t_ += 0.01f;
         if (timer_%60  == 0)

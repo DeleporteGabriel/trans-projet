@@ -14,11 +14,6 @@ public class TempoRythm : MonoBehaviour
     public CreateTempo IDchecker;
     public List<Sprite> noteSkin;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {

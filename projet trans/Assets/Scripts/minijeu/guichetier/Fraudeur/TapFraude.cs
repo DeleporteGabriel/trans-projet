@@ -23,10 +23,31 @@ public class TapFraude : MonoBehaviour
     public int pnjPass;
 
     public GameObject mesFraudeurs;
+
+    private int diffulctLevel;
+    private float vitesseFraude;
     // Start is called before the first frame update
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        diffulctLevel = maJaugeValue.difficulty;
+
+        if (diffulctLevel == 1)
+        {
+            margeFraude = 3;
+            vitesseFraude = 1;
+
+        }
+        else if (diffulctLevel == 2)
+        {
+            margeFraude = 2;
+            vitesseFraude = 1.2f;
+        }
+        else if (diffulctLevel == 3)
+        {
+            margeFraude = 0;
+            vitesseFraude = 1.5f;
+        }
 
         if (Input.touchCount > 0) { activeTouch = true; }
     }
@@ -42,7 +63,8 @@ public class TapFraude : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= timerMax && pnjCount <= pnjMax)
         {
-            Instantiate(mesFraudeurs, new Vector3(Random.Range(-1.5f, 1.7f), 7, 0), Quaternion.identity);
+            var monFraude = Instantiate(mesFraudeurs, new Vector3(Random.Range(-1.5f, 1.7f), 7, 0), Quaternion.identity);
+            monFraude.GetComponent<Fraudeur>().vitesse *= vitesseFraude;
             pnjCount++;
             timer = 0;
         }
