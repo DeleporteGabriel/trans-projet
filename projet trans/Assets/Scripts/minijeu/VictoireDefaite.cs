@@ -36,22 +36,21 @@ public class VictoireDefaite : MonoBehaviour
             if (Input.touchCount > 0 && activeTouch == false)
             {
                 tutoBool = true;
+                debut = false;
                 activeTouch = true;
                 Destroy(monIntro);
                 monTuto.SetActive(true);
             }
         }
 
-        if (tutoBool == true && debut == false)
+        if (monTuto != null)
         {
             if (Input.touchCount > 0 && activeTouch == false)
             {
-                tutoBool = false;
-                debut = false;
                 Destroy(monTuto);
             }
         }
-
+        
         if (fini == true)
         {
             if (Input.touchCount > 0)
@@ -64,7 +63,7 @@ public class VictoireDefaite : MonoBehaviour
                 }
             }
         }
-        
+
         if (Input.touchCount == 0) { activeTouch = false; } else { activeTouch = true; }
     }
 

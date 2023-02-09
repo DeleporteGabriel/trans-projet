@@ -61,11 +61,6 @@ public class IndestructibleObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lanceTimer == true)
-        {
-            tempsDeJeu_ += Time.deltaTime;
-        }
-
         if (currentMJ.Count == 0 && SceneManager.GetActiveScene().name == "SceneMap" && minijeuTermines < 12)
         {
             currentMJ.Clear();
@@ -125,7 +120,17 @@ public class IndestructibleObject : MonoBehaviour
                 }
             }
         }
-
+        if (currentMJ.Count == 0 && minijeuTermines == 12 && SceneManager.GetActiveScene().name != "SceneOutro")
+        {
+            SceneManager.LoadScene("SceneOutro");
+        }
+        else
+        {
+            if (lanceTimer == true)
+            {
+                tempsDeJeu_ += Time.deltaTime;
+            }
+        }
         if (SceneManager.GetActiveScene().name == "SceneMap" && isInScene == false)
         {
             allIcones = FindObjectsOfType<IconeColors>();

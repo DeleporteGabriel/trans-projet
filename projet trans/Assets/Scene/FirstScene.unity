@@ -203,7 +203,7 @@ MonoBehaviour:
   LastPlayedMinigame: 0
   isMinigameWin: 0
   tempsDeJeu_: 0
-  difficulty: 1
+  difficulty: 3
 --- !u!1 &945660931
 GameObject:
   m_ObjectHideFlags: 0
