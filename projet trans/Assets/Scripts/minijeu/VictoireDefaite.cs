@@ -35,7 +35,6 @@ public class VictoireDefaite : MonoBehaviour
         {
             if (Input.touchCount > 0 && activeTouch == false)
             {
-                debut = false;
                 tutoBool = true;
                 activeTouch = true;
                 Destroy(monIntro);
@@ -48,6 +47,7 @@ public class VictoireDefaite : MonoBehaviour
             if (Input.touchCount > 0 && activeTouch == false)
             {
                 tutoBool = false;
+                debut = false;
                 Destroy(monTuto);
             }
         }
