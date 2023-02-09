@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TextOutro : MonoBehaviour
 {
@@ -50,6 +51,9 @@ public class TextOutro : MonoBehaviour
             if (numeroDialogue == mesDialogues.Count - 1)
             {
                 stopDialogue = true;
+                SceneManager.LoadScene("SceneFin");
+                monTemps.minijeuTermines = 0;
+                monTemps.minijeuGagne = 0;
             }
             numeroDialogue = Mathf.Clamp(numeroDialogue + 1, 0, mesDialogues.Count - 1);
 

@@ -92,4 +92,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/VisualNovel/SceneOutro.unity
     guid: 3392f3c1de76ea84fbfdc818c3e40572
+  - enabled: 1
+    path: Assets/Scene/VisualNovel/SceneFin.unity
+    guid: 8cdee1a7fb05d554da65918ba495af1a
   m_configObjects: {}
