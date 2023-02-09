@@ -27,10 +27,8 @@ public class CreateTempo : MonoBehaviour
 
     public TempoRythm maNote;
 
-    [Range(1f, 3f)]
     public int nombreRangee;
 
-    [Range(1f, 5f)]
     public int errorMax;
 
     private int diffulctLevel;
@@ -39,7 +37,7 @@ public class CreateTempo : MonoBehaviour
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
-        diffulctLevel = maJaugeValue.difficulty;
+        if (maJaugeValue != null) { diffulctLevel = maJaugeValue.difficulty; } else { diffulctLevel = 3; }
 
         if (diffulctLevel == 1)
         {
@@ -98,7 +96,7 @@ public class CreateTempo : MonoBehaviour
             noteNumber++;
         }
 
-        if (errorCheck >= 3)
+        if (errorCheck > errorMax)
         {
             maFin.Defaite(13, 4);
 
@@ -114,7 +112,7 @@ public class CreateTempo : MonoBehaviour
             }
         }
 
-        if ((rythmNumber > 19) && (errorCheck < errorMax))
+        if ((rythmNumber > 19) && (errorCheck <= errorMax))
         {
             maFin.Victoire(13, 4);
         }
