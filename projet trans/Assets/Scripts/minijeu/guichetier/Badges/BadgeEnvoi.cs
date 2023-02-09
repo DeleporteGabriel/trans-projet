@@ -49,17 +49,17 @@ public class BadgeEnvoi : MonoBehaviour
         }
         else if (diffulctLevel == 2)
         {
-            errorMax = 1;
+            errorMax = 2;
             monTimer.timerMax *= 0.8f;
             monTimer.currentTimer = monTimer.timerMax;
-            nombreEnvoiMax = 4;
+            nombreEnvoiMax = 5;
         }
         else if (diffulctLevel == 3)
         {
             errorMax = 0;
             monTimer.timerMax *= 0.5f;
             monTimer.currentTimer = monTimer.timerMax;
-            nombreEnvoiMax = 4;
+            nombreEnvoiMax = 6;
         }
 
         RemplirListe();
@@ -139,7 +139,7 @@ public class BadgeEnvoi : MonoBehaviour
             }
         }
 
-        if (nombreErreur >= errorMax)
+        if (nombreErreur > errorMax)
         {
             maFin.Defaite(3, 0);
         }
