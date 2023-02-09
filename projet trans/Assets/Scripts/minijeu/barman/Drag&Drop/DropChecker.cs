@@ -136,7 +136,6 @@ public class DropChecker : MonoBehaviour
             numberGood = totalDrop;
             isCorrect = 0;
             textAffiche = "";
-
             Invoke("ResetRound", 2);            
         }
 

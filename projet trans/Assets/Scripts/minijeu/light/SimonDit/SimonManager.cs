@@ -28,10 +28,35 @@ public class SimonManager : MonoBehaviour
     public float timer;
     public float timerMax;
     public int iModele;
+
+    [SerializeField]
+    private int nombreSuite;
+    private int diffulctLevel;
+
     // Start is called before the first frame update
     void Start()
     {
         maJaugeValue = FindObjectOfType<IndestructibleObject>();
+        diffulctLevel = maJaugeValue.difficulty;
+
+        if (diffulctLevel == 1)
+        {
+            nombreSuite = 4;
+        }
+        else if (diffulctLevel == 2)
+        {
+            nombreSuite = 6;
+        }
+        else if (diffulctLevel == 3)
+        {
+            nombreSuite = 8;
+        }
+
+        mesReponses.Clear();
+        for (int i = 0; i < nombreSuite; i++)
+        {
+            mesReponses.Add(Random.Range(0, 4));
+        }
 
         simonIsPlaying = true;
 
@@ -82,6 +107,7 @@ public class SimonManager : MonoBehaviour
                             //action
                             var autreSimon = other.collider.GetComponent<IsSimon>();
                             mesSimons[autreSimon.quelSimon].color = Color.white;
+                            mesModeles[autreSimon.quelSimon].color = colorModele[autreSimon.quelSimon];
                             maSerie.Add(autreSimon.quelSimon);
                             autreSimon.isWhite = true;
                             isTouch = true;

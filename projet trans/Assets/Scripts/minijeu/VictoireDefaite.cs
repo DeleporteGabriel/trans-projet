@@ -36,22 +36,21 @@ public class VictoireDefaite : MonoBehaviour
             if (Input.touchCount > 0 && activeTouch == false)
             {
                 tutoBool = true;
+                debut = false;
                 activeTouch = true;
                 Destroy(monIntro);
                 monTuto.SetActive(true);
             }
         }
 
-        if (tutoBool == true && debut == false)
+        if (monTuto != null)
         {
             if (Input.touchCount > 0 && activeTouch == false)
             {
-                tutoBool = false;
-                debut = false;
                 Destroy(monTuto);
             }
         }
-
+        
         if (fini == true)
         {
             if (Input.touchCount > 0)
@@ -64,7 +63,7 @@ public class VictoireDefaite : MonoBehaviour
                 }
             }
         }
-        
+
         if (Input.touchCount == 0) { activeTouch = false; } else { activeTouch = true; }
     }
 
@@ -74,6 +73,7 @@ public class VictoireDefaite : MonoBehaviour
         {
             Instantiate(victor, new Vector3(0, 1, 0), Quaternion.identity);
             fini = true;
+            activeTouch = true;
             maJaugeValue.isMinigameWin = true;
             maJaugeValue.removeMJ(MJ, Perso);
             maJaugeValue.minijeuGagne++;
@@ -86,6 +86,7 @@ public class VictoireDefaite : MonoBehaviour
         {
             Instantiate(defat, new Vector3(0, 1, 0), Quaternion.identity);
             fini = true;
+            activeTouch = true;
             maJaugeValue.isMinigameWin = false;
             maJaugeValue.removeMJ(MJ, Perso);
         }
