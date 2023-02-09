@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11ff1f644ba0bc4da23714d88248bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maScene: FirstScene
+  maScene: SceneMenu
   sr: {fileID: 0}
   timer: 0
   timerMax: 0

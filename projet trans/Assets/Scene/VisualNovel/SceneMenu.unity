@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -520,6 +520,8 @@ GameObject:
   m_Component:
   - component: {fileID: 293154885}
   - component: {fileID: 293154884}
+  - component: {fileID: 293154886}
+  - component: {fileID: 293154887}
   m_Layer: 0
   m_Name: Menu_1
   m_TagString: Untagged
@@ -594,6 +596,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &293154886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293154883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.148477, y: 1.6796558, z: 0.19999999}
+  m_Center: {x: -0.05504265, y: -0.027521426, z: 0}
+--- !u!114 &293154887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293154883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0c9fd39190a7c46b41e626a55373eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 1
+  maScene: SceneIntro
 --- !u!1 &377744830
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +717,8 @@ GameObject:
   m_Component:
   - component: {fileID: 569457981}
   - component: {fileID: 569457980}
+  - component: {fileID: 569457982}
+  - component: {fileID: 569457983}
   m_Layer: 0
   m_Name: Menu_1 (1)
   m_TagString: Untagged
@@ -762,6 +793,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &569457982
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569457979}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.093432, y: 1.6796554, z: 0.19999999}
+  m_Center: {x: 0, y: -0.027521627, z: 0}
+--- !u!114 &569457983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569457979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0c9fd39190a7c46b41e626a55373eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 2
+  maScene: SceneIntro
 --- !u!1 &657941466
 GameObject:
   m_ObjectHideFlags: 0

@@ -159,7 +159,7 @@ public class IndestructibleObject : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "FirstScene" && (Input.touchCount > 0))
         {
             lanceTimer = true;
-            SceneManager.LoadScene("SceneIntro");
+            SceneManager.LoadScene("SceneMenu");
         }
     }
 
