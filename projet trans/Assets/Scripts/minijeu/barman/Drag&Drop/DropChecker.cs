@@ -136,7 +136,6 @@ public class DropChecker : MonoBehaviour
             numberGood = totalDrop;
             isCorrect = 0;
             textAffiche = "";
-            Debug.Log("salut 1");
             Invoke("ResetRound", 2);            
         }
 
@@ -154,8 +153,6 @@ public class DropChecker : MonoBehaviour
 
     public void ResetRound()
     {
-        Debug.Log("salut 2");
-
         bonIngredient.Clear();
         bonIngredient.Add(listeIngredients[0]);
         feurBon.Clear();
